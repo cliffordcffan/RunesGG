@@ -139,7 +139,7 @@ header nav ul li a:hover,header nav ul li a.activeSmall {
   box-sizing: border-box;
   width:70%;
   margin-left: 15%;
-  margin-top: 15%;
+  margin-top: 15&;
   font-size:16px;
   padding: 12px 20px 12px 40px;
   border: 1px solid #ddd;
