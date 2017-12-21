@@ -11,7 +11,8 @@ var port = 8080;
 //config server
 var URI = 'mongodb://ReadWrite:readwrite123@clusterthefirst-shard-00-00-ym3yd.mongodb.net:27017,clusterthefirst-shard-00-01-ym3yd.mongodb.net:27017,clusterthefirst-shard-00-02-ym3yd.mongodb.net:27017/LOL?ssl=true&replicaSet=ClusterTheFirst-shard-0&authSource=admin';
 mongoose.connect(URI,{useMongoClient:true});
-//mongoose.connect('mongodb+srv://ReadWrite:readwrite123@clusterthefirst-ym3yd.mongodb.net/LOL',{useMongoClient:true});
+
+//test connection
 var db = mongoose.connection;
 db.on('error', console.error.bind(console, 'connection error: '));
 db.once('open', function() {
