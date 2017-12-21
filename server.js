@@ -1,6 +1,5 @@
 //set up server
 
-
 var express	= require('express');
 var app 	= express();
 var mongoose 	= require('mongoose');
@@ -16,8 +15,10 @@ mongoose.connect(URI,{useMongoClient:true});
 var db = mongoose.connection;
 db.on('error', console.error.bind(console, 'connection error: '));
 db.once('open', function() {
-	console.log('heyo');
+	//connection works, no need to print anything out
 });
+
+//app use
 app.use(express.static('./public'));
 app.use("/images", express.static(__dirname + '/images'));
 app.use("/css", express.static(__dirname + '/css'));
