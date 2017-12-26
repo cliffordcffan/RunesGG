@@ -9,8 +9,9 @@ var methodOverride = require('method-override');
 var port = 8080;
 
 //config server
-var URI = 'mongodb://ReadWrite:readwrite123@clusterthefirst-shard-00-00-ym3yd.mongodb.net:27017,clusterthefirst-shard-00-01-ym3yd.mongodb.net:27017,clusterthefirst-shard-00-02-ym3yd.mongodb.net:27017/LOL?ssl=true&replicaSet=ClusterTheFirst-shard-0&authSource=admin';
+var URI = 'mongodb://ReadWrite:readingwriting123@clusterthefirst-shard-00-00-ym3yd.mongodb.net:27017,clusterthefirst-shard-00-01-ym3yd.mongodb.net:27017,clusterthefirst-shard-00-02-ym3yd.mongodb.net:27017/LOL?ssl=true&replicaSet=ClusterTheFirst-shard-0&authSource=admin';
 mongoose.connect(URI,{useMongoClient:true});
+mongoose.Promise = global.Promise;
 
 //test connection
 var db = mongoose.connection;
@@ -18,6 +19,21 @@ db.on('error', console.error.bind(console, 'connection error: '));
 db.once('open', function() {
 	//connection works, no need to print anything out
 });
+
+//test
+
+var Schema = mongoose.Schema;
+const mongooseMap = require('mongoose-map')(mongoose);
+var champSchema = new Schema({data:{}, type:String, version:String},{collection:'champions'});
+var doc = mongoose.model('Champions',champSchema);
+var champions = '';
+doc.
+  find({}).
+  select({_id: 0, data:1}).
+  exec(function(err,res){
+	  var champions = JSON.stringify(res);
+	  console.log(champions);
+  });
 
 //app use
 app.use(express.static('./public'));
