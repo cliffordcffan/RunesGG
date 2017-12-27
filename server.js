@@ -39,28 +39,25 @@ var ourChampSchema = new Schema(
   {collection:'ourChampions'}
 );
 var ourModel = mongoose.model('OurChampions',ourChampSchema);
+//clean database for testing purposes
+ourModel.remove({},function(err){});
 var champions;
 doc.
   find({}).
   select({_id: 0, data:1}).
   exec(function(err,res){
 	  champions = JSON.parse(JSON.stringify(res))[0].data;
-	  var arr = [];
 	  for (var x in champions){
-		  arr.push(champions[x]);
-	  }
-	  //console.log(arr[arr.length-1].id);
-	  for (i = 0; i < arr.length; i++){
-	  	var curr = new ourModel({name:arr[i].name,
-			id:arr[i].id,
-			title:arr[i].title,
+		var champ = champions[x];
+	  	var entry = new ourModel({name:champ.name,
+			id:champ.id,
+			title:champ.title,
 			wins:0,
 			losses:0}
 		);
-		curr.save(function(err){
+		entry.save(function(err){
 			if(err) return handleError(err);
 		});
-		console.log(curr);
 	  }
   });
 
