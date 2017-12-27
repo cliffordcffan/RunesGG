@@ -21,18 +21,47 @@ db.once('open', function() {
 });
 
 //test
-
 var Schema = mongoose.Schema;
-const mongooseMap = require('mongoose-map')(mongoose);
-var champSchema = new Schema({data:{}, type:String, version:String},{collection:'champions'});
+
+//default champ list schema
+var champSchema = new Schema({},{collection:'champions'});
 var doc = mongoose.model('Champions',champSchema);
-var champions = '';
+
+//our own champion schema w/ win rates
+var ourChampSchema = new Schema(
+  {
+    name: {type:String, required:true},
+    id: {type:String, required:true},
+    title: {type:String},
+    wins: {type:Number},
+    losses: {type:Number}
+  },
+  {collection:'ourChampions'}
+);
+var ourModel = mongoose.model('OurChampions',ourChampSchema);
+var champions;
 doc.
   find({}).
   select({_id: 0, data:1}).
   exec(function(err,res){
-	  var champions = JSON.stringify(res);
-	  console.log(champions);
+	  champions = JSON.parse(JSON.stringify(res))[0].data;
+	  var arr = [];
+	  for (var x in champions){
+		  arr.push(champions[x]);
+	  }
+	  //console.log(arr[arr.length-1].id);
+	  for (i = 0; i < arr.length; i++){
+	  	var curr = new ourModel({name:arr[i].name,
+			id:arr[i].id,
+			title:arr[i].title,
+			wins:0,
+			losses:0}
+		);
+		curr.save(function(err){
+			if(err) return handleError(err);
+		});
+		console.log(curr);
+	  }
   });
 
 //app use
