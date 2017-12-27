@@ -85,22 +85,28 @@ matchModel.
 			teamOneWin=false;
 		}
 		var numParticipants = 10;
-		//parse team 1
-		for(i = 0; i < numParticipants/2; i++){
+		//parse teams
+		for(i = 0; i < numParticipants; i++){
 			var champID = match.participants[i].championId;
 			//update our db
 			var condition = {id: champID},
-			    update = { $inc: {wins:1}};
+			    updateWin = { $inc: {wins:1}},
+			    updateLoss = { $inc: {losses:1}},
+			    update;
+			if(i < numParticipants/2){
+				if(teamOneWin){
+					update = updateWin;
+				}else{
+					update = updateLoss;
+				}	
+			}else{
+				if(teamOneWin){
+					update = updateLoss;
+				}else{
+					update = updateWin;
+				}
+			}
 			ourModel.update(condition,update, function(err, score){
-				if(err) return handleError(err);
-			});
-		}
-		//parse team 2
-		for(i = numParticipants/2; i < numParticipants; i++){
-			var champID = match.participants[i].championId;
-			var condition = {id:champID},
-			    update = {$inc: {losses:1}};
-			ourModel.update(condition,update,function(err,score){
 				if(err) return handleError(err);
 			});
 		}
