@@ -20,12 +20,12 @@ db.once('open', function() {
 	//connection works, no need to print anything out
 });
 
-//test
+////////////////////////TESTING/////////////////////////
 var Schema = mongoose.Schema;
 
 //default champ list schema
 var champSchema = new Schema({},{collection:'champions'});
-var doc = mongoose.model('Champions',champSchema);
+var champModel = mongoose.model('Champions',champSchema);
 
 //our own champion schema w/ win rates
 var ourChampSchema = new Schema(
@@ -38,14 +38,22 @@ var ourChampSchema = new Schema(
   },
   {collection:'ourChampions'}
 );
+
 var ourModel = mongoose.model('OurChampions',ourChampSchema);
+
+//schema for match list test set 1
+var matchSchema = new Schema({},{collection:'match1'});
+var matchModel = mongoose.model('Match1',matchSchema);
+
 //clean database for testing purposes
 ourModel.remove({},function(err){});
 var champions;
-doc.
-  find({}).
-  select({_id: 0, data:1}).
-  exec(function(err,res){
+
+//parse riot api champion list and send to new champ list
+champModel.
+    find({}).
+    select({_id: 0, data:1}).
+    exec(function(err,res){
 	  champions = JSON.parse(JSON.stringify(res))[0].data;
 	  for (var x in champions){
 		var champ = champions[x];
@@ -59,7 +67,51 @@ doc.
 			if(err) return handleError(err);
 		});
 	  }
-  });
+    });
+
+//parse first test set of matches
+matchModel.
+    find().
+    select({_id:0, matches:1}).
+    exec(function(err,res){
+  	matches = JSON.parse(JSON.stringify(res))[0].matches;
+	//console.log(matches[0]);
+	for (var x in matches){
+		var match = matches[x];
+		var teamOneWin;
+		if(match.teams[0].win==='Win'){
+			teamOneWin=true;
+		}else{
+			teamOneWin=false;
+		}
+		var numParticipants = 10;
+		//parse teams
+		for(i = 0; i < numParticipants; i++){
+			var champID = match.participants[i].championId;
+			//update our db
+			var condition = {id: champID},
+			    updateWin = { $inc: {wins:1}},
+			    updateLoss = { $inc: {losses:1}},
+			    update;
+			if(i < numParticipants/2){
+				if(teamOneWin){
+					update = updateWin;
+				}else{
+					update = updateLoss;
+				}	
+			}else{
+				if(teamOneWin){
+					update = updateLoss;
+				}else{
+					update = updateWin;
+				}
+			}
+			ourModel.update(condition,update, function(err, score){
+				if(err) return handleError(err);
+			});
+		}
+	}	
+    });
 
 //app use
 app.use(express.static('./public'));
