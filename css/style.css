@@ -88,6 +88,46 @@ input:focus,textarea:focus {
   vertical-align:middle;
 }
 
+.RunesType{
+  margin-left: auto;
+  margin-right: auto;
+  position:relative;
+  width:50em;
+}
+.PrecisionTree{
+	float: left;
+}
+.DominationTree{
+	float: right;
+}
+.SorceryTree{
+	float: center;
+}
+.InspirationTree{
+	float: left;
+}
+.ResolveTree{
+	float: right;
+}
+.key{
+}
+.nonKey{
+}
+
+/*Table*/
+table{
+	table-layout: fixed;
+	width: 25%;
+}
+
+body table tr td img{
+	margin-left: auto;
+	margin-right: auto;
+	display: block;
+	width: 50%;
+	height: auto;
+}
+
 /* header section */
 header {
   height:100%;
@@ -101,6 +141,34 @@ header .wrap {
 header .logo {
   margin-top:1px;
   width:10%;
+}
+body nav ul{
+	margin: 1em 0;
+	padding: 0;
+}
+body nav ul li{
+	display:block;
+	float: left;
+	margin-right:20px;
+	margin-left:20px;
+}
+body nav ul li a {
+  border-radius:24px;
+  color:#aaa;
+  font-size:1.4em;
+  font-weight:400;
+  text-decoration:none;
+}
+body nav ul li a.active {
+  background-color:#c33c3a;
+  color:#fff;
+}
+body nav ul li a.active:hover {
+  background-color:#d2413f;
+  color:#fff;
+}
+body nav ul li a:hover,body nav ul li a.activeTree {
+  color:#c33c3a;
 }
 header nav {
   float:right;
