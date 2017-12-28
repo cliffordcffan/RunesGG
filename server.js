@@ -74,22 +74,8 @@ app.use(bodyParser.json());
 app.use(bodyParser.json({type: 'application/vnd.api+json'}));
 app.use(methodOverride('X-HTTP-Method-Override'));
 
-app.get('/',function(req,res){
-	console.log("getting homepage");
-  res.sendFile(path.join(__dirname+'/public/index.html'));
-  //__dirname : It will resolve to your project folder.
-});
-app.post('/',function(req,res){
-  console.log("searching for ");
-  console.log(req.body.Champion);
-  let champion = req.body.Champion;
-  res.render(path.join(__dirname+'/public/template'),{championName: champion, error:null});
-  //res.sendFile(path.join(__dirname+'/public/template.html'));
-  //__dirname : It will resolve to your project folder.
-});
-
 //routes
-//require('./app/routes.js')(app);
+require('./app/routes.js')(app,path);
 
 //listen
 app.listen(port);
