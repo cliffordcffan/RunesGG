@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Champions</title>
+	<!-- add styles -->
+    <link href="../css/style.css" rel="stylesheet" type="text/css" />
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+</head>
+<body background="../images/wallpaper.jpg">
+	<header>
+		<div class = "wrap">
+		<!--Dynamic Champion name taken from search from index-->
+			<% if(championName !== null){ %>
+					<a href='index.html'><img class='logo' src ='<%='../images/squares/'+championName+'Square.png'%>'/></a>
+				<b><%= championName %></b>
+			<% } %>
+
+			<% if(error !== null){ %>
+				<b><%= error %></b>
+			<% } %>
+		<!--end of dynamic name change-->
+		<!-- Also replace logo from images/squares/ -->
+		</div>
+	</header>
+	<div class = "RunesType">
+	<nav>
+		<ul>
+			<li><a id="primaryTree" ng-class ="{activeTree:part =='primary'}">Primary Tree</a></li>
+			<li><a id="secondaryTree" href="template2.html" ng-class="{activeTree:part == 'secondary'}">Secondary Tree</a></li>
+		</ul>
+	</nav>
+	</div>
+	<br />
+	<!-- break to allow left align due to <nav> being a fatty-->
+	<br />
+	<table class ="PrecisionTree">
+		<tr>
+			<th colspan="3">Precision</td>
+		</tr>
+		<tr class = "key">
+			<td><img id = "P1" src = "../images/perk/8005.png"/></td> <!--Press The Attack-->
+			<td><img id = "P2" src = "../images/perk/8008.png"/></td> <!--Lethal Tempo-->
+			<td><img id = "P3" src = "../images/perk/8021.png"/></td> <!--Fleet Footwork-->
+		</tr>
+		<tr class ="nonKey">
+			<td><img id = "P4" src = "../images/perk/9101.png"/></td> <!--Overheal-->
+			<td><img id = "P5" src = "../images/perk/9111.png"/></td> <!--Triumph-->
+			<td><img id = "P6" src = "../images/perk/8009.png"/></td> <!--Presence Of Mind-->
+		</tr>
+		<tr class ="nonKey">
+			<td><img id = "P7" src = "../images/perk/9104.png"/></td> <!--Legend: Alacrity-->
+			<td><img id = "P8" src = "../images/perk/9105.png"/></td> <!--Legend: Tenacity-->
+			<td><img id = "P9" src = "../images/perk/9103.png"/></td> <!--Legend: Bloodline-->
+		</tr>
+		<tr class = "nonKey">
+			<td><img id = "P10" src = "../images/perk/8014.png"/></td> <!--Coup De Grace-->
+			<td><img id = "P11" src = "../images/perk/8017.png"/></td> <!--Cut Down-->
+			<td><img id = "P12" src = "../images/perk/8299.png"/></td> <!--Last Stand-->
+		</tr>
+	</table>
+	<table class ="DominationTree">
+		<tr>
+			<th colspan="3">Domination</td>
+		</tr>
+		<tr class = "key">
+			<td><img id = "D1" src = "../images/perk/8112.png"/></td> <!--Electrocute-->
+			<td><img id = "D2" src = "../images/perk/8124.png"/></td> <!--Predator-->
+			<td><img id = "D3" src = "../images/perk/8128.png"/></td> <!--Dark Harvest-->
+		</tr>
+		<tr class ="nonKey">
+			<td><img id = "D4" src = "../images/perk/8126.png"/></td> <!--Cheap Shot-->
+			<td><img id = "D5" src = "../images/perk/8139.png"/></td> <!--Taste of Blood-->
+			<td><img id = "D6" src = "../images/perk/8143.png"/></td> <!--Sudden Impact-->
+		</tr>
+		<tr class ="nonKey">
+			<td><img id = "D7" src = "../images/perk/8136.png"/></td> <!--Zombie Ward-->
+			<td><img id = "D8" src = "../images/perk/8120.png"/></td> <!--Ghost Poro-->
+			<td><img id = "D9" src = "../images/perk/8138.png"/></td> <!--Eyeball Collection-->
+		</tr>
+		<tr class = "nonKey">
+			<td><img id = "D10" src = "../images/perk/8135.png"/></td> <!--Ravenous Hunter-->
+			<td><img id = "D11" src = "../images/perk/8134.png"/></td> <!--Ingenious Hunter-->
+			<td><img id = "D12" src = "../images/perk/8105.png"/></td> <!--Relentless Hunter-->
+		</tr>
+	</table>
+	<table class ="SorceryTree">
+		<tr>
+			<th colspan="3">Sorcery</td>
+		</tr>
+		<tr class = "key">
+			<td><img id = "S1" src = "../images/perk/8214.png"/></td> <!--Summon Aery-->
+			<td><img id = "S2" src = "../images/perk/8229.png"/></td> <!--Arcane Comet-->
+			<td><img id = "S3" src = "../images/perk/8230.png"/></td> <!--Phase Rush-->
+		</tr>
+		<tr class ="nonKey">
+			<td><img id = "S4" src = "../images/perk/8224.png"/></td> <!--Nullifying Orb-->
+			<td><img id = "S5" src = "../images/perk/8226.png"/></td> <!--Manaflow Band-->
+			<td><img id = "S6" src = "../images/perk/8243.png"/></td> <!--The Ultimate Hat-->
+		</tr>
+		<tr class ="nonKey">
+			<td><img id = "S7" src = "../images/perk/8210.png"/></td> <!--Transcendence-->
+			<td><img id = "S8" src = "../images/perk/8234.png"/></td> <!--Celerity-->
+			<td><img id = "S9" src = "../images/perk/8233.png"/></td> <!--Absolute Focus-->
+		</tr>
+		<tr class = "nonKey">
+			<td><img id = "S10" src = "../images/perk/8237.png"/></td> <!--Scorch-->
+			<td><img id = "S11" src = "../images/perk/8232.png"/></td> <!--Waterwalking-->
+			<td><img id = "S12" src = "../images/perk/8236.png"/></td> <!--Gathering Storm-->
+		</tr>
+	</table>
+	<table class ="InspirationTree">
+		<tr>
+			<th colspan="3">Inspiration</td>
+		</tr>
+		<tr class = "key">
+			<td><img id = "I1" src = "../images/perk/8326.png"/></td> <!--Unsealed Spellbook-->
+			<td><img id = "I2" src = "../images/perk/8351.png"/></td> <!--Glacial Augment-->
+			<td><img id = "I3" src = "../images/perk/8359.png"/></td> <!--Kleptomancy-->
+		</tr>
+		<tr class ="nonKey">
+			<td><img id = "I4" src = "../images/perk/8306.png"/></td> <!--Hextech Flashtraption-->
+			<td><img id = "I5" src = "../images/perk/8345.png"/></td> <!--Biscuit Delivery-->
+			<td><img id = "I6" src = "../images/perk/8313.png"/></td> <!--Perfect Timing-->
+		</tr>
+		<tr class ="nonKey">
+			<td><img id = "I7" src = "../images/perk/8304.png"/></td> <!--Magical Footwear-->
+			<td><img id = "I8" src = "../images/perk/8321.png"/></td> <!--Future Market-->
+			<td><img id = "I9" src = "../images/perk/8316.png"/></td> <!--Minion Dematerializer-->
+		</tr>
+		<tr class = "nonKey">
+			<td><img id = "I10" src = "../images/perk/8347.png"/></td> <!--Cosmic Insight-->
+			<td><img id = "I11" src = "../images/perk/8410.png"/></td> <!--Approach Velocity-->
+			<td><img id = "I12" src = "../images/perk/8339.png"/></td> <!--Celestial Body-->
+		</tr>
+	</table>
+	<table class ="ResolveTree">
+		<tr>
+			<th colspan="3">Resolve</td>
+		</tr>
+		<tr class = "key">
+			<td><img id = "R1" src = "../images/perk/8437.png"/></td> <!--Grasp Of The Undying-->
+			<td><img id = "R2" src = "../images/perk/8439.png"/></td> <!--Aftershcok-->
+			<td><img id = "R3" src = "../images/perk/8465.png"/></td> <!--Guardian-->
+		</tr>
+		<tr class ="nonKey">
+			<td><img id = "R4" src = "../images/perk/8242.png"/></td> <!--Unflinching-->
+			<td><img id = "R5" src = "../images/perk/8446.png"/></td> <!--Demolish-->
+			<td><img id = "R6" src = "../images/perk/8463.png"/></td> <!--Font Of Life-->
+		</tr>
+		<tr class ="nonKey">
+			<td><img id = "R7" src = "../images/perk/8430.png"/></td> <!--Iron Skin-->
+			<td><img id = "R8" src = "../images/perk/8435.png"/></td> <!--Mirror Shell-->
+			<td><img id = "R9" src = "../images/perk/8429.png"/></td> <!--Conditioning-->
+		</tr>
+		<tr class = "nonKey">
+			<td><img id = "R10" src = "../images/perk/8451.png"/></td> <!--Overgrowth-->
+			<td><img id = "R11" src = "../images/perk/8453.png"/></td> <!--Revitalize-->
+			<td><img id = "R12" src = "../images/perk/8444.png"/></td> <!--Second Wind-->
+		</tr>
+	</table>
+</body>
+</html>
