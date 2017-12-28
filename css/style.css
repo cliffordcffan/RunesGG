@@ -49,6 +49,23 @@ input:focus,textarea:focus {
   border:none;
   outline:2px solid #7ed7b9;
 }
+.fieldset{
+	border:0px;
+}
+.searchContainer{
+	text-align: center;
+}
+.search-input{
+	width: 500px;
+	height: 40px;
+}
+
+.search-button{
+	height: 40px;
+}
+.search-button:hover {
+  background-color: #f46e42;
+}
 .left {
   float:left;
 }
