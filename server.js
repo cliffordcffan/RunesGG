@@ -52,7 +52,7 @@ var ourModel = mongoose.model('OurChampions',ourChampSchema);
 //parse first test set of matches
 var matchLink = 'https://s3-us-west-1.amazonaws.com/riot-developer-portal/seed-data/matches10.json';
 //require('./app/parseMatch.js')(matchLink,ourModel);
-//var request = require('request');
+var request = require('request');
 var data;
 /*request(matchLink,function(err,res,body){
 	if(!err && res.statusCode ==200){
