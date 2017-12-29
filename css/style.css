@@ -106,25 +106,47 @@ input:focus,textarea:focus {
 }
 
 .RunesType{
-  margin-left: auto;
-  margin-right: auto;
-  position:relative;
-  width:50em;
+	padding: 0;
+	margin-left: 15em;
 }
+.RunesType input:disabled{
+	background-color: #b5d1ff;
+	color: #000000;
+}
+.RunesType input:enabled{
+	border: none;
+	background-color: #ffffff;
+    opacity: .2;
+}
+.RunesType input:hover:enabled{
+	opacity:0.8;
+	color: #d3dae5;
+}
+
 .PrecisionTree{
 	float: left;
+	table-layout: fixed;
+	width: 25%;
 }
 .DominationTree{
 	float: right;
+	table-layout: fixed;
+	width: 25%;
 }
 .SorceryTree{
-	float: center;
+	text-align: middle;
+	table-layout: fixed;
+	width: 25%;
 }
 .InspirationTree{
 	float: left;
+	table-layout: fixed;
+	width: 25%;
 }
 .ResolveTree{
 	float: right;
+	table-layout: fixed;
+	width: 25%;
 }
 .key{
 }
@@ -138,11 +160,6 @@ td img{
             filter: grayscale(100%); 
 }
 /*Table*/
-table{
-	table-layout: fixed;
-	width: 25%;
-}
-
 body table tr td img{
 	margin-left: auto;
 	margin-right: auto;
@@ -182,15 +199,7 @@ body nav ul li a {
   font-weight:400;
   text-decoration:none;
 }
-body nav ul li a.active {
-  background-color:#c33c3a;
-  color:#fff;
-}
-body nav ul li a.active:hover {
-  background-color:#d2413f;
-  color:#fff;
-}
-body nav ul li a:hover,body nav ul li a.activeTree {
+body nav ul li a.current:hover{
   color:#c33c3a;
 }
 header nav {
@@ -226,7 +235,7 @@ header nav ul li a:hover,header nav ul li a.activeSmall {
   color:#c33c3a;
 }
 
-#searchBar {
+searchBar {
   box-sizing: border-box;
   width:70%;
   margin-left: 15%;

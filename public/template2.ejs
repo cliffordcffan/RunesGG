@@ -10,7 +10,7 @@
 <body background="../images/wallpaper.jpg">
 	<header>
 		<div class = "wrap">
-		<!--Dynamic Champion name taken from search from index-->
+<!--Dynamic Champion name taken from search from index-->
 			<% if(championName !== null){ %>
 					<a href='index.html'><img class='logo' src ='<%='../images/squares/'+championName+'Square.png'%>'/></a>
 				<b><%= championName %></b>
@@ -23,36 +23,32 @@
 		<!-- Also replace logo from images/squares/ -->
 		</div>
 	</header>
-	<div class = "RunesType" >
+	<div class ="RunesType">
 		<fieldset class="fieldset">
 			<table>
 				<tr>
 					<td>
 						<form action="/template" method="post">
 								<input name = "Champion" type="hidden" value="<%=championName%>"> 
-								<input class ="primaryButton" type="submit" class="search-button" value="Primary Tree" disabled="true">
+								<input class ="primaryButton" type="submit" class="search-button" value="Primary Tree">
 						</form>
 					</td>
 					<td>
 						<form action="/template2" method="post">
 							<input name = "Champion" type="hidden" value="<%=championName%>">
-							<input class ="secondaryButton" type="submit" class="search-button" value="Secondary Tree">
+							<input class ="secondaryButton" type="submit" class="search-button" value="Secondary Tree" disabled="true">
 						</form>
 					</td>
 				</tr>
 			</table>
 		</fieldset>
 	</div>
+	<br />
 	<!-- break to allow left align due to <nav> being a fatty-->
 	<br />
 	<table class ="PrecisionTree">
 		<tr>
 			<th colspan="3">Precision</td>
-		</tr>
-		<tr class = "key">
-			<td><img id = "P1" src = "../images/perk/8005.png"/></td> <!--Press The Attack-->
-			<td><img id = "P2" src = "../images/perk/8008.png"/></td> <!--Lethal Tempo-->
-			<td><img id = "P3" src = "../images/perk/8021.png"/></td> <!--Fleet Footwork-->
 		</tr>
 		<tr class ="nonKey">
 			<td><img id = "P4" src = "../images/perk/9101.png"/></td> <!--Overheal-->
@@ -74,11 +70,6 @@
 		<tr>
 			<th colspan="3">Domination</td>
 		</tr>
-		<tr class = "key">
-			<td><img id = "D1" src = "../images/perk/8112.png"/></td> <!--Electrocute-->
-			<td><img id = "D2" src = "../images/perk/8124.png"/></td> <!--Predator-->
-			<td><img id = "D3" src = "../images/perk/8128.png"/></td> <!--Dark Harvest-->
-		</tr>
 		<tr class ="nonKey">
 			<td><img id = "D4" src = "../images/perk/8126.png"/></td> <!--Cheap Shot-->
 			<td><img id = "D5" src = "../images/perk/8139.png"/></td> <!--Taste of Blood-->
@@ -98,11 +89,6 @@
 	<table class ="SorceryTree">
 		<tr>
 			<th colspan="3">Sorcery</td>
-		</tr>
-		<tr class = "key">
-			<td><img id = "S1" src = "../images/perk/8214.png"/></td> <!--Summon Aery-->
-			<td><img id = "S2" src = "../images/perk/8229.png"/></td> <!--Arcane Comet-->
-			<td><img id = "S3" src = "../images/perk/8230.png"/></td> <!--Phase Rush-->
 		</tr>
 		<tr class ="nonKey">
 			<td><img id = "S4" src = "../images/perk/8224.png"/></td> <!--Nullifying Orb-->
@@ -124,11 +110,6 @@
 		<tr>
 			<th colspan="3">Inspiration</td>
 		</tr>
-		<tr class = "key">
-			<td><img id = "I1" src = "../images/perk/8326.png"/></td> <!--Unsealed Spellbook-->
-			<td><img id = "I2" src = "../images/perk/8351.png"/></td> <!--Glacial Augment-->
-			<td><img id = "I3" src = "../images/perk/8359.png"/></td> <!--Kleptomancy-->
-		</tr>
 		<tr class ="nonKey">
 			<td><img id = "I4" src = "../images/perk/8306.png"/></td> <!--Hextech Flashtraption-->
 			<td><img id = "I5" src = "../images/perk/8345.png"/></td> <!--Biscuit Delivery-->
@@ -149,11 +130,6 @@
 		<tr>
 			<th colspan="3">Resolve</td>
 		</tr>
-		<tr class = "key">
-			<td><img id = "R1" src = "../images/perk/8437.png"/></td> <!--Grasp Of The Undying-->
-			<td><img id = "R2" src = "../images/perk/8439.png"/></td> <!--Aftershcok-->
-			<td><img id = "R3" src = "../images/perk/8465.png"/></td> <!--Guardian-->
-		</tr>
 		<tr class ="nonKey">
 			<td><img id = "R4" src = "../images/perk/8242.png"/></td> <!--Unflinching-->
 			<td><img id = "R5" src = "../images/perk/8446.png"/></td> <!--Demolish-->
@@ -170,5 +146,6 @@
 			<td><img id = "R12" src = "../images/perk/8444.png"/></td> <!--Second Wind-->
 		</tr>
 	</table>
+	
 </body>
 </html>
