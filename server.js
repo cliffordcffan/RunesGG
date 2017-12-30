@@ -28,19 +28,45 @@ var Schema = mongoose.Schema;
 var champSchema = new Schema({},{collection:'champions'});
 var champModel = mongoose.model('Champions',champSchema);
 
-//our own champion schema w/ win rates
+//default rune schema
+var runeSchema = new Schema({},{collection:'runesReforged'});
+var runeModel = mongoose.model('RunesReforged',runeSchema);
+
+//our own champion schema w/ win rates and rune trees + w/r + stats
+var perkSchema = new Schema(
+  {
+    id:{type:String},
+    wins:{type:Number, default:0},
+    losses:{type:Number, default:0},
+    stat1:{type:Number, default:0},
+    stat2:{type:Number, default:0},
+    stat3:{type:Number, default:0}
+  }
+);
+var treeSchema = new Schema(
+  {
+    id: {type:String},
+    name: {type:String},
+    runes:{keystone:[perkSchema],perk1:[perkSchema],perk2:[perkSchema],perk3:[perkSchema]}
+  }
+);
+
 var ourChampSchema = new Schema(
   {
     name: {type:String, required:true},
     id: {type:String, required:true},
     title: {type:String},
     wins: {type:Number},
-    losses: {type:Number}
+    losses: {type:Number},
+    primaryTrees: [treeSchema],
+    secondaryTrees: [treeSchema]
   },
   {collection:'ourChampions'}
 );
 
 var ourModel = mongoose.model('OurChampions',ourChampSchema);
+var treeModel = mongoose.model('Tree',treeSchema);
+var perkModel = mongoose.model('Perk',perkSchema);
 
 //////////////Commented out after seeding into db///////////
 //clean database for testing purposes
@@ -49,12 +75,16 @@ var ourModel = mongoose.model('OurChampions',ourChampSchema);
 //parse riot api champion list and send to new champ list
 //require('./app/parseChampions.js')(champModel,ourModel);
 
+//add runes
+//require('./app/parseRunes.js')(ourModel,runeModel,treeModel,perkModel);
+
 //parse first test set of matches
+/*
 var matchLink = 'https://s3-us-west-1.amazonaws.com/riot-developer-portal/seed-data/matches10.json';
 //require('./app/parseMatch.js')(matchLink,ourModel);
 var request = require('request');
 var data;
-/*request(matchLink,function(err,res,body){
+request(matchLink,function(err,res,body){
 	if(!err && res.statusCode ==200){
 		data = JSON.parse(body).matches;
 		var parse = require('./app/parseMatch.js')(data,ourModel);
