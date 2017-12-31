@@ -24,7 +24,12 @@
 				<b><%= error %></b>
 			<% } %>
 		<!--end of dynamic name change-->
-		<!-- Also replace logo from images/squares/ -->
+			<fieldset class="searchContainerSmall">
+				<form action="/" method="post">
+					<input name = "Champion" type="text" class="search-input-small" placeholder=" Enter champion name" required>
+					<input type="submit" class="search-button-small" value="Search">
+				</form>
+			</fieldset>
 		</div>
 	</header>
 	<div class ="RunesType">
@@ -48,6 +53,7 @@
 		</fieldset>
 	</div>
 	<br />
+	<br />
 	<!-- break to allow left align due to <nav> being a fatty-->
 	<br />
 	<table class ="PrecisionTree">
@@ -55,19 +61,94 @@
 			<th colspan="3">Precision</td>
 		</tr>
 		<tr class ="nonKey">
-			<td><img id = "P4" src = "../images/perk/9101.png"/></td> <!--Overheal-->
-			<td><img id = "P5" src = "../images/perk/9111.png"/></td> <!--Triumph-->
-			<td><img id = "P6" src = "../images/perk/8009.png"/></td> <!--Presence Of Mind-->
+			<!--Overheal-->
+			<td> 
+				<div class =tooltip>
+					<img id = "P4" src = "../images/perk/9101.png"/>
+					<span class="tooltiptext">
+						Win Rate:
+						<br />Affect 1:
+						<br />Effect 2:
+						<br />Perfect KO: 
+					</span>
+				</div>
+			</td> 
+			<!--Triumph-->
+			<td> 
+				<div class =tooltip>
+					<img id = "P5" src = "../images/perk/9111.png"/>
+					<span class="tooltiptext">
+						Tooltip text
+					</span>
+				</div>
+			</td> 
+			<!--Presence Of Mind-->
+			<td> 
+				<div class =tooltip>
+					<img id = "P6" src = "../images/perk/8009.png"/>
+					<span class="tooltiptext">
+						Tooltip text
+					</span>
+				</div>
+			</td> 
 		</tr>
 		<tr class ="nonKey">
-			<td><img id = "P7" src = "../images/perk/9104.png"/></td> <!--Legend: Alacrity-->
-			<td><img id = "P8" src = "../images/perk/9105.png"/></td> <!--Legend: Tenacity-->
-			<td><img id = "P9" src = "../images/perk/9103.png"/></td> <!--Legend: Bloodline-->
+			<!--Legend: Alacrity-->
+			<td> 
+				<div class =tooltip>
+					<img id = "P7" src = "../images/perk/9104.png"/>
+					<span class="tooltiptext">
+						Tooltip text
+					</span>
+				</div>
+			</td> 
+			<!--Legend: Tenacity-->
+			<td> 
+				<div class =tooltip>
+					<img id = "P8" src = "../images/perk/9105.png"/>
+					<span class="tooltiptext">
+						Tooltip text
+					</span>
+				</div>
+			</td> 
+			<!--Legend: Bloodline-->
+			<td> 
+				<div class =tooltip>
+					<img id = "P9" src = "../images/perk/9103.png"/>
+					<span class="tooltiptext">
+						Tooltip text
+					</span>
+				</div>
+			</td> 
 		</tr>
 		<tr class = "nonKey">
-			<td><img id = "P10" src = "../images/perk/8014.png"/></td> <!--Coup De Grace-->
-			<td><img id = "P11" src = "../images/perk/8017.png"/></td> <!--Cut Down-->
-			<td><img id = "P12" src = "../images/perk/8299.png"/></td> <!--Last Stand-->
+			<!--Coup De Grace-->
+			<td> 
+				<div class =tooltip>
+					<img id = "P10" src = "../images/perk/8014.png"/>
+					<span class="tooltiptext">
+						Tooltip text
+					</span>
+				</div>
+			</td> 
+			<!--Cut Down-->
+			<td> 
+				<div class =tooltip>
+					<img id = "P11" src = "../images/perk/8017.png"/>
+					<span class="tooltiptext">
+						Tooltip text
+					</span>
+				</div>
+			</td> 
+			<!--Last Stand-->
+			<td> 
+				<div class =tooltip>
+					<img id = "P12" src = "../images/perk/8299.png"/>
+					<span class="tooltiptext">
+						Tooltip text
+					</span>
+				</div>
+			</td> 
 		</tr>
 	</table>
 	<table class ="DominationTree">
@@ -75,19 +156,91 @@
 			<th colspan="3">Domination</td>
 		</tr>
 		<tr class ="nonKey">
-			<td><img id = "D4" src = "../images/perk/8126.png"/></td> <!--Cheap Shot-->
-			<td><img id = "D5" src = "../images/perk/8139.png"/></td> <!--Taste of Blood-->
-			<td><img id = "D6" src = "../images/perk/8143.png"/></td> <!--Sudden Impact-->
+			<!--Cheap Shot-->
+			<td> 
+				<div class =tooltip>
+					<img id = "D4" src = "../images/perk/8126.png"/>
+					<span class="tooltiptext">
+						Tooltip text
+					</span>
+				</div>
+			</td>
+			<!--Taste of Blood-->
+			<td> 
+				<div class =tooltip>
+					<img id = "D5" src = "../images/perk/8139.png"/>
+					<span class="tooltiptext">
+						Tooltip text
+					</span>
+				</div>
+			</td>
+			<!--Sudden Impact-->
+			<td> 
+				<div class =tooltip>
+					<img id = "D6" src = "../images/perk/8143.png"/>
+					<span class="tooltiptext">
+						Tooltip text
+					</span>
+				</div>
+			</td>
 		</tr>
 		<tr class ="nonKey">
-			<td><img id = "D7" src = "../images/perk/8136.png"/></td> <!--Zombie Ward-->
-			<td><img id = "D8" src = "../images/perk/8120.png"/></td> <!--Ghost Poro-->
-			<td><img id = "D9" src = "../images/perk/8138.png"/></td> <!--Eyeball Collection-->
+			<!--Zombie Ward-->
+			<td> 
+				<div class =tooltip>
+					<img id = "D7" src = "../images/perk/8136.png"/>
+					<span class="tooltiptext">
+						Tooltip text
+					</span>
+				</div>
+			</td>
+			<!--Ghost Poro-->
+			<td> 
+				<div class =tooltip>
+					<img id = "D8" src = "../images/perk/8120.png"/>
+					<span class="tooltiptext">
+						Tooltip text
+					</span>
+				</div>
+			</td>
+			<!--Eyeball Collection-->
+			<td> 
+				<div class =tooltip>
+					<img id = "D9" src = "../images/perk/8138.png"/>
+					<span class="tooltiptext">
+						Tooltip text
+					</span>
+				</div>
+			</td>
 		</tr>
 		<tr class = "nonKey">
-			<td><img id = "D10" src = "../images/perk/8135.png"/></td> <!--Ravenous Hunter-->
-			<td><img id = "D11" src = "../images/perk/8134.png"/></td> <!--Ingenious Hunter-->
-			<td><img id = "D12" src = "../images/perk/8105.png"/></td> <!--Relentless Hunter-->
+			<!--Ravenous Hunter-->
+			<td> 
+				<div class =tooltip>
+					<img id = "D10" src = "../images/perk/8135.png"/>
+					<span class="tooltiptext">
+						Tooltip text
+					</span>
+				</div>
+			</td>
+			<!--Ingenious Hunter-->
+			<td> 
+				<div class =tooltip>
+					<img id = "D11" src = "../images/perk/8134.png"/>
+					<span class="tooltiptext">
+						Tooltip text
+					</span>
+				</div>
+			</td>
+			<!--Relentless Hunter-->
+			<td> 
+				<div class =tooltip>
+					<img id = "D12" src = "../images/perk/8105.png"/>
+					<span class="tooltiptext">
+						Tooltip text
+					</span>
+				</div>
+			</td>
 		</tr>
 	</table>
 	<table class ="SorceryTree">
@@ -95,19 +248,91 @@
 			<th colspan="3">Sorcery</td>
 		</tr>
 		<tr class ="nonKey">
-			<td><img id = "S4" src = "../images/perk/8224.png"/></td> <!--Nullifying Orb-->
-			<td><img id = "S5" src = "../images/perk/8226.png"/></td> <!--Manaflow Band-->
-			<td><img id = "S6" src = "../images/perk/8243.png"/></td> <!--The Ultimate Hat-->
+			<!--Nullifying Orb-->
+			<td> 
+				<div class =tooltip>
+					<img id = "S4" src = "../images/perk/8224.png"/>
+					<span class="tooltiptext">
+						Tooltip text
+					</span>
+				</div>
+			</td>
+			 <!--Manaflow Band-->
+			<td> 
+				<div class =tooltip>
+					<img id = "S5" src = "../images/perk/8226.png"/>
+					<span class="tooltiptext">
+						Tooltip text
+					</span>
+				</div>
+			</td>
+			<!--The Ultimate Hat-->
+			<td> 
+				<div class =tooltip>
+					<img id = "S6" src = "../images/perk/8243.png"/>
+					<span class="tooltiptext">
+						Tooltip text
+					</span>
+				</div>
+			</td>
 		</tr>
 		<tr class ="nonKey">
-			<td><img id = "S7" src = "../images/perk/8210.png"/></td> <!--Transcendence-->
-			<td><img id = "S8" src = "../images/perk/8234.png"/></td> <!--Celerity-->
-			<td><img id = "S9" src = "../images/perk/8233.png"/></td> <!--Absolute Focus-->
+			<!--Transcendence-->
+			<td> 
+				<div class =tooltip>
+					<img id = "S7" src = "../images/perk/8210.png"/>
+					<span class="tooltiptext">
+						Tooltip text
+					</span>
+				</div>
+			</td>
+			<!--Celerity-->
+			<td> 
+				<div class =tooltip>
+					<img id = "S8" src = "../images/perk/8234.png"/>
+					<span class="tooltiptext">
+						Tooltip text
+					</span>
+				</div>
+			</td>
+			<!--Absolute Focus-->
+			<td> 
+				<div class =tooltip>
+					<img id = "S9" src = "../images/perk/8233.png"/>
+					<span class="tooltiptext">
+						Tooltip text
+					</span>
+				</div>
+			</td>
 		</tr>
 		<tr class = "nonKey">
-			<td><img id = "S10" src = "../images/perk/8237.png"/></td> <!--Scorch-->
-			<td><img id = "S11" src = "../images/perk/8232.png"/></td> <!--Waterwalking-->
-			<td><img id = "S12" src = "../images/perk/8236.png"/></td> <!--Gathering Storm-->
+			<!--Scorch-->
+			<td> 
+				<div class =tooltip>
+					<img id = "S10" src = "../images/perk/8237.png"/>
+					<span class="tooltiptext">
+						Tooltip text
+					</span>
+				</div>
+			</td>
+			<!--Waterwalking-->
+			<td> 
+				<div class =tooltip>
+					<img id = "S11" src = "../images/perk/8232.png"/>
+					<span class="tooltiptext">
+						Tooltip text
+					</span>
+				</div>
+			</td>
+			<!--Gathering Storm-->
+			<td> 
+				<div class =tooltip>
+					<img id = "S12" src = "../images/perk/8236.png"/>
+					<span class="tooltiptext">
+						Tooltip text
+					</span>
+				</div>
+			</td>
 		</tr>
 	</table>
 	<table class ="InspirationTree">
@@ -115,19 +340,91 @@
 			<th colspan="3">Inspiration</td>
 		</tr>
 		<tr class ="nonKey">
-			<td><img id = "I4" src = "../images/perk/8306.png"/></td> <!--Hextech Flashtraption-->
-			<td><img id = "I5" src = "../images/perk/8345.png"/></td> <!--Biscuit Delivery-->
-			<td><img id = "I6" src = "../images/perk/8313.png"/></td> <!--Perfect Timing-->
+			<!--Hextech Flashtraption-->
+			<td> 
+				<div class =tooltip>
+					<img id = "I4" src = "../images/perk/8306.png"/>
+					<span class="tooltiptext">
+						Tooltip text
+					</span>
+				</div>
+			</td>
+			<!--Biscuit Delivery-->
+			<td> 
+				<div class =tooltip>
+					<img id = "I5" src = "../images/perk/8345.png"/>
+					<span class="tooltiptext">
+						Tooltip text
+					</span>
+				</div>
+			</td>
+			<!--Perfect Timing-->
+			<td> 
+				<div class =tooltip>
+					<img id = "I6" src = "../images/perk/8313.png"/>
+					<span class="tooltiptext">
+						Tooltip text
+					</span>
+				</div>
+			</td>
 		</tr>
 		<tr class ="nonKey">
-			<td><img id = "I7" src = "../images/perk/8304.png"/></td> <!--Magical Footwear-->
-			<td><img id = "I8" src = "../images/perk/8321.png"/></td> <!--Future Market-->
-			<td><img id = "I9" src = "../images/perk/8316.png"/></td> <!--Minion Dematerializer-->
+			<!--Magical Footwear-->
+			<td> 
+				<div class =tooltip>
+					<img id = "I7" src = "../images/perk/8304.png"/>
+					<span class="tooltiptext">
+						Tooltip text
+					</span>
+				</div>
+			</td>
+			<!--Future Market-->
+			<td> 
+				<div class =tooltip>
+					<img id = "I8" src = "../images/perk/8321.png"/>
+					<span class="tooltiptext">
+						Tooltip text
+					</span>
+				</div>
+			</td>
+			<!--Minion Dematerializer-->
+			<td> 
+				<div class =tooltip>
+					<img id = "I9" src = "../images/perk/8316.png"/>
+					<span class="tooltiptext">
+						Tooltip text
+					</span>
+				</div>
+			</td>
 		</tr>
 		<tr class = "nonKey">
-			<td><img id = "I10" src = "../images/perk/8347.png"/></td> <!--Cosmic Insight-->
-			<td><img id = "I11" src = "../images/perk/8410.png"/></td> <!--Approach Velocity-->
-			<td><img id = "I12" src = "../images/perk/8339.png"/></td> <!--Celestial Body-->
+			<!--Cosmic Insight-->
+			<td> 
+				<div class =tooltip>
+					<img id = "I10" src = "../images/perk/8347.png"/>
+					<span class="tooltiptext">
+						Tooltip text
+					</span>
+				</div>
+			</td>
+			<!--Approach Velocity-->
+			<td> 
+				<div class =tooltip>
+					<img id = "I11" src = "../images/perk/8410.png"/>
+					<span class="tooltiptext">
+						Tooltip text
+					</span>
+				</div>
+			</td> 
+			<!--Celestial Body-->
+			<td> 
+				<div class =tooltip>
+					<img id = "I12" src = "../images/perk/8339.png"/>
+					<span class="tooltiptext">
+						Tooltip text
+					</span>
+				</div>
+			</td>
 		</tr>
 	</table>
 	<table class ="ResolveTree">
@@ -135,19 +432,91 @@
 			<th colspan="3">Resolve</td>
 		</tr>
 		<tr class ="nonKey">
-			<td><img id = "R4" src = "../images/perk/8242.png"/></td> <!--Unflinching-->
-			<td><img id = "R5" src = "../images/perk/8446.png"/></td> <!--Demolish-->
-			<td><img id = "R6" src = "../images/perk/8463.png"/></td> <!--Font Of Life-->
+			 <!--Unflinching-->
+			<td> 
+				<div class =tooltip>
+					<img id = "R4" src = "../images/perk/8242.png"/>
+					<span class="tooltiptext">
+						Tooltip text
+					</span>
+				</div>
+			</td>
+			<!--Demolish-->
+			<td> 
+				<div class =tooltip>
+					<img id = "R5" src = "../images/perk/8446.png"/>
+					<span class="tooltiptext">
+						Tooltip text
+					</span>
+				</div>
+			</td>
+			<!--Font Of Life-->
+			<td> 
+				<div class =tooltip>
+					<img id = "R6" src = "../images/perk/8463.png"/>
+					<span class="tooltiptext">
+						Tooltip text
+					</span>
+				</div>
+			</td>
 		</tr>
 		<tr class ="nonKey">
-			<td><img id = "R7" src = "../images/perk/8430.png"/></td> <!--Iron Skin-->
-			<td><img id = "R8" src = "../images/perk/8435.png"/></td> <!--Mirror Shell-->
-			<td><img id = "R9" src = "../images/perk/8429.png"/></td> <!--Conditioning-->
+			<!--Iron Skin-->
+			<td> 
+				<div class =tooltip>
+					<img id = "R7" src = "../images/perk/8430.png"/>
+					<span class="tooltiptext">
+						Tooltip text
+					</span>
+				</div>
+			</td>
+			<!--Mirror Shell-->
+			<td> 
+				<div class =tooltip>
+					<img id = "R8" src = "../images/perk/8435.png"/>
+					<span class="tooltiptext">
+						Tooltip text
+					</span>
+				</div>
+			</td>
+			<!--Conditioning-->
+			<td> 
+				<div class =tooltip>
+					<img id = "R9" src = "../images/perk/8429.png"/>
+					<span class="tooltiptext">
+						Tooltip text
+					</span>
+				</div>
+			</td>
 		</tr>
 		<tr class = "nonKey">
-			<td><img id = "R10" src = "../images/perk/8451.png"/></td> <!--Overgrowth-->
-			<td><img id = "R11" src = "../images/perk/8453.png"/></td> <!--Revitalize-->
-			<td><img id = "R12" src = "../images/perk/8444.png"/></td> <!--Second Wind-->
+			<!--Overgrowth-->
+			<td> 
+				<div class =tooltip>
+					<img id = "R10" src = "../images/perk/8451.png"/>
+					<span class="tooltiptext">
+						Tooltip text
+					</span>
+				</div>
+			</td>
+			<!--Revitalize-->
+			<td> 
+				<div class =tooltip>
+					<img id = "R11" src = "../images/perk/8453.png"/>
+					<span class="tooltiptext">
+						Tooltip text
+					</span>
+				</div>
+			</td>
+			<!--Second Wind-->
+			<td> 
+				<div class =tooltip>
+					<img id = "R12" src = "../images/perk/8444.png"/>
+					<span class="tooltiptext">
+						Tooltip text
+					</span>
+				</div>
+			</td>
 		</tr>
 	</table>
 	
