@@ -47,7 +47,8 @@ var treeSchema = new Schema(
   {
     id: {type:String},
     name: {type:String},
-    runes:{keystone:[perkSchema],perk1:[perkSchema],perk2:[perkSchema],perk3:[perkSchema]}
+    runes:{keystone:[perkSchema],perk1:[perkSchema],perk2:[perkSchema],perk3:[perkSchema]},
+    games:{type:Number,default:0}
   }
 );
 
@@ -67,6 +68,8 @@ var ourChampSchema = new Schema(
 var ourModel = mongoose.model('OurChampions',ourChampSchema);
 var treeModel = mongoose.model('Tree',treeSchema);
 var perkModel = mongoose.model('Perk',perkSchema);
+var matchModel = mongoose.model('FoundMatches', new Schema({id:{type:Number,required:true}}));
+var tempModel = mongoose.model('FoundPlayers', new Schema({id:{type:Number,default:0},name:{type:String}}));
 
 //////////////Commented out after seeding into db///////////
 //clean database for testing purposes
@@ -78,16 +81,16 @@ var perkModel = mongoose.model('Perk',perkSchema);
 //add runes
 //require('./app/parseRunes.js')(ourModel,runeModel,treeModel,perkModel);
 
-//parse first test set of matches
-/*
-var matchLink = 'https://s3-us-west-1.amazonaws.com/riot-developer-portal/seed-data/matches10.json';
-//require('./app/parseMatch.js')(matchLink,ourModel);
+//parse set of matches
+/*tempModel.remove({},function(err){});
+var apiKey = 'RGAPI-5c5768f1-1789-4c65-9cb7-17b689fef1e7';
+var matchLink = 'https://na1.api.riotgames.com/lol/league/v3/challengerleagues/by-queue/RANKED_SOLO_5x5?api_key='+apiKey;
 var request = require('request');
 var data;
 request(matchLink,function(err,res,body){
 	if(!err && res.statusCode ==200){
-		data = JSON.parse(body).matches;
-		var parse = require('./app/parseMatch.js')(data,ourModel);
+		data = JSON.parse(body).entries;
+		require('./app/parseLeague.js')(data,tempModel);
 	}
 });*/
 
