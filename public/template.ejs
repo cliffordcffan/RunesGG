@@ -1,26 +1,35 @@
 <!DOCTYPE html>
 <html>
 <head>
+<!-- dispalys grey screen if css not applied yet-->
+<div id="loadOverlay" style="background-color:#333; position:absolute; top:0px; left:0px; width:100%; height:100%; z-index:2000;"></div>
+<!-- dispalys grey screen if css not applied yet-->
+
 	<title>Champions</title>
 	<!-- add styles -->
-    <link href="../css/style.css" rel="stylesheet" type="text/css" />
+    <link href="/css/style.css" rel="stylesheet" type="text/css" />
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
 </head>
-<body background="../images/wallpaper.jpg">
+<body>
 	<header>
 		<div class = "wrap">
 		<!--Dynamic Champion name taken from search from index-->
 			<% if(championName !== null){ %>
 					<a href='index.html'><img class='logo' src ='<%='../images/squares/'+championName+'Square.png'%>'/></a>
-				<b><%= championName %></b>
+				<b class ="title" ><%= championName %></b>
 			<% } %>
 
 			<% if(error !== null){ %>
 				<b><%= error %></b>
 			<% } %>
 		<!--end of dynamic name change-->
-		<!-- Also replace logo from images/squares/ -->
+			<fieldset class="searchContainerSmall">
+				<form action="/" method="post">
+					<input name = "Champion" type="text" class="search-input-small" placeholder=" Enter champion name" required>
+					<input type="submit" class="search-button-small" value="Search">
+				</form>
+			</fieldset>
 		</div>
 	</header>
 	<div class = "RunesType" >
@@ -45,6 +54,7 @@
 	</div>
 	<!-- break to allow left align due to <nav> being a fatty-->
 	<br />
+
 	<table class ="PrecisionTree">
 		<tr>
 			<th colspan="3">Precision</td>
