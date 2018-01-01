@@ -2,13 +2,16 @@
 
 RunesGG is our entry to Riot Games' API Challenge 2017 by BobFromSweden and Zoe ZoeStar for the Usability/Practicality category.
 
-# To Run #
+# To Use #
 
 Since we didn't get around to hosting the site, you will have to download our source code and run "node server.js" on the terminal in the main directory (RunesGG).
 
 From there, you view our site by going to localhost:8080 on an internet browser.
 NOTE: please type in champion names in capitalized form (e.g. Tristana not tristana). This is because we didn't get around to fully implementing our search bar functionality. An incorrect and non capitalized champion name will not make a bad API call to the Riot API, but will crash our program. Sorry!
 
+- Individual runes have their opacity adjusted based on pick rate, compared to competing runes a player could have chosen(e.g. each rune in the primary tree is competing with any rune in the same row; each rune in the secondary trees is competing with any given rune in that entire tree).
+
+- To view win-rates and statistics simply hover over any rune icon. We realize we didn't name what each of the rune stats represent (See Features We Didn't Get Around To).
 
 # Overview #
 
