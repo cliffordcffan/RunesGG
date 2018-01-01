@@ -20,11 +20,21 @@ Neither of our team members had much experience with web development, so we spen
 
 We started out just trying to figure out how to parse Riot's API data into, well, anything. It took us a while to play around with Mongoose, but we eventually were able to parse the static Champion data. From there we split up the work to have Zoe ZoeStar handle making the website look pretty and let BobFromSweden handle the backend data parsing. 
 
+
+
 On the backend, we discussed a few schemas for our master database and settled on creating a collection of champions that each have their own array of primary and secondary rune sets. Each object in those arrays would be defined by a rune-tree schema, which would include that tree's name, id, total games played, as well as an array of perk objects. Those perk objects represent each individual keystone and rune, and include information about that rune's id, total wins, total losses, and statistics. 
 
 Once we had all our schemas and mongoose models set up, we began thinking about how to crawl through the total set of ranked games. After some mishaps and the mistake of being careless with the API key rate limits, we learned to stagger our function calls with timeouts and settled on pulling a couple thousand games (versus the original goal of all Gold/Platinum+ ranked games).
 
 We began by pulling the challenger ladder for ranked solo queue, and from there, we pulled each player's 100 recent ranked solo queue games from the Match-V3 API, discarding games that happened before the Preseason Patch. From there, it was just a matter of getting the appropriate champion and rune data into our database and debugging.
+
+
+
+On the frontend side of things, we started out with a simple html page with a search bar. From there, we learned how to use node js to create a dynamic web page to display the primary and secondary rune trees for each champion. We settled on using ejs templates since we want to display all 5 rune trees regardless of which champion is selected, and had a second template to handle the set of secondary trees. 
+
+Once we had our basic templates set up and ran through a few css designs to make the website pretty, we began playing around with expressJS to understand how to route our web app, handle GET/POST's and pass data from our search bar to our back end and back to our champion runes page. 
+
+
 
 # Features We Didn't Get Around to Finishing #
 
@@ -39,6 +49,13 @@ Unfortunately, it fell down on our list of priorities as we wanted to prioritize
 (We would use rows in the primary rune trees because individual runes are competing with runes of the same row; for the same reason, we would compare secondary tree runes with all other runes of that tree because users can only pick 2 runes)
 
 We got this feature working with static test values, but were unable to integrate it into our web app. In the end, the clock was ticking, so we decided to scrap it for future development.
+
+4. Hosting the website. We had always intended to purchase some cheap domain name and host it on the web since we genuinely believed this web page would be useful to players (or even to ourselves). 
+
+
+# Conclusion #
+
+Overall, it was a pretty great learning experience and we both picked up some useful skills and knowledge about web dev. We're actually pretty excited to continue working on and developing our site since it is a tool that we would like to have when we play League (or until popular sites like op.gg does runes analysis better). It's unfortunate that we ended up spending so much time on hiccups and just trying to learn and figure things out, but we're pretty happy with what we accomplished.
 
  
 
