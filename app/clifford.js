@@ -223,7 +223,7 @@ function compile(str, path) {
 
 // tell node to compile.styl-files to normal css-files
 app.use(stylus.middleware({
-    src: __dirname + '/public',
+    src: __dirname + '/../public/css',
     compile: compile
 }))
 }
