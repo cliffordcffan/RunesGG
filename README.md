@@ -13,6 +13,8 @@ NOTE: please type in champion names in capitalized form (e.g. Tristana not trist
 
 - To view win-rates and statistics simply hover over any rune icon. We realize we didn't name what each of the rune stats represent (See Features We Didn't Get Around To).
 
+- Our database is seeded with 6172 Ranked Solo Queue matches that we parsed from looking through the challenger ladder. So it probably won't be very representative of the entire League of Legends base but we wanted a small, workable set of games and that was the most easily accessible one. 
+
 # Overview #
 
 Our goal was to create a tool that comprehensively displayed Runes Reforged data. We felt that there weren't any existing ways to see rune data beyond the most popular and highest win-rate trees. Consequently, it's not easy for a player to understand or visualize the differences between swapping x rune with y rune and so forth. 
