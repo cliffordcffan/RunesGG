@@ -45,6 +45,9 @@ textarea:focus {
   border: none;
   outline: 2px solid #7ed7b9;
 }
+.treeTitle{
+	font-size: 25px;
+}
 .fieldset {
   border: 0px;
 }
@@ -164,305 +167,14 @@ textarea:focus {
   margin: 5px 20px;
   padding: 5px;
 }
-#P1 {
-  opacity: 1;
-  -ms-filter: none;
-  filter: none;
+.t1Opacity{
+	opacity: 1.0;
 }
-#P2 {
-  opacity: 1;
-  -ms-filter: none;
-  filter: none;
+.t2Opacity{
+	opacity: 0.6;
 }
-#P3 {
-  opacity: 1;
-  -ms-filter: none;
-  filter: none;
-}
-#P4 {
-  opacity: 0.125;
-  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=13)";
-  filter: alpha(opacity=13);
-}
-#P5 {
-  opacity: 1;
-  -ms-filter: none;
-  filter: none;
-}
-#P6 {
-  opacity: 0.125;
-  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=13)";
-  filter: alpha(opacity=13);
-}
-#P7 {
-  opacity: 0.6;
-  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=60)";
-  filter: alpha(opacity=60);
-}
-#P8 {
-  opacity: 0.4;
-  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=40)";
-  filter: alpha(opacity=40);
-}
-#P9 {
-  opacity: 1;
-  -ms-filter: none;
-  filter: none;
-}
-#P10 {
-  opacity: 1;
-  -ms-filter: none;
-  filter: none;
-}
-#P11 {
-  opacity: 0.142857142857143;
-  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=14)";
-  filter: alpha(opacity=14);
-}
-#P12 {
-  opacity: 0.285714285714286;
-  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=29)";
-  filter: alpha(opacity=29);
-}
-#S1 {
-  opacity: 1 1 1;
-  -ms-filter: none;
-  filter: none;
-}
-#S2 {
-  opacity: NaN NaN NaN;
-  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=NaN)";
-  filter: alpha(opacity=NaN);
-}
-#S3 {
-  opacity: NaN NaN NaN;
-  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=NaN)";
-  filter: alpha(opacity=NaN);
-}
-#S4 {
-  opacity: 1 1 1;
-  -ms-filter: none;
-  filter: none;
-}
-#S5 {
-  opacity: NaN NaN NaN;
-  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=NaN)";
-  filter: alpha(opacity=NaN);
-}
-#S6 {
-  opacity: NaN NaN NaN;
-  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=NaN)";
-  filter: alpha(opacity=NaN);
-}
-#S7 {
-  opacity: 1 1 1;
-  -ms-filter: none;
-  filter: none;
-}
-#S8 {
-  opacity: NaN NaN NaN;
-  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=NaN)";
-  filter: alpha(opacity=NaN);
-}
-#S9 {
-  opacity: NaN NaN NaN;
-  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=NaN)";
-  filter: alpha(opacity=NaN);
-}
-#S10 {
-  opacity: 1 1 1;
-  -ms-filter: none;
-  filter: none;
-}
-#S11 {
-  opacity: NaN NaN NaN;
-  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=NaN)";
-  filter: alpha(opacity=NaN);
-}
-#S12 {
-  opacity: NaN NaN NaN;
-  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=NaN)";
-  filter: alpha(opacity=NaN);
-}
-#D1 {
-  opacity: 1 1 1;
-  -ms-filter: none;
-  filter: none;
-}
-#D2 {
-  opacity: NaN NaN NaN;
-  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=NaN)";
-  filter: alpha(opacity=NaN);
-}
-#D3 {
-  opacity: NaN NaN NaN;
-  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=NaN)";
-  filter: alpha(opacity=NaN);
-}
-#D4 {
-  opacity: 1 1 1;
-  -ms-filter: none;
-  filter: none;
-}
-#D5 {
-  opacity: NaN NaN NaN;
-  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=NaN)";
-  filter: alpha(opacity=NaN);
-}
-#D6 {
-  opacity: NaN NaN NaN;
-  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=NaN)";
-  filter: alpha(opacity=NaN);
-}
-#D7 {
-  opacity: 1 1 1;
-  -ms-filter: none;
-  filter: none;
-}
-#D8 {
-  opacity: NaN NaN NaN;
-  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=NaN)";
-  filter: alpha(opacity=NaN);
-}
-#D9 {
-  opacity: NaN NaN NaN;
-  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=NaN)";
-  filter: alpha(opacity=NaN);
-}
-#D10 {
-  opacity: 1 1 1;
-  -ms-filter: none;
-  filter: none;
-}
-#D11 {
-  opacity: NaN NaN NaN;
-  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=NaN)";
-  filter: alpha(opacity=NaN);
-}
-#D12 {
-  opacity: NaN NaN NaN;
-  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=NaN)";
-  filter: alpha(opacity=NaN);
-}
-#I1 {
-  opacity: 1 1 1;
-  -ms-filter: none;
-  filter: none;
-}
-#I2 {
-  opacity: NaN NaN NaN;
-  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=NaN)";
-  filter: alpha(opacity=NaN);
-}
-#I3 {
-  opacity: NaN NaN NaN;
-  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=NaN)";
-  filter: alpha(opacity=NaN);
-}
-#I4 {
-  opacity: 1 1 1;
-  -ms-filter: none;
-  filter: none;
-}
-#I5 {
-  opacity: NaN NaN NaN;
-  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=NaN)";
-  filter: alpha(opacity=NaN);
-}
-#I6 {
-  opacity: NaN NaN NaN;
-  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=NaN)";
-  filter: alpha(opacity=NaN);
-}
-#I7 {
-  opacity: 1 1 1;
-  -ms-filter: none;
-  filter: none;
-}
-#I8 {
-  opacity: NaN NaN NaN;
-  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=NaN)";
-  filter: alpha(opacity=NaN);
-}
-#I9 {
-  opacity: NaN NaN NaN;
-  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=NaN)";
-  filter: alpha(opacity=NaN);
-}
-#I10 {
-  opacity: 1 1 1;
-  -ms-filter: none;
-  filter: none;
-}
-#I11 {
-  opacity: NaN NaN NaN;
-  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=NaN)";
-  filter: alpha(opacity=NaN);
-}
-#I12 {
-  opacity: NaN NaN NaN;
-  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=NaN)";
-  filter: alpha(opacity=NaN);
-}
-#R1 {
-  opacity: 1 1 1;
-  -ms-filter: none;
-  filter: none;
-}
-#R2 {
-  opacity: NaN NaN NaN;
-  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=NaN)";
-  filter: alpha(opacity=NaN);
-}
-#R3 {
-  opacity: NaN NaN NaN;
-  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=NaN)";
-  filter: alpha(opacity=NaN);
-}
-#R4 {
-  opacity: 1 1 1;
-  -ms-filter: none;
-  filter: none;
-}
-#R5 {
-  opacity: NaN NaN NaN;
-  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=NaN)";
-  filter: alpha(opacity=NaN);
-}
-#R6 {
-  opacity: NaN NaN NaN;
-  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=NaN)";
-  filter: alpha(opacity=NaN);
-}
-#R7 {
-  opacity: 1 1 1;
-  -ms-filter: none;
-  filter: none;
-}
-#R8 {
-  opacity: NaN NaN NaN;
-  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=NaN)";
-  filter: alpha(opacity=NaN);
-}
-#R9 {
-  opacity: NaN NaN NaN;
-  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=NaN)";
-  filter: alpha(opacity=NaN);
-}
-#R10 {
-  opacity: 1 1 1;
-  -ms-filter: none;
-  filter: none;
-}
-#R11 {
-  opacity: NaN NaN NaN;
-  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=NaN)";
-  filter: alpha(opacity=NaN);
-}
-#R12 {
-  opacity: NaN NaN NaN;
-  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=NaN)";
-  filter: alpha(opacity=NaN);
+.t3Opacity{
+	opacity: 0.2;
 }
 /*Table*/
 body table tr td img {
@@ -493,6 +205,7 @@ body table tr td {
   border-radius: 6px;
   z-index: 1;
   position: absolute;
+  white-space: pre-line;
 }
 /* Show the tooltip text when you mouse over the tooltip container */
 .tooltip:hover .tooltiptext {

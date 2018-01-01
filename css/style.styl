@@ -1,0 +1,311 @@
+/* ============================================================================================== 
+This copyright notice must be kept untouched in the stylesheet at all times.
+The original version of this stylesheet and the associated (x)html 
+is available at http://www.script-tutorials.com/responsive-website-using-angularjs/
+Copyright (c) Script Tutorials. All rights reserved.
+This stylesheet and the associated (x)html may be modified in any way to fit your requirements.
+================================================================================================= */
+@import 'nib'
+/* general settings */
+html {
+  min-height:100%;
+  overflow-x:hidden;
+  overflow-y:scroll;
+  position:relative;
+  width:100%;
+}
+body {
+  color:#FFF;
+  font-weight:100;
+  min-height:100%;
+}
+a {
+  text-decoration:none;
+}
+a img {
+  border:none;
+}
+h1 {
+  font-size:3.5em;
+  font-weight:100;
+}
+p {
+  font-size:1.5em;
+}
+input,textarea {
+  -webkit-appearance:none;
+  background-color:#f7f7f7;
+  border:none;
+  border-radius:3px;
+  font-size:1em;
+  font-weight:100;
+}
+input:focus,textarea:focus {
+  border:none;
+  outline:2px solid #7ed7b9;
+}
+.fieldset{
+	border:0px;
+}
+.searchContainerSmall{
+	margin-top: 10px;
+	padding: 0;
+	float: right;
+	border: 0px;
+}
+.search-button-small{
+	font-size: 10px;
+	height: 20px;
+	width: 50px;
+}
+.search-input-small{
+	font-size: 15px;
+	height: 20px;
+	width: 250px;
+}
+.searchContainer{
+	text-align: center;
+}
+.search-input{
+	width: 500px;
+	height: 40px;
+}
+
+.search-button{
+	height: 40px;
+}
+.search-button:hover {
+  background-color: #f46e42;
+}
+.left {
+  float:left;
+}
+.right {
+  float:right;
+}
+.btn {
+  background-color:#fff;
+  border-radius:24px;
+  color:#595959;
+  display:inline-block;
+  font-size:1.4em;
+  font-weight:400;
+  margin:30px 0;
+  padding:10px 30px;
+  text-decoration:none;
+}
+.btn:hover {
+  opacity:0.8;
+}
+.wrap {
+  margin:0 ;
+  overflow:hidden;
+  padding:0 50px;
+  position:relative;
+  width:100%;
+  background: #ff9900;
+}
+.wrap:before {
+  content:'';
+  display:inline-block;
+  height:100%;
+  margin-right:-0.25em;
+  vertical-align:middle;
+}
+
+
+.RunesType{
+	float: left;
+	padding: 0;
+	margin-left: 15vw;
+}
+.RunesType input:disabled{
+	background-color: #b5d1ff;
+	color: #000000;
+}
+.RunesType input:enabled{
+	border: none;
+	background-color: #ffffff;
+    opacity: .2;
+}
+.RunesType input:hover:enabled{
+	opacity:0.8;
+	color: #d3dae5;
+}
+
+.AllRunes{
+	text-align: center;
+}
+.PrecisionTree{
+    display:inline-block;
+    margin:5px 20px;
+    padding:5px;
+}
+.DominationTree{
+    display:inline-block;
+    margin:5px 20px;
+    padding:5px;
+}
+.SorceryTree{
+    display:inline-block;
+    margin:5px 20px;
+    padding:5px;
+}
+.InspirationTree{
+    display:inline-block;
+    margin:5px 20px;
+    padding:5px;
+}
+.ResolveTree{
+    display:inline-block;
+    margin:5px 20px;
+    padding:5px;
+}
+.key{
+
+}
+.nonKey{
+}
+
+#P1{opacity: opacity_P1;}
+#P2{opacity: opacity_P2;}
+#P3{opacity: opacity_P3;}
+#P4{opacity: opacity_P4;}
+#P5{opacity: opacity_P5;}
+#P6{opacity: opacity_P6;}
+#P7{opacity: opacity_P7;}
+#P8{opacity: opacity_P8;}
+#P9{opacity: opacity_P9;}
+#P10{opacity: opacity_P10;}
+#P11{opacity: opacity_P11;}
+#P12{opacity: opacity_P12;}
+
+#S1{opacity: opacity_S1;}
+#S2{opacity: opacity_S2;}
+#S3{opacity: opacity_S3;}
+#S4{opacity: opacity_S4;}
+#S5{opacity: opacity_S5;}
+#S6{opacity: opacity_S6;}
+#S7{opacity: opacity_S7;}
+#S8{opacity: opacity_S8;}
+#S9{opacity: opacity_S9;}
+#S10{opacity: opacity_S10;}
+#S11{opacity: opacity_S11;}
+#S12{opacity: opacity_S12;}
+
+#D1{opacity: opacity_D1;}
+#D2{opacity: opacity_D2;}
+#D3{opacity: opacity_D3;}
+#D4{opacity: opacity_D4;}
+#D5{opacity: opacity_D5;}
+#D6{opacity: opacity_D6;}
+#D7{opacity: opacity_D7;}
+#D8{opacity: opacity_D8;}
+#D9{opacity: opacity_D9;}
+#D10{opacity: opacity_D10;}
+#D11{opacity: opacity_D11;}
+#D12{opacity: opacity_D12;}
+
+#I1{opacity: opacity_I1;}
+#I2{opacity: opacity_I2;}
+#I3{opacity: opacity_I3;}
+#I4{opacity: opacity_I4;}
+#I5{opacity: opacity_I5;}
+#I6{opacity: opacity_I6;}
+#I7{opacity: opacity_I7;}
+#I8{opacity: opacity_I8;}
+#I9{opacity: opacity_I9;}
+#I10{opacity: opacity_I10;}
+#I11{opacity: opacity_I11;}
+#I12{opacity: opacity_I12;}
+
+#R1{opacity: opacity_R1;}
+#R2{opacity: opacity_R2;}
+#R3{opacity: opacity_R3;}
+#R4{opacity: opacity_R4;}
+#R5{opacity: opacity_R5;}
+#R6{opacity: opacity_R6;}
+#R7{opacity: opacity_R7;}
+#R8{opacity: opacity_R8;}
+#R9{opacity: opacity_R9;}
+#R10{opacity: opacity_R10;}
+#R11{opacity: opacity_R11;}
+#R12{opacity: opacity_R12;}
+
+/*Table*/
+body table tr td img{
+	display: block;
+	width: 75%;
+	min-width: 50px;
+	max-width: 150px;
+	height: auto;
+}
+body table tr td{
+	padding-top: 0.5em;
+	padding-bottom: 0.5em;
+	text-align: center;
+}
+
+/* Tooltip container */
+.tooltip {
+    position: relative;
+    display: inline-block;
+}
+
+/* Tooltip text */
+.tooltip .tooltiptext {
+    visibility: hidden;
+    width: 200px;
+    background-color: black;
+    color: #fff;
+    text-align: center;
+    padding: 5px 0;
+    border-radius: 6px;
+	z-index: 1;
+    position: absolute;
+}
+
+/* Show the tooltip text when you mouse over the tooltip container */
+.tooltip:hover .tooltiptext {
+    visibility: visible;
+}
+
+/* header section */
+header {
+	
+}
+header .wrap {
+  height:100%;
+}
+header .title{
+	margin-left: 1em;
+	height:100%;
+	color: #000000;
+	vertical-align: middle;
+	font-size: 5vw;
+}
+header .logo {
+  margin-top:10px;
+  margin-bottom:10px;
+  width:6%;
+}
+body{
+	height: 100%;
+	margin: 0;
+	padding: 0;
+	background-image: url("../images/wallpaper.png");
+	background-repeat: repeat;
+}
+
+searchBar {
+  box-sizing: border-box;
+  width:70%;
+  margin-left: 15%;
+  margin-top: 15%;
+  font-size:16px;
+  padding: 12px 20px 12px 40px;
+  border: 1px solid #ddd;
+  margin-bottom: 12px;
+}
+
+#loadOverlay{display: none;}

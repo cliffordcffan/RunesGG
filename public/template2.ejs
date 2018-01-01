@@ -59,36 +59,46 @@
 	<div class ="AllRunes">
 	<table class ="PrecisionTree">
 		<tr>
-			<th colspan="3">Precision</td>
+			<th colspan="3" class ="treeTitle" >Precision</th>
 		</tr>
+
 		<tr class ="nonKey">
 			<!--Overheal-->
 			<td> 
 				<div class =tooltip>
-					<img id = "P4" src = "../images/perk/9101.png"/>
+					<img 
+					<% if(pRank[1]!==null){%>
+						class = "<%= pRank[1] %>"
+					<% } %>
+					id = "P4" src = "../images/perk/9101.png"/>
 					<span class="tooltiptext">
-						Win Rate:
-						<br />Affect 1:
-						<br />Effect 2:
-						<br />Perfect KO: 
+						<%=pTTT[1]%> 
 					</span>
 				</div>
 			</td> 
 			<!--Triumph-->
 			<td> 
 				<div class =tooltip>
-					<img id = "P5" src = "../images/perk/9111.png"/>
+					<img 
+					<% if(pRank[5]!==null){%>
+						class = "<%= pRank[5] %>"
+					<% } %>
+					id = "P5" src = "../images/perk/9111.png"/>
 					<span class="tooltiptext">
-						Tooltip text
+						<%=pTTT[5]%>
 					</span>
 				</div>
 			</td> 
 			<!--Presence Of Mind-->
 			<td> 
 				<div class =tooltip>
-					<img id = "P6" src = "../images/perk/8009.png"/>
+					<img
+					<% if(pRank[9]!==null){%>
+						class = "<%= pRank[9] %>"
+					<% } %>
+					id = "P6" src = "../images/perk/8009.png"/>
 					<span class="tooltiptext">
-						Tooltip text
+						<%=pTTT[9]%>
 					</span>
 				</div>
 			</td> 
@@ -97,27 +107,39 @@
 			<!--Legend: Alacrity-->
 			<td> 
 				<div class =tooltip>
-					<img id = "P7" src = "../images/perk/9104.png"/>
+					<img 
+					<% if(pRank[2]!==null){%>
+						class = "<%= pRank[2] %>"
+					<% } %>
+					id = "P7" src = "../images/perk/9104.png"/>
 					<span class="tooltiptext">
-						Tooltip text
+						<%=pTTT[2]%>
 					</span>
 				</div>
 			</td> 
 			<!--Legend: Tenacity-->
 			<td> 
 				<div class =tooltip>
-					<img id = "P8" src = "../images/perk/9105.png"/>
+					<img 
+					<% if(pRank[6]!==null){%>
+						class = "<%= pRank[6] %>"
+					<% } %>
+					id = "P8" src = "../images/perk/9105.png"/>
 					<span class="tooltiptext">
-						Tooltip text
+						<%=pTTT[6]%>
 					</span>
 				</div>
 			</td> 
 			<!--Legend: Bloodline-->
 			<td> 
 				<div class =tooltip>
-					<img id = "P9" src = "../images/perk/9103.png"/>
+					<img 
+					<% if(pRank[10]!==null){%>
+						class = "<%= pRank[10] %>"
+					<% } %>
+					id = "P9" src = "../images/perk/9103.png"/>
 					<span class="tooltiptext">
-						Tooltip text
+						<%=pTTT[10]%>
 					</span>
 				</div>
 			</td> 
@@ -126,61 +148,89 @@
 			<!--Coup De Grace-->
 			<td> 
 				<div class =tooltip>
-					<img id = "P10" src = "../images/perk/8014.png"/>
+					<img 
+					<% if(pRank[3]!==null){%>
+						class = "<%= pRank[3] %>"
+					<% } %>
+					id = "P10" src = "../images/perk/8014.png"/>
 					<span class="tooltiptext">
-						Tooltip text
+						<%=pTTT[3]%>
 					</span>
 				</div>
 			</td> 
 			<!--Cut Down-->
 			<td> 
 				<div class =tooltip>
-					<img id = "P11" src = "../images/perk/8017.png"/>
+					<img 
+					<% if(pRank[7]!==null){%>
+						class = "<%= pRank[7] %>"
+					<% } %>
+					id = "P11" src = "../images/perk/8017.png"/>
 					<span class="tooltiptext">
-						Tooltip text
+						<%=pTTT[7]%>
 					</span>
 				</div>
 			</td> 
 			<!--Last Stand-->
 			<td> 
 				<div class =tooltip>
-					<img id = "P12" src = "../images/perk/8299.png"/>
+					<img 
+					<% if(pRank[11]!==null){%>
+						class = "<%= pRank[11] %>"
+					<% } %>
+					id = "P12" src = "../images/perk/8299.png"/>
 					<span class="tooltiptext">
-						Tooltip text
+						<%=pTTT[11]%>
 					</span>
 				</div>
 			</td> 
 		</tr>
+		<tr>
+			<th colspan="3"><%=pGames%></th>
+		</tr>
 	</table>
 	<table class ="DominationTree">
 		<tr>
-			<th colspan="3">Domination</td>
+			<th colspan="3" class ="treeTitle" >Domination</th>
 		</tr>
+		
 		<tr class ="nonKey">
 			<!--Cheap Shot-->
 			<td> 
 				<div class =tooltip>
-					<img id = "D4" src = "../images/perk/8126.png"/>
+					<img  
+					<% if(dRank[1]!==null){%>
+						class = "<%= dRank[1] %>"
+					<% } %>
+					id = "D4" src = "../images/perk/8126.png"/>
 					<span class="tooltiptext">
-						Tooltip text
+						<%=dTTT[1]%>
 					</span>
 				</div>
 			</td>
 			<!--Taste of Blood-->
 			<td> 
 				<div class =tooltip>
-					<img id = "D5" src = "../images/perk/8139.png"/>
+					<img  
+					<% if(dRank[5]!==null){%>
+						class = "<%= dRank[5] %>"
+					<% } %>
+					id = "D5" src = "../images/perk/8139.png"/>
 					<span class="tooltiptext">
-						Tooltip text
+						<%=dTTT[5]%>
 					</span>
 				</div>
 			</td>
 			<!--Sudden Impact-->
 			<td> 
 				<div class =tooltip>
-					<img id = "D6" src = "../images/perk/8143.png"/>
+					<img  
+					<% if(dRank[9]!==null){%>
+						class = "<%= dRank[9] %>"
+					<% } %>
+					id = "D6" src = "../images/perk/8143.png"/>
 					<span class="tooltiptext">
-						Tooltip text
+						<%=dTTT[9]%>
 					</span>
 				</div>
 			</td>
@@ -189,27 +239,39 @@
 			<!--Zombie Ward-->
 			<td> 
 				<div class =tooltip>
-					<img id = "D7" src = "../images/perk/8136.png"/>
+					<img  
+					<% if(dRank[2]!==null){%>
+						class = "<%= dRank[2] %>"
+					<% } %>
+					id = "D7" src = "../images/perk/8136.png"/>
 					<span class="tooltiptext">
-						Tooltip text
+						<%=dTTT[2]%>
 					</span>
 				</div>
 			</td>
 			<!--Ghost Poro-->
 			<td> 
 				<div class =tooltip>
-					<img id = "D8" src = "../images/perk/8120.png"/>
+					<img  
+					<% if(dRank[6]!==null){%>
+						class = "<%= dRank[6] %>"
+					<% } %>
+					id = "D8" src = "../images/perk/8120.png"/>
 					<span class="tooltiptext">
-						Tooltip text
+						<%=dTTT[6]%>
 					</span>
 				</div>
 			</td>
 			<!--Eyeball Collection-->
 			<td> 
 				<div class =tooltip>
-					<img id = "D9" src = "../images/perk/8138.png"/>
+					<img  
+					<% if(dRank[10]!==null){%>
+						class = "<%= dRank[10] %>"
+					<% } %>
+					id = "D9" src = "../images/perk/8138.png"/>
 					<span class="tooltiptext">
-						Tooltip text
+						<%=dTTT[10]%>
 					</span>
 				</div>
 			</td>
@@ -218,61 +280,89 @@
 			<!--Ravenous Hunter-->
 			<td> 
 				<div class =tooltip>
-					<img id = "D10" src = "../images/perk/8135.png"/>
+					<img  
+					<% if(dRank[3]!==null){%>
+						class = "<%= dRank[3] %>"
+					<% } %>
+					id = "D10" src = "../images/perk/8135.png"/>
 					<span class="tooltiptext">
-						Tooltip text
+						<%=dTTT[3]%>
 					</span>
 				</div>
 			</td>
 			<!--Ingenious Hunter-->
 			<td> 
 				<div class =tooltip>
-					<img id = "D11" src = "../images/perk/8134.png"/>
+					<img  
+					<% if(dRank[7]!==null){%>
+						class = "<%= dRank[7] %>"
+					<% } %>
+					id = "D11" src = "../images/perk/8134.png"/>
 					<span class="tooltiptext">
-						Tooltip text
+						<%=dTTT[7]%>
 					</span>
 				</div>
 			</td>
 			<!--Relentless Hunter-->
 			<td> 
 				<div class =tooltip>
-					<img id = "D12" src = "../images/perk/8105.png"/>
+					<img  
+					<% if(dRank[11]!==null){%>
+						class = "<%= dRank[11] %>"
+					<% } %>
+					id = "D12" src = "../images/perk/8105.png"/>
 					<span class="tooltiptext">
-						Tooltip text
+						<%=dTTT[11]%>
 					</span>
 				</div>
 			</td>
 		</tr>
+		<tr>
+			<th colspan="3"><%=dGames%></th>
+		</tr>
 	</table>
 	<table class ="SorceryTree">
 		<tr>
-			<th colspan="3">Sorcery</td>
+			<th colspan="3"  class ="treeTitle" >Sorcery</th>
 		</tr>
+		
 		<tr class ="nonKey">
 			<!--Nullifying Orb-->
 			<td> 
 				<div class =tooltip>
-					<img id = "S4" src = "../images/perk/8224.png"/>
+					<img   
+					<% if(sRank[1]!==null){%>
+						class = "<%= sRank[1] %>"
+					<% } %>
+					id = "S4" src = "../images/perk/8224.png"/>
 					<span class="tooltiptext">
-						Tooltip text
+						<%=sTTT[1]%>
 					</span>
 				</div>
 			</td>
 			 <!--Manaflow Band-->
 			<td> 
 				<div class =tooltip>
-					<img id = "S5" src = "../images/perk/8226.png"/>
+					<img  
+					<% if(sRank[5]!==null){%>
+						class = "<%= sRank[5] %>"
+					<% } %>
+					 id = "S5" src = "../images/perk/8226.png"/>
 					<span class="tooltiptext">
-						Tooltip text
+						<%=sTTT[5]%>
 					</span>
 				</div>
 			</td>
 			<!--The Ultimate Hat-->
 			<td> 
 				<div class =tooltip>
-					<img id = "S6" src = "../images/perk/8243.png"/>
+					<img   
+					<% if(sRank[9]!==null){%>
+						class = "<%= sRank[9] %>"
+					<% } %>
+					id = "S6" src = "../images/perk/8243.png"/>
 					<span class="tooltiptext">
-						Tooltip text
+						<%=sTTT[9]%>
 					</span>
 				</div>
 			</td>
@@ -281,27 +371,39 @@
 			<!--Transcendence-->
 			<td> 
 				<div class =tooltip>
-					<img id = "S7" src = "../images/perk/8210.png"/>
+					<img   
+					<% if(sRank[2]!==null){%>
+						class = "<%= sRank[2] %>"
+					<% } %>
+					id = "S7" src = "../images/perk/8210.png"/>
 					<span class="tooltiptext">
-						Tooltip text
+						<%=sTTT[2]%>
 					</span>
 				</div>
 			</td>
 			<!--Celerity-->
 			<td> 
 				<div class =tooltip>
-					<img id = "S8" src = "../images/perk/8234.png"/>
+					<img   
+					<% if(sRank[6]!==null){%>
+						class = "<%= sRank[6] %>"
+					<% } %>
+					id = "S8" src = "../images/perk/8234.png"/>
 					<span class="tooltiptext">
-						Tooltip text
+						<%=sTTT[6]%>
 					</span>
 				</div>
 			</td>
 			<!--Absolute Focus-->
 			<td> 
 				<div class =tooltip>
-					<img id = "S9" src = "../images/perk/8233.png"/>
+					<img  
+					<% if(sRank[10]!==null){%>
+						class = "<%= sRank[10] %>"
+					<% } %>
+					 id = "S9" src = "../images/perk/8233.png"/>
 					<span class="tooltiptext">
-						Tooltip text
+						<%=sTTT[10]%>
 					</span>
 				</div>
 			</td>
@@ -310,61 +412,89 @@
 			<!--Scorch-->
 			<td> 
 				<div class =tooltip>
-					<img id = "S10" src = "../images/perk/8237.png"/>
+					<img  
+					<% if(sRank[3]!==null){%>
+						class = "<%= sRank[3] %>"
+					<% } %>
+					 id = "S10" src = "../images/perk/8237.png"/>
 					<span class="tooltiptext">
-						Tooltip text
+						<%=sTTT[3]%>
 					</span>
 				</div>
 			</td>
 			<!--Waterwalking-->
 			<td> 
 				<div class =tooltip>
-					<img id = "S11" src = "../images/perk/8232.png"/>
+					<img   
+					<% if(sRank[7]!==null){%>
+						class = "<%= sRank[7] %>"
+					<% } %>
+					id = "S11" src = "../images/perk/8232.png"/>
 					<span class="tooltiptext">
-						Tooltip text
+						<%=sTTT[7]%>
 					</span>
 				</div>
 			</td>
 			<!--Gathering Storm-->
 			<td> 
 				<div class =tooltip>
-					<img id = "S12" src = "../images/perk/8236.png"/>
+					<img  
+					<% if(sRank[11]!==null){%>
+						class = "<%= sRank[11] %>"
+					<% } %>
+					 id = "S12" src = "../images/perk/8236.png"/>
 					<span class="tooltiptext">
-						Tooltip text
+						<%=sTTT[11]%>
 					</span>
 				</div>
 			</td>
 		</tr>
+		<tr>
+			<th colspan="3"><%=sGames%></th>
+		</tr>
 	</table>
 	<table class ="InspirationTree">
 		<tr>
-			<th colspan="3">Inspiration</td>
+			<th colspan="3" class ="treeTitle" >Inspiration</th>
 		</tr>
+		
 		<tr class ="nonKey">
 			<!--Hextech Flashtraption-->
 			<td> 
 				<div class =tooltip>
-					<img id = "I4" src = "../images/perk/8306.png"/>
+					<img   
+					<% if(iRank[1]!==null){%>
+						class = "<%= iRank[1] %>"
+					<% } %>
+					 id = "I4" src = "../images/perk/8306.png"/>
 					<span class="tooltiptext">
-						Tooltip text
+						<%=iTTT[1]%>
 					</span>
 				</div>
 			</td>
 			<!--Biscuit Delivery-->
 			<td> 
 				<div class =tooltip>
-					<img id = "I5" src = "../images/perk/8345.png"/>
+					<img   
+					<% if(iRank[5]!==null){%>
+						class = "<%= iRank[5] %>"
+					<% } %>
+					 id = "I5" src = "../images/perk/8345.png"/>
 					<span class="tooltiptext">
-						Tooltip text
+						<%=iTTT[5]%>
 					</span>
 				</div>
 			</td>
 			<!--Perfect Timing-->
 			<td> 
 				<div class =tooltip>
-					<img id = "I6" src = "../images/perk/8313.png"/>
+					<img   
+					<% if(iRank[9]!==null){%>
+						class = "<%= iRank[9] %>"
+					<% } %>
+					 id = "I6" src = "../images/perk/8313.png"/>
 					<span class="tooltiptext">
-						Tooltip text
+						<%=iTTT[9]%>
 					</span>
 				</div>
 			</td>
@@ -373,27 +503,39 @@
 			<!--Magical Footwear-->
 			<td> 
 				<div class =tooltip>
-					<img id = "I7" src = "../images/perk/8304.png"/>
+					<img   
+					<% if(iRank[2]!==null){%>
+						class = "<%= iRank[2] %>"
+					<% } %>
+					 id = "I7" src = "../images/perk/8304.png"/>
 					<span class="tooltiptext">
-						Tooltip text
+						<%=iTTT[2]%>
 					</span>
 				</div>
 			</td>
 			<!--Future Market-->
 			<td> 
 				<div class =tooltip>
-					<img id = "I8" src = "../images/perk/8321.png"/>
+					<img   
+					<% if(iRank[6]!==null){%>
+						class = "<%= iRank[6] %>"
+					<% } %>
+					 id = "I8" src = "../images/perk/8321.png"/>
 					<span class="tooltiptext">
-						Tooltip text
+						<%=iTTT[6]%>
 					</span>
 				</div>
 			</td>
 			<!--Minion Dematerializer-->
 			<td> 
 				<div class =tooltip>
-					<img id = "I9" src = "../images/perk/8316.png"/>
+					<img   
+					<% if(iRank[10]!==null){%>
+						class = "<%= iRank[10] %>"
+					<% } %>
+					 id = "I9" src = "../images/perk/8316.png"/>
 					<span class="tooltiptext">
-						Tooltip text
+						<%=iTTT[10]%>
 					</span>
 				</div>
 			</td>
@@ -402,61 +544,89 @@
 			<!--Cosmic Insight-->
 			<td> 
 				<div class =tooltip>
-					<img id = "I10" src = "../images/perk/8347.png"/>
+					<img   
+					<% if(iRank[3]!==null){%>
+						class = "<%= iRank[3] %>"
+					<% } %>
+					 id = "I10" src = "../images/perk/8347.png"/>
 					<span class="tooltiptext">
-						Tooltip text
+						<%=iTTT[3]%>
 					</span>
 				</div>
 			</td>
 			<!--Approach Velocity-->
 			<td> 
 				<div class =tooltip>
-					<img id = "I11" src = "../images/perk/8410.png"/>
+					<img   
+					<% if(iRank[7]!==null){%>
+						class = "<%= iRank[7] %>"
+					<% } %>
+					 id = "I11" src = "../images/perk/8410.png"/>
 					<span class="tooltiptext">
-						Tooltip text
+						<%=iTTT[7]%>
 					</span>
 				</div>
 			</td> 
 			<!--Celestial Body-->
 			<td> 
 				<div class =tooltip>
-					<img id = "I12" src = "../images/perk/8339.png"/>
+					<img  
+					<% if(iRank[11]!==null){%>
+						class = "<%= iRank[11] %>"
+					<% } %>
+					  id = "I12" src = "../images/perk/8339.png"/>
 					<span class="tooltiptext">
-						Tooltip text
+						<%=iTTT[11]%>
 					</span>
 				</div>
 			</td>
 		</tr>
+		<tr>
+			<th colspan="3"><%=iGames%></th>
+		</tr>
 	</table>
 	<table class ="ResolveTree">
 		<tr>
-			<th colspan="3">Resolve</td>
+			<th colspan="3" class ="treeTitle" >Resolve</th>
 		</tr>
+
 		<tr class ="nonKey">
 			 <!--Unflinching-->
 			<td> 
 				<div class =tooltip>
-					<img id = "R4" src = "../images/perk/8242.png"/>
+					<img  
+					<% if(rRank[1]!==null){%>
+						class = "<%= rRank[1] %>"
+					<% } %>
+					 id = "R4" src = "../images/perk/8242.png"/>
 					<span class="tooltiptext">
-						Tooltip text
+						<%=rTTT[1]%>
 					</span>
 				</div>
 			</td>
 			<!--Demolish-->
 			<td> 
 				<div class =tooltip>
-					<img id = "R5" src = "../images/perk/8446.png"/>
+					<img   
+					<% if(rRank[5]!==null){%>
+						class = "<%= rRank[5] %>"
+					<% } %>
+					id = "R5" src = "../images/perk/8446.png"/>
 					<span class="tooltiptext">
-						Tooltip text
+						<%=rTTT[5]%>
 					</span>
 				</div>
 			</td>
 			<!--Font Of Life-->
 			<td> 
 				<div class =tooltip>
-					<img id = "R6" src = "../images/perk/8463.png"/>
+					<img  
+					<% if(rRank[9]!==null){%>
+						class = "<%= rRank[9] %>"
+					<% } %>
+					 id = "R6" src = "../images/perk/8463.png"/>
 					<span class="tooltiptext">
-						Tooltip text
+						<%=rTTT[9]%>
 					</span>
 				</div>
 			</td>
@@ -465,27 +635,39 @@
 			<!--Iron Skin-->
 			<td> 
 				<div class =tooltip>
-					<img id = "R7" src = "../images/perk/8430.png"/>
+					<img   
+					<% if(rRank[2]!==null){%>
+						class = "<%= rRank[2] %>"
+					<% } %>
+					id = "R7" src = "../images/perk/8430.png"/>
 					<span class="tooltiptext">
-						Tooltip text
+						<%=rTTT[2]%>
 					</span>
 				</div>
 			</td>
 			<!--Mirror Shell-->
 			<td> 
 				<div class =tooltip>
-					<img id = "R8" src = "../images/perk/8435.png"/>
+					<img   
+					<% if(rRank[6]!==null){%>
+						class = "<%= rRank[6] %>"
+					<% } %>
+					id = "R8" src = "../images/perk/8435.png"/>
 					<span class="tooltiptext">
-						Tooltip text
+						<%=rTTT[6]%>
 					</span>
 				</div>
 			</td>
 			<!--Conditioning-->
 			<td> 
 				<div class =tooltip>
-					<img id = "R9" src = "../images/perk/8429.png"/>
+					<img   
+					<% if(rRank[10]!==null){%>
+						class = "<%= rRank[10] %>"
+					<% } %>
+					id = "R9" src = "../images/perk/8429.png"/>
 					<span class="tooltiptext">
-						Tooltip text
+						<%=rTTT[10]%>
 					</span>
 				</div>
 			</td>
@@ -494,30 +676,45 @@
 			<!--Overgrowth-->
 			<td> 
 				<div class =tooltip>
-					<img id = "R10" src = "../images/perk/8451.png"/>
+					<img  
+					<% if(rRank[3]!==null){%>
+						class = "<%= rRank[3] %>"
+					<% } %>
+					 id = "R10" src = "../images/perk/8451.png"/>
 					<span class="tooltiptext">
-						Tooltip text
+						<%=rTTT[3]%>
 					</span>
 				</div>
 			</td>
 			<!--Revitalize-->
 			<td> 
 				<div class =tooltip>
-					<img id = "R11" src = "../images/perk/8453.png"/>
+					<img  
+					<% if(rRank[7]!==null){%>
+						class = "<%= rRank[7] %>"
+					<% } %>
+					 id = "R11" src = "../images/perk/8453.png"/>
 					<span class="tooltiptext">
-						Tooltip text
+						<%=rTTT[7]%>
 					</span>
 				</div>
 			</td>
 			<!--Second Wind-->
 			<td> 
 				<div class =tooltip>
-					<img id = "R12" src = "../images/perk/8444.png"/>
+					<img   
+					<% if(rRank[11]!==null){%>
+						class = "<%= rRank[11] %>"
+					<% } %>
+					id = "R12" src = "../images/perk/8444.png"/>
 					<span class="tooltiptext">
-						Tooltip text
+						<%=rTTT[11]%>
 					</span>
 				</div>
 			</td>
+		</tr>
+				<tr>
+			<th colspan="3"><%=rGames%></th>
 		</tr>
 	</table>
 	</div>
