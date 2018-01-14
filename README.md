@@ -7,7 +7,8 @@ RunesGG is our entry to Riot Games' API Challenge 2017 by BobFromSweden and Zoe 
 Since we didn't get around to hosting the site, you will have to download our source code and run "node server.js" on the terminal in the main directory (RunesGG).
 
 From there, you view our site by going to localhost:8080 on an internet browser.
-NOTE: please type in champion names in capitalized form (e.g. Tristana not tristana). This is because we didn't get around to fully implementing our search bar functionality. An incorrect and non capitalized champion name will not make a bad API call to the Riot API, but will crash our program. Sorry!
+NOTE: please type in champion names in capitalized or spaced form (e.g. Tristana not tristana). This is because we didn't get around to fully implementing our search bar functionality. An incorrect or non capitalized champion name will not make a bad API call to the Riot API, but will crash our program. Sorry!
+- Please don't search for Lee Sin. This breaks the program :(
 
 - Individual runes have their opacity adjusted based on pick rate, compared to competing runes a player could have chosen(e.g. each rune in the primary tree is competing with any rune in the same row; each rune in the secondary trees is competing with any given rune in that entire tree).
 
@@ -39,7 +40,7 @@ On the backend, we discussed a few schemas for our master database and settled o
 
 Once we had all our schemas and mongoose models set up, we began thinking about how to crawl through the total set of ranked games. After some mishaps and the mistake of being careless with the API key rate limits, we learned to stagger our function calls with timeouts and settled on pulling a couple thousand games (versus the original goal of all Gold/Platinum+ ranked games).
 
-We began by pulling the challenger ladder for ranked solo queue, and from there, we pulled each player's 100 recent ranked solo queue games from the Match-V3 API, discarding games that happened before the Preseason Patch. From there, it was just a matter of getting the appropriate champion and rune data into our database and debugging.
+We began by pulling the challenger ladder for ranked solo queue, and from there, we pulled each player's 100 recent ranked solo queue games from the Match-V3 API, discarding games that happened before the Preseason Patch and preventing duplicate games through Mongo's upsert functionality. From there, it was just a matter of getting the appropriate champion and rune data into our database and debugging.
 
 ### Front End Stuff ###
 
