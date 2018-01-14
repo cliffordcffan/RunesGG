@@ -1,15 +1,22 @@
+var search = require('./search');
 //get request on home page
 module.exports = function (app,path, ourModel) {
+	/////////////////////////////////////////////////  Home Page /////////////////////////////////////////////////////////////////
     app.get('/',function(req,res){
 		console.log("getting homepage");
         res.sendFile(path.join(__dirname+'/../public/index.html'));
         //__dirname : It will resolve to your project folder.
     });
+	
+	/////////////////////////////////////////////////  Template /////////////////////////////////////////////////////////////////
     app.post('/',function(req,res){
         console.log("searching for ");
-		console.log(req.body.Champion);
-		currChampion = req.body.Champion;
-		let champion = req.body.Champion;
+		let champion = search.normalizeChampionName(req.body.Champion);
+		console.log(champion);
+		if(champion == "invalid"){
+			res.sendFile(path.join(__dirname+'/../public/invalidChampionName.html'));
+		}
+		else{
 		//runes Data
 		ourModel.findOne({name:champion}, function(err, champ){
 			var precisionTTT = [];
@@ -474,13 +481,18 @@ module.exports = function (app,path, ourModel) {
 				iRank: iRank,
 				rRank: rRank,
 				error:null});
-		});
+		});}
     });
+	
+	
+	
+	
+	
+	/////////////////////////////////////////////////  Template /////////////////////////////////////////////////////////////////
 	app.post('/template',function(req,res){
         console.log("searching for ");
-		console.log(req.body.Champion);
-		currChampion = req.body.Champion;
-		let champion = req.body.Champion;
+		let champion = search.normalizeChampionName(req.body.Champion);
+		console.log(champion);
 		//runes Data
 		ourModel.findOne({name:champion}, function(err, champ){
 			var precisionTTT = [];
@@ -947,11 +959,14 @@ module.exports = function (app,path, ourModel) {
 				error:null});
 		});
     });
+	
+	
+	
+		/////////////////////////////////////////////////  Template2 /////////////////////////////////////////////////////////////////
 	app.post('/template2',function(req,res){
         console.log("searching for ");
-		console.log(req.body.Champion);
-		currChampion = req.body.Champion;
-		let champion = req.body.Champion;
+		let champion = search.normalizeChampionName(req.body.Champion);
+		console.log(champion);
 		//runes Data
 		ourModel.findOne({name:champion}, function(err, champ){
 			var precisionTTT = [];

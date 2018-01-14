@@ -51,6 +51,9 @@ textarea:focus {
 .fieldset {
   border: 0px;
 }
+.fieldsetIcons{
+	border: 0px;
+}
 .searchContainerSmall {
   margin-top: 10px;
   padding: 0;
@@ -176,6 +179,13 @@ textarea:focus {
 .t3Opacity{
 	opacity: 0.2;
 }
+.championIcon{
+	text-align: center;
+	display: inline-block;
+	margin-left: 10em;
+	margin-right: 10em;
+	padding: 10px;
+}
 /*Table*/
 body table tr td img {
   display: block;
@@ -245,6 +255,9 @@ searchBar {
   padding: 12px 20px 12px 40px;
   border: 1px solid #ddd;
   margin-bottom: 12px;
+}
+form {
+	display: inline-block;]
 }
 #loadOverlay {
   display: none;

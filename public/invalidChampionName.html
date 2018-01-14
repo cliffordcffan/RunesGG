@@ -1,0 +1,575 @@
+<!DOCTYPE html>
+<html>
+<head>
+<!-- dispalys grey screen if css not applied yet-->
+<div id="loadOverlay" style="background-color:#333; position:absolute; top:0px; left:0px; width:100%; height:100%; z-index:2000;"></div>
+<!-- dispalys grey screen if css not applied yet-->
+
+	<title>RUNES.GG</title>
+	<!-- add styles -->
+    <link href="/css/style.css" rel="stylesheet" type="text/css" />
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+</head>
+<body background="../images/wallpaper.png">
+	<header>
+		<div class = "wrap">
+		<a href='#!'><img class='logo' src ='../images/logo.png'/></a>
+		<b class ="title" >RUNES.GG</b>
+		</div>
+	</header>
+	<br />
+	<br />
+	<br />
+	<div class ="searchContainer">
+		<fieldset class="fieldset">
+			<form action="/" method="post">
+				<input name = "Champion" type="text" class="search-input" placeholder="Champion not found :(  try again or click portrait" required>
+				<input type="submit" class="search-button" value="Search">
+			</form>
+		</fieldset>
+	</div>
+	<div class = "championIcon">
+	<fieldset class ="fieldsetIcons">
+		<form action="/template" method="post">
+			<input name = "Champion" type="hidden" value="Aatrox">
+			<input action = "/template" method="post" type = "image" src ='../images/squares/AatroxSquare.png'/>
+		</form>
+		<form action="/template" method="post">
+			<input name = "Champion" type="hidden" value="Ahri">
+			<input type = "image" src ='../images/squares/AhriSquare.png'/>
+		</form>
+		<form action="/template" method="post">
+			<input name = "Champion" type="hidden" value="Akali">
+			<input type = "image" src ='../images/squares/AkaliSquare.png'/>
+		</form>
+		<form action="/template" method="post">
+			<input name = "Champion" type="hidden" value="Alistar">
+			<input type = "image" src ='../images/squares/AlistarSquare.png'/>
+		</form>
+		<form action="/template" method="post">
+			<input name = "Champion" type="hidden" value="Amumu">
+			<input type = "image" src ='../images/squares/AmumuSquare.png'/>
+		</form>
+		<form action="/template" method="post">
+			<input name = "Champion" type="hidden" value="Anivia">
+			<input type = "image" src ='../images/squares/AnnieSquare.png'/>
+		</form>
+		<form action="/template" method="post">
+			<input name = "Champion" type="hidden" value="Ashe">
+			<input type = "image" src ='../images/squares/AsheSquare.png'/>
+		</form>
+		<form action="/template" method="post">
+			<input name = "Champion" type="hidden" value="Aurelion Sol">
+			<input type = "image" src ='../images/squares/Aurelion SolSquare.png'/>
+		</form>
+		<form action="/template" method="post">
+			<input name = "Champion" type="hidden" value="Azir">
+			<input type = "image" src ='../images/squares/AzirSquare.png'/>
+		</form>
+		<form action="/template" method="post">
+			<input name = "Champion" type="hidden" value="Bard">
+			<input type = "image" src ='../images/squares/BardSquare.png'/>
+		</form>
+		<form action="/template" method="post">
+			<input name = "Champion" type="hidden" value="Blitzcrank">
+			<input type = "image" src ='../images/squares/BlitzcrankSquare.png'/>
+		</form>
+		<form action="/template" method="post">
+			<input name = "Champion" type="hidden" value="Brand">
+			<input type = "image" src ='../images/squares/BrandSquare.png'/>
+		</form>
+		<form action="/template" method="post">
+			<input name = "Champion" type="hidden" value="Braum">
+			<input type = "image" src ='../images/squares/BraumSquare.png'/>
+		</form>
+		<form action="/template" method="post">
+			<input name = "Champion" type="hidden" value="Caitlyn">
+			<input type = "image" src ='../images/squares/CaitlynSquare.png'/>
+		</form>
+		<form action="/template" method="post">
+			<input name = "Champion" type="hidden" value="Camille">
+			<input type = "image" src ='../images/squares/CamilleSquare.png'/>
+		</form>
+		<form action="/template" method="post">
+			<input name = "Champion" type="hidden" value="Cassiopeia">
+			<input type = "image" src ='../images/squares/CassiopeiaSquare.png'/>
+		</form>
+		<form action="/template" method="post">
+			<input name = "Champion" type="hidden" value="Cho'Gath">
+			<input type = "image" src ="../images/squares/Cho'GathSquare.png"/>
+		</form>
+		<form action="/template" method="post">
+			<input name = "Champion" type="hidden" value="Corki">
+			<input type = "image" src ='../images/squares/CorkiSquare.png'/>
+		</form>
+		<form action="/template" method="post">
+			<input name = "Champion" type="hidden" value="Darius">
+			<input type = "image" src ='../images/squares/DariusSquare.png'/>
+		</form>
+		<form action="/template" method="post">
+			<input name = "Champion" type="hidden" value="Diana">
+			<input type = "image" src ='../images/squares/DianaSquare.png'/>
+		</form>
+		<form action="/template" method="post">
+			<input name = "Champion" type="hidden" value="Dr. Mundo">
+			<input type = "image" src ='../images/squares/Dr. MundoSquare.png'/>
+		</form>
+		<form action="/template" method="post">
+			<input name = "Champion" type="hidden" value="Draven">
+			<input type = "image" src ='../images/squares/DravenSquare.png'/>
+		</form>
+		<form action="/template" method="post">
+			<input name = "Champion" type="hidden" value="Ekko">
+			<input type = "image" src ='../images/squares/EkkoSquare.png'/>
+		</form>
+		<form action="/template" method="post">
+			<input name = "Champion" type="hidden" value="Elise">
+			<input type = "image" src ='../images/squares/EliseSquare.png'/>
+		</form>
+		<form action="/template" method="post">
+			<input name = "Champion" type="hidden" value="Evelynn">
+			<input type = "image" src ='../images/squares/EvelynnSquare.png'/>
+		</form>
+		<form action="/template" method="post">
+			<input name = "Champion" type="hidden" value="Ezreal">
+			<input type = "image" src ='../images/squares/EzrealSquare.png'/>
+		</form>
+		<form action="/template" method="post">
+			<input name = "Champion" type="hidden" value="Fiddlesticks">
+			<input type = "image" src ='../images/squares/FiddlesticksSquare.png'/>
+		</form>
+		<form action="/template" method="post">
+			<input name = "Champion" type="hidden" value="Fiora">
+			<input type = "image" src ='../images/squares/FioraSquare.png'/>
+		</form>
+		<form action="/template" method="post">
+			<input name = "Champion" type="hidden" value="Fizz">
+			<input type = "image" src ='../images/squares/FizzSquare.png'/>
+		</form>
+		<form action="/template" method="post">
+			<input name = "Champion" type="hidden" value="Galio">
+			<input type = "image" src ='../images/squares/GalioSquare.png'/>
+		</form>
+		<form action="/template" method="post">
+			<input name = "Champion" type="hidden" value="Gangplank">
+			<input type = "image" src ='../images/squares/GangplankSquare.png'/>
+		</form>
+		<form action="/template" method="post">
+			<input name = "Champion" type="hidden" value="Garen">
+			<input type = "image" src ='../images/squares/GarenSquare.png'/>
+		</form>
+		<form action="/template" method="post">
+			<input name = "Champion" type="hidden" value="Gnar">
+			<input type = "image" src ='../images/squares/GnarSquare.png'/>
+		</form>
+		<form action="/template" method="post">
+			<input name = "Champion" type="hidden" value="Graves">
+			<input type = "image" src ='../images/squares/GravesSquare.png'/>
+		</form>
+		<form action="/template" method="post">
+			<input name = "Champion" type="hidden" value="Hecarim">
+			<input type = "image" src ='../images/squares/HecarimSquare.png'/>
+		</form>
+		<form action="/template" method="post">
+			<input name = "Champion" type="hidden" value="Heimerdinger">
+			<input type = "image" src ='../images/squares/HeimerdingerSquare.png'/>
+		</form>
+		<form action="/template" method="post">
+			<input name = "Champion" type="hidden" value="Illaoi">
+			<input type = "image" src ='../images/squares/IllaoiSquare.png'/>
+		</form>
+		<form action="/template" method="post">
+			<input name = "Champion" type="hidden" value="Irelia">
+			<input type = "image" src ='../images/squares/IreliaSquare.png'/>
+		</form>
+		<form action="/template" method="post">
+			<input name = "Champion" type="hidden" value="Ivern">
+			<input type = "image" src ='../images/squares/IvernSquare.png'/>
+		</form>
+		<form action="/template" method="post">
+			<input name = "Champion" type="hidden" value="Janna">
+			<input type = "image" src ='../images/squares/JannaSquare.png'/>
+		</form>
+		<form action="/template" method="post">
+			<input name = "Champion" type="hidden" value="Jarvan IV">
+			<input type = "image" src ='../images/squares/Jarvan IVSquare.png'/>
+		</form>
+		<form action="/template" method="post">
+			<input name = "Champion" type="hidden" value="Jax">
+			<input type = "image" src ='../images/squares/JaxSquare.png'/>
+		</form>
+		<form action="/template" method="post">
+			<input name = "Champion" type="hidden" value="Jayce">
+			<input type = "image" src ='../images/squares/JayceSquare.png'/>
+		</form>
+		<form action="/template" method="post">
+			<input name = "Champion" type="hidden" value="Jhin">
+			<input type = "image" src ='../images/squares/JhinSquare.png'/>
+		</form>
+		<form action="/template" method="post">
+			<input name = "Champion" type="hidden" value="Jinx">
+			<input type = "image" src ='../images/squares/JinxSquare.png'/>
+		</form>
+		<form action="/template" method="post">
+			<input name = "Champion" type="hidden" value="Kalista">
+			<input type = "image" src ='../images/squares/KalistaSquare.png'/>
+		</form>
+		<form action="/template" method="post">
+			<input name = "Champion" type="hidden" value="Karma">
+			<input type = "image" src ='../images/squares/KarmaSquare.png'/>
+		</form>
+		<form action="/template" method="post">
+			<input name = "Champion" type="hidden" value="Karthus">
+			<input type = "image" src ='../images/squares/KarthusSquare.png'/>
+		</form>
+		<form action="/template" method="post">
+			<input name = "Champion" type="hidden" value="Kassadin">
+			<input type = "image" src ='../images/squares/KassadinSquare.png'/>
+		</form>
+		<form action="/template" method="post">
+			<input name = "Champion" type="hidden" value="Katarina">
+			<input type = "image" src ='../images/squares/KatarinaSquare.png'/>
+		</form>
+		<form action="/template" method="post">
+			<input name = "Champion" type="hidden" value="Kayle">
+			<input type = "image" src ='../images/squares/KayleSquare.png'/>
+		</form>
+		<form action="/template" method="post">
+			<input name = "Champion" type="hidden" value="Kayn">
+			<input type = "image" src ='../images/squares/KaynSquare.png'/>
+		</form>
+		<form action="/template" method="post">
+			<input name = "Champion" type="hidden" value="Kennen">
+			<input type = "image" src ='../images/squares/KennenSquare.png'/>
+		</form>
+		<form action="/template" method="post">
+			<input name = "Champion" type="hidden" value="Kha'Zix">
+			<input type = "image" src ="../images/squares/Kha'ZixSquare.png"/>
+		</form>
+		<form action="/template" method="post">
+			<input name = "Champion" type="hidden" value="Kindred">
+			<input type = "image" src ='../images/squares/KindredSquare.png'/>
+		</form>
+		<form action="/template" method="post">
+			<input name = "Champion" type="hidden" value="Kled">
+			<input type = "image" src ='../images/squares/KledSquare.png'/>
+		</form>
+		<form action="/template" method="post">
+			<input name = "Champion" type="hidden" value="Kog'Maw">
+			<input type = "image" src ="../images/squares/Kog'MawSquare.png"/>
+		</form>
+		<form action="/template" method="post">
+			<input name = "Champion" type="hidden" value="LeBlanc">
+			<input type = "image" src ='../images/squares/LeBlancSquare.png'/>
+		</form>
+		<form action="/template" method="post">
+			<input name = "Champion" type="hidden" value="Lee Sin">
+			<input type = "image" src ='../images/squares/Lee SinSquare.png'/>
+		</form>
+		<form action="/template" method="post">
+			<input name = "Champion" type="hidden" value="Leona">
+			<input type = "image" src ='../images/squares/LeonaSquare.png'/>
+		</form>
+		<form action="/template" method="post">
+			<input name = "Champion" type="hidden" value="Lissandra">
+			<input type = "image" src ='../images/squares/LissandraSquare.png'/>
+		</form>
+		<form action="/template" method="post">
+			<input name = "Champion" type="hidden" value="Lucian">
+			<input type = "image" src ='../images/squares/LucianSquare.png'/>
+		</form>
+		<form action="/template" method="post">
+			<input name = "Champion" type="hidden" value="Lulu">
+			<input type = "image" src ='../images/squares/LuluSquare.png'/>
+		</form>
+		<form action="/template" method="post">
+			<input name = "Champion" type="hidden" value="Lux">
+			<input type = "image" src ='../images/squares/LuxSquare.png'/>
+		</form>
+		<form action="/template" method="post">
+			<input name = "Champion" type="hidden" value="Malphite">
+			<input type = "image" src ='../images/squares/MalphiteSquare.png'/>
+		</form>
+		<form action="/template" method="post">
+			<input name = "Champion" type="hidden" value="Malzahar">
+			<input type = "image" src ='../images/squares/MalzaharSquare.png'/>
+		</form>
+		<form action="/template" method="post">
+			<input name = "Champion" type="hidden" value="Maokai">
+			<input type = "image" src ='../images/squares/MaokaiSquare.png'/>
+		</form>
+		<form action="/template" method="post">
+			<input name = "Champion" type="hidden" value="Master Yi">
+			<input type = "image" src ='../images/squares/Master YiSquare.png'/>
+		</form>
+		<form action="/template" method="post">
+			<input name = "Champion" type="hidden" value="Miss Fortune">
+			<input type = "image" src ='../images/squares/Miss FortuneSquare.png'/>
+		</form>
+		<form action="/template" method="post">
+			<input name = "Champion" type="hidden" value="Mordekaiser">
+			<input type = "image" src ='../images/squares/MordekaiserSquare.png'/>
+		</form>
+		<form action="/template" method="post">
+			<input name = "Champion" type="hidden" value="Morgana">
+			<input type = "image" src ='../images/squares/MorganaSquare.png'/>
+		</form>
+		<form action="/template" method="post">
+			<input name = "Champion" type="hidden" value="Nami">
+			<input type = "image" src ='../images/squares/NamiSquare.png'/>
+		</form>
+		<form action="/template" method="post">
+			<input name = "Champion" type="hidden" value="Nasus">
+			<input type = "image" src ='../images/squares/NasusSquare.png'/>
+		</form>
+		<form action="/template" method="post">
+			<input name = "Champion" type="hidden" value="Nautilus">
+			<input type = "image" src ='../images/squares/NautilusSquare.png'/>
+		</form>
+		<form action="/template" method="post">
+			<input name = "Champion" type="hidden" value="Nidalee">
+			<input type = "image" src ='../images/squares/NidaleeSquare.png'/>
+		</form>
+		<form action="/template" method="post">
+			<input name = "Champion" type="hidden" value="Nocturne">
+			<input type = "image" src ='../images/squares/NocturneSquare.png'/>
+		</form>
+		<form action="/template" method="post">
+			<input name = "Champion" type="hidden" value="Nunu">
+			<input type = "image" src ='../images/squares/NunuSquare.png'/>
+		</form>
+		<form action="/template" method="post">
+			<input name = "Champion" type="hidden" value="Olaf">
+			<input type = "image" src ='../images/squares/OlafSquare.png'/>
+		</form>
+		<form action="/template" method="post">
+			<input name = "Champion" type="hidden" value="Orianna">
+			<input type = "image" src ='../images/squares/OriannaSquare.png'/>
+		</form>
+		<form action="/template" method="post">
+			<input name = "Champion" type="hidden" value="Ornn">
+			<input type = "image" src ='../images/squares/OrnnSquare.png'/>
+		</form>
+		<form action="/template" method="post">
+			<input name = "Champion" type="hidden" value="Pantheon">
+			<input type = "image" src ='../images/squares/PantheonSquare.png'/>
+		</form>
+		<form action="/template" method="post">
+			<input name = "Champion" type="hidden" value="Poppy">
+			<input type = "image" src ='../images/squares/PoppySquare.png'/>
+		</form>
+		<form action="/template" method="post">
+			<input name = "Champion" type="hidden" value="Quinn">
+			<input type = "image" src ='../images/squares/QuinnSquare.png'/>
+		</form>
+		<form action="/template" method="post">
+			<input name = "Champion" type="hidden" value="Rakan">
+			<input type = "image" src ='../images/squares/RakanSquare.png'/>
+		</form>
+		<form action="/template" method="post">
+			<input name = "Champion" type="hidden" value="Rammus">
+			<input type = "image" src ='../images/squares/RammusSquare.png'/>
+		</form>
+		<form action="/template" method="post">
+			<input name = "Champion" type="hidden" value="Rek'Sai">
+			<input type = "image" src ="../images/squares/Rek'SaiSquare.png"/>
+		</form>
+		<form action="/template" method="post">
+			<input name = "Champion" type="hidden" value="Renekton">
+			<input type = "image" src ='../images/squares/RenektonSquare.png'/>
+		</form>
+		<form action="/template" method="post">
+			<input name = "Champion" type="hidden" value="Rengar">
+			<input type = "image" src ='../images/squares/RengarSquare.png'/>
+		</form>
+		<form action="/template" method="post">
+			<input name = "Champion" type="hidden" value="Riven">
+			<input type = "image" src ='../images/squares/RivenSquare.png'/>
+		</form>
+		<form action="/template" method="post">
+			<input name = "Champion" type="hidden" value="Rumble">
+			<input type = "image" src ='../images/squares/RumbleSquare.png'/>
+		</form>
+		<form action="/template" method="post">
+			<input name = "Champion" type="hidden" value="Ryze">
+			<input type = "image" src ='../images/squares/RyzeSquare.png'/>
+		</form>
+		<form action="/template" method="post">
+			<input name = "Champion" type="hidden" value="Sejuani">
+			<input type = "image" src ='../images/squares/SejuaniSquare.png'/>
+		</form>
+		<form action="/template" method="post">
+			<input name = "Champion" type="hidden" value="Shaco">
+			<input type = "image" src ='../images/squares/ShacoSquare.png'/>
+		</form>
+		<form action="/template" method="post">
+			<input name = "Champion" type="hidden" value="Shen">
+			<input type = "image" src ='../images/squares/ShenSquare.png'/>
+		</form><form action="/template" method="post">
+			<input name = "Champion" type="hidden" value="Shyvana">
+			<input type = "image" src ='../images/squares/ShyvanaSquare.png'/>
+		</form>
+		<form action="/template" method="post">
+			<input name = "Champion" type="hidden" value="Singed">
+			<input type = "image" src ='../images/squares/SingedSquare.png'/>
+		</form>
+		<form action="/template" method="post">
+			<input name = "Champion" type="hidden" value="Sion">
+			<input type = "image" src ='../images/squares/SionSquare.png'/>
+		</form>
+		<form action="/template" method="post">
+			<input name = "Champion" type="hidden" value="Sivir">
+			<input type = "image" src ='../images/squares/SivirSquare.png'/>
+		</form>
+		<form action="/template" method="post">
+			<input name = "Champion" type="hidden" value="Skarner">
+			<input type = "image" src ='../images/squares/SkarnerSquare.png'/>
+		</form>
+		<form action="/template" method="post">
+			<input name = "Champion" type="hidden" value="Sona">
+			<input type = "image" src ='../images/squares/SonaSquare.png'/>
+		</form><form action="/template" method="post">
+			<input name = "Champion" type="hidden" value="Soraka">
+			<input type = "image" src ='../images/squares/SorakaSquare.png'/>
+		</form>
+		<form action="/template" method="post">
+			<input name = "Champion" type="hidden" value="Swain">
+			<input type = "image" src ='../images/squares/SwainSquare.png'/>
+		</form>
+		<form action="/template" method="post">
+			<input name = "Champion" type="hidden" value="Syndra">
+			<input type = "image" src ='../images/squares/SyndraSquare.png'/>
+		</form>
+		<form action="/template" method="post">
+			<input name = "Champion" type="hidden" value="Tahm Kench">
+			<input type = "image" src ='../images/squares/Tahm KenchSquare.png'/>
+		</form>
+		<form action="/template" method="post">
+			<input name = "Champion" type="hidden" value="Taliyah">
+			<input type = "image" src ='../images/squares/TaliyahSquare.png'/>
+		</form><form action="/template" method="post">
+			<input name = "Champion" type="hidden" value="Talon">
+			<input type = "image" src ='../images/squares/TalonSquare.png'/>
+		</form><form action="/template" method="post">
+			<input name = "Champion" type="hidden" value="Taric">
+			<input type = "image" src ='../images/squares/TaricSquare.png'/>
+		</form>
+		<form action="/template" method="post">
+			<input name = "Champion" type="hidden" value="Teemo">
+			<input type = "image" src ='../images/squares/TeemoSquare.png'/>
+		</form>
+		<form action="/template" method="post">
+			<input name = "Champion" type="hidden" value="Thresh">
+			<input type = "image" src ='../images/squares/ThreshSquare.png'/>
+		</form><form action="/template" method="post">
+			<input name = "Champion" type="hidden" value="Tristana">
+			<input type = "image" src ='../images/squares/TristanaSquare.png'/>
+		</form>
+		<form action="/template" method="post">
+			<input name = "Champion" type="hidden" value="Trundle">
+			<input type = "image" src ='../images/squares/TrundleSquare.png'/>
+		</form>
+		<form action="/template" method="post">
+			<input name = "Champion" type="hidden" value="Tryndamere">
+			<input type = "image" src ='../images/squares/TryndamereSquare.png'/>
+		</form>
+		<form action="/template" method="post">
+			<input name = "Champion" type="hidden" value="Twisted Fate">
+			<input type = "image" src ='../images/squares/Twisted FateSquare.png'/>
+		</form>
+		<form action="/template" method="post">
+			<input name = "Champion" type="hidden" value="Twitch">
+			<input type = "image" src ='../images/squares/TwitchSquare.png'/>
+		</form><form action="/template" method="post">
+			<input name = "Champion" type="hidden" value="Udyr">
+			<input type = "image" src ='../images/squares/UdyrSquare.png'/>
+		</form>
+		<form action="/template" method="post">
+			<input name = "Champion" type="hidden" value="Urgot">
+			<input type = "image" src ='../images/squares/UrgotSquare.png'/>
+		</form>
+		<form action="/template" method="post">
+			<input name = "Champion" type="hidden" value="Varus">
+			<input type = "image" src ='../images/squares/VarusSquare.png'/>
+		</form>
+		<form action="/template" method="post">
+			<input name = "Champion" type="hidden" value="Vayne">
+			<input type = "image" src ='../images/squares/VayneSquare.png'/>
+		</form>
+		<form action="/template" method="post">
+			<input name = "Champion" type="hidden" value="Veigar">
+			<input type = "image" src ='../images/squares/VeigarSquare.png'/>
+		</form>
+		<form action="/template" method="post">
+			<input name = "Champion" type="hidden" value="Vel'Koz">
+			<input type = "image" src ="../images/squares/Vel'KozSquare.png"/>
+		</form>
+		<form action="/template" method="post">
+			<input name = "Champion" type="hidden" value="Viktor">
+			<input type = "image" src ='../images/squares/ViktorSquare.png'/>
+		</form>
+		<form action="/template" method="post">
+			<input name = "Champion" type="hidden" value="Vi">
+			<input type = "image" src ='../images/squares/ViSquare.png'/>
+		</form><form action="/template" method="post">
+			<input name = "Champion" type="hidden" value="Vladimir">
+			<input type = "image" src ='../images/squares/VladimirSquare.png'/>
+		</form>
+		<form action="/template" method="post">
+			<input name = "Champion" type="hidden" value="Volibear">
+			<input type = "image" src ='../images/squares/VolibearSquare.png'/>
+		</form><form action="/template" method="post">
+			<input name = "Champion" type="hidden" value="Warwick">
+			<input type = "image" src ='../images/squares/WarwickSquare.png'/>
+		</form><form action="/template" method="post">
+			<input name = "Champion" type="hidden" value="Wukong">
+			<input type = "image" src ='../images/squares/WukongSquare.png'/>
+		</form><form action="/template" method="post">
+			<input name = "Champion" type="hidden" value="Xayah">
+			<input type = "image" src ='../images/squares/XayahSquare.png'/>
+		</form>
+		<form action="/template" method="post">
+			<input name = "Champion" type="hidden" value="Xerath">
+			<input type = "image" src ='../images/squares/XerathSquare.png'/>
+		</form>
+		<form action="/template" method="post">
+			<input name = "Champion" type="hidden" value="Xin Zhao">
+			<input type = "image" src ='../images/squares/Xin ZhaoSquare.png'/>
+		</form>
+		<form action="/template" method="post">
+			<input name = "Champion" type="hidden" value="Yasuo">
+			<input type = "image" src ='../images/squares/YasuoSquare.png'/>
+		</form>
+		<form action="/template" method="post">
+			<input name = "Champion" type="hidden" value="Yorick">
+			<input type = "image" src ='../images/squares/YorickSquare.png'/>
+		</form>
+		<form action="/template" method="post">
+			<input name = "Champion" type="hidden" value="Zac">
+			<input type = "image" src ='../images/squares/ZacSquare.png'/>
+		</form>
+		<form action="/template" method="post">
+			<input name = "Champion" type="hidden" value="Zed">
+			<input type = "image" src ='../images/squares/ZedSquare.png'/>
+		</form>
+		<form action="/template" method="post">
+			<input name = "Champion" type="hidden" value="Ziggs">
+			<input type = "image" src ='../images/squares/ZiggsSquare.png'/>
+		</form>
+		<form action="/template" method="post">
+			<input name = "Champion" type="hidden" value="Zilean">
+			<input type = "image" src ='../images/squares/ZileanSquare.png'/>
+		</form>
+		<form action="/template" method="post">
+			<input name = "Champion" type="hidden" value="Zoe">
+			<input type = "image" src ='../images/squares/ZoeSquare.png'/>
+		</form>
+		<form action="/template" method="post">
+			<input name = "Champion" type="hidden" value="Zyra">
+			<input type = "image" src ='../images/squares/ZyraSquare.png'/>
+		</form>
+	</fieldset>
+	</div>
+	</body>
+</html>
