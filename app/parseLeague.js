@@ -5,6 +5,7 @@ module.exports = function(league, tempModel){
 		var entry = new tempModel({name:player.playerOrTeamName,
 			summonerid:player.playerOrTeamId
 		});
+		//console.log(entry);
 		entry.save(function(err){
 			if(err) return handleError(err);
 		});	

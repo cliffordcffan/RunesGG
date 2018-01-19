@@ -84,139 +84,287 @@ module.exports = function (app,path, ourModel) {
 				inspirationPerk3 += (tmp.wins+tmp.loses);
 			}
 			for(i =0; i < 3; i++){
+				/////////////////////PRECISION////////////////////
 				var keystone = precisionTree.runes.keystone[i];
-			    //here you can pull keystone.wins, keystone.losses, keystone.stat1,stat2,stat3, id
+			   	//here you can pull keystone.wins, keystone.losses, keystone.stat1,stat2,stat3, id
 				var perk1 = precisionTree.runes.perk1[i];
 				var perk2 = precisionTree.runes.perk2[i];
 				var perk3 = precisionTree.runes.perk3[i];
-
-				precisionTTT.push('Win Rate: '+((keystone.wins / (keystone.wins+keystone.losses))*100).toPrecision(4).toString()+ '%\n'
-									+ 'Games Played: ' + ((keystone.wins+keystone.losses)).toString() + '\n'
-									+ 'stat1: ' + (keystone.stat1/((keystone.wins+keystone.losses))).toString() + '\n'
-									+ 'stat2: ' + (keystone.stat2/((keystone.wins+keystone.losses))).toString() + '\n'
-									+ 'stat3: ' + (keystone.stat3/((keystone.wins+keystone.losses))).toString() + '\n');
-				precisionTTT.push('Win Rate: '+((perk1.wins / (perk1.wins+perk1.losses))*100).toPrecision(4).toString()+ '%\n'
-									+ 'Games Played: ' + ((perk1.wins+perk1.losses)).toString() + '\n'
-									+ 'stat1: ' + (perk1.stat1/((perk1.wins+perk1.losses))).toString() + '\n'
-									+ 'stat2: ' + (perk1.stat2/((perk1.wins+perk1.losses))).toString() + '\n'
-									+ 'stat3: ' + (perk1.stat3/((perk1.wins+perk1.losses))).toString() + '\n');
-				precisionTTT.push('Win Rate: '+((perk2.wins / (perk2.wins+perk2.losses))*100).toPrecision(4).toString()+ '%\n'
-									+ 'Games Played: ' + ((perk2.wins+perk2.losses)).toString() + '\n'
-									+ 'stat1: ' + (perk2.stat1/((perk2.wins+perk2.losses))).toString() + '\n'
-									+ 'stat2: ' + (perk2.stat2/((perk2.wins+perk2.losses))).toString() + '\n'
-									+ 'stat3: ' + (perk2.stat3/((perk2.wins+perk2.losses))).toString() + '\n');
-				precisionTTT.push('Win Rate: '+((perk3.wins / (perk3.wins+perk3.losses))*100).toPrecision(4).toString()+ '%\n'
-									+ 'Games Played: ' + ((perk3.wins+perk3.losses)).toString() + '\n'
-									+ 'stat1: ' + (perk3.stat1/((perk3.wins+perk3.losses))).toString() + '\n'
-									+ 'stat2: ' + (perk3.stat2/((perk3.wins+perk3.losses))).toString() + '\n'
-									+ 'stat3: ' + (perk3.stat3/((perk3.wins+perk3.losses))).toString() + '\n');
 				
+				/////////////////////key stone/////////////////////
+				var ins = keystone.name + '\n\n' +'Win Rate: '+((keystone.wins / (keystone.wins+keystone.losses))*100).toPrecision(4).toString()+ '%\n'
+									+ 'Games Played: ' + ((keystone.wins+keystone.losses)).toString() + '\n'
+									+ '\n' + '-Average Stats-' +'\n'
+									+ keystone.stat1_name + ': ' + (keystone.stat1/((keystone.wins+keystone.losses))).toString() + '\n';
+				if(keystone.stat2_name != "none"){
+					ins = ins + keystone.stat2_name + ': ' + (keystone.stat2/((keystone.wins+keystone.losses))).toString() + '\n';
+				}
+				if(keystone.stat3_name != "none"){
+					ins = ins + keystone.stat3_name + ': ' + (keystone.stat3/((keystone.wins+keystone.losses))).toString() + '\n';
+				}
+				precisionTTT.push(ins);
+
+				/////////////////////rune 1//////////////////////
+				ins = perk1.name + '\n\n' + 'Win Rate: '+((perk1.wins / (perk1.wins+perk1.losses))*100).toPrecision(4).toString()+ '%\n'
+									+ 'Games Played: ' + ((perk1.wins+perk1.losses)).toString() + '\n'
+									+ '\n' + '-Average Stats-'+'\n'
+									+ perk1.stat1_name + ': ' + (perk1.stat1/((perk1.wins+perk1.losses))).toString() + '\n';
+				if(perk1.stat2_name != "none"){
+					ins = ins + perk1.stat2_name + ': ' + (perk1.stat2/((perk1.wins+perk1.losses))).toString() + '\n';
+				}
+				if(perk1.stat3_name != "none"){
+					ins = ins + perk1.stat3_name + ': ' + (perk1.stat3/((perk1.wins+perk1.losses))).toString() + '\n';
+				}
+				precisionTTT.push(ins);
+				////////////////////////rune 2/////////////////////
+				ins = perk2.name + '\n\n' + 'Win Rate: '+((perk2.wins / (perk2.wins+perk2.losses))*100).toPrecision(4).toString()+ '%\n'
+									+ 'Games Played: ' + ((perk2.wins+perk2.losses)).toString() + '\n'
+									+ '\n' + '-Average Stats-'+'\n'
+									+ perk2.stat1_name + ': ' + (perk2.stat1/((perk2.wins+perk2.losses))).toString() + '\n';
+				if(perk2.stat2_name != "none"){
+					ins = ins + perk2.stat2_name + ': ' + (perk2.stat2/((perk2.wins+perk2.losses))).toString() + '\n';
+				}
+				if(perk2.stat3_name != "none"){
+					ins = ins + perk2.stat3_name + ': ' + (perk2.stat3/((perk2.wins+perk2.losses))).toString() + '\n';
+				}
+				precisionTTT.push(ins);
+				///////////////////////rune 3///////////////////////
+				ins = perk3.name + '\n\n' + 'Win Rate: '+((perk3.wins / (perk3.wins+perk3.losses))*100).toPrecision(4).toString()+ '%\n'
+									+ 'Games Played: ' + ((perk3.wins+perk3.losses)).toString() + '\n'
+									+ '\n' + '-Average Stats-'+'\n'
+									+ perk3.stat1_name + ': ' + (perk3.stat1/((perk3.wins+perk3.losses))).toString() + '\n';
+				if(perk3.stat2_name != "none"){
+					ins = ins + perk3.stat2_name + ': ' + (perk3.stat2/((perk3.wins+perk3.losses))).toString() + '\n';
+				}
+				if(perk3.stat3_name != "none"){
+					ins = ins + perk3.stat3_name + ': ' + (perk3.stat3/((perk3.wins+perk3.losses))).toString() + '\n';
+				}
+				precisionTTT.push(ins);
+				
+
+				/////////////////////SORCERY////////////////////////
 				keystone = sorceryTree.runes.keystone[i];
 				perk1 = sorceryTree.runes.perk1[i];
 				perk2 = sorceryTree.runes.perk2[i];
 				perk3 = sorceryTree.runes.perk3[i];
 
-				sorceryTTT.push('Win Rate: '+((keystone.wins / (keystone.wins+keystone.losses))*100).toPrecision(4).toString()+ '%\n'
+				/////////////////////key stone/////////////////////
+				ins = keystone.name + '\n\n' +'Win Rate: '+((keystone.wins / (keystone.wins+keystone.losses))*100).toPrecision(4).toString()+ '%\n'
 									+ 'Games Played: ' + ((keystone.wins+keystone.losses)).toString() + '\n'
-									+ 'stat1: ' + (keystone.stat1/((keystone.wins+keystone.losses))).toString() + '\n'
-									+ 'stat2: ' + (keystone.stat2/((keystone.wins+keystone.losses))).toString() + '\n'
-									+ 'stat3: ' + (keystone.stat3/((keystone.wins+keystone.losses))).toString() + '\n');
-				sorceryTTT.push('Win Rate: '+((perk1.wins / (perk1.wins+perk1.losses))*100).toPrecision(4).toString()+ '%\n'
+									+ '\n' + '-Average Stats-' +'\n'
+									+ keystone.stat1_name + ': ' + (keystone.stat1/((keystone.wins+keystone.losses))).toString() + '\n';
+				if(keystone.stat2_name != "none"){
+					ins = ins + keystone.stat2_name + ': ' + (keystone.stat2/((keystone.wins+keystone.losses))).toString() + '\n';
+				}
+				if(keystone.stat3_name != "none"){
+					ins = ins + keystone.stat3_name + ': ' + (keystone.stat3/((keystone.wins+keystone.losses))).toString() + '\n';
+				}
+				sorceryTTT.push(ins);
+
+				/////////////////////rune 1//////////////////////
+				ins = perk1.name + '\n\n' + 'Win Rate: '+((perk1.wins / (perk1.wins+perk1.losses))*100).toPrecision(4).toString()+ '%\n'
 									+ 'Games Played: ' + ((perk1.wins+perk1.losses)).toString() + '\n'
-									+ 'stat1: ' + (perk1.stat1/((perk1.wins+perk1.losses))).toString() + '\n'
-									+ 'stat2: ' + (perk1.stat2/((perk1.wins+perk1.losses))).toString() + '\n'
-									+ 'stat3: ' + (perk1.stat3/((perk1.wins+perk1.losses))).toString() + '\n');
-				sorceryTTT.push('Win Rate: '+((perk2.wins / (perk2.wins+perk2.losses))*100).toPrecision(4).toString()+ '%\n'
+									+ '\n' + '-Average Stats-'+'\n'
+									+ perk1.stat1_name + ': ' + (perk1.stat1/((perk1.wins+perk1.losses))).toString() + '\n';
+				if(perk1.stat2_name != "none"){
+					ins = ins + perk1.stat2_name + ': ' + (perk1.stat2/((perk1.wins+perk1.losses))).toString() + '\n';
+				}
+				if(perk1.stat3_name != "none"){
+					ins = ins + perk1.stat3_name + ': ' + (perk1.stat3/((perk1.wins+perk1.losses))).toString() + '\n';
+				}
+				sorceryTTT.push(ins);
+				////////////////////////rune 2/////////////////////
+				ins = perk2.name + '\n\n' + 'Win Rate: '+((perk2.wins / (perk2.wins+perk2.losses))*100).toPrecision(4).toString()+ '%\n'
 									+ 'Games Played: ' + ((perk2.wins+perk2.losses)).toString() + '\n'
-									+ 'stat1: ' + (perk2.stat1/((perk2.wins+perk2.losses))).toString() + '\n'
-									+ 'stat2: ' + (perk2.stat2/((perk2.wins+perk2.losses))).toString() + '\n'
-									+ 'stat3: ' + (perk2.stat3/((perk2.wins+perk2.losses))).toString() + '\n');
-				sorceryTTT.push('Win Rate: '+((perk3.wins / (perk3.wins+perk3.losses))*100).toPrecision(4).toString()+ '%\n'
+									+ '\n' + '-Average Stats-'+'\n'
+									+ perk2.stat1_name + ': ' + (perk2.stat1/((perk2.wins+perk2.losses))).toString() + '\n';
+				if(perk2.stat2_name != "none"){
+					ins = ins + perk2.stat2_name + ': ' + (perk2.stat2/((perk2.wins+perk2.losses))).toString() + '\n';
+				}
+				if(perk2.stat3_name != "none"){
+					ins = ins + perk2.stat3_name + ': ' + (perk2.stat3/((perk2.wins+perk2.losses))).toString() + '\n';
+				}
+				sorceryTTT.push(ins);
+				///////////////////////rune 3///////////////////////
+				ins = perk3.name + '\n\n' + 'Win Rate: '+((perk3.wins / (perk3.wins+perk3.losses))*100).toPrecision(4).toString()+ '%\n'
 									+ 'Games Played: ' + ((perk3.wins+perk3.losses)).toString() + '\n'
-									+ 'stat1: ' + (perk3.stat1/((perk3.wins+perk3.losses))).toString() + '\n'
-									+ 'stat2: ' + (perk3.stat2/((perk3.wins+perk3.losses))).toString() + '\n'
-									+ 'stat3: ' + (perk3.stat3/((perk3.wins+perk3.losses))).toString() + '\n');
+									+ '\n' + '-Average Stats-'+'\n'
+									+ perk3.stat1_name + ': ' + (perk3.stat1/((perk3.wins+perk3.losses))).toString() + '\n';
+				if(perk3.stat2_name != "none"){
+					ins = ins + perk3.stat2_name + ': ' + (perk3.stat2/((perk3.wins+perk3.losses))).toString() + '\n';
+				}
+				if(perk3.stat3_name != "none"){
+					ins = ins + perk3.stat3_name + ': ' + (perk3.stat3/((perk3.wins+perk3.losses))).toString() + '\n';
+				}
+				sorceryTTT.push(ins);
 									
 				keystone = dominationTree.runes.keystone[i];
 				perk1 = dominationTree.runes.perk1[i];
 				perk2 = dominationTree.runes.perk2[i];
 				perk3 = dominationTree.runes.perk3[i];
 
-				dominationTTT.push('Win Rate: '+((keystone.wins / (keystone.wins+keystone.losses))*100).toPrecision(4).toString()+ '%\n'
+				/////////////////////key stone/////////////////////
+				ins = keystone.name + '\n\n' +'Win Rate: '+((keystone.wins / (keystone.wins+keystone.losses))*100).toPrecision(4).toString()+ '%\n'
 									+ 'Games Played: ' + ((keystone.wins+keystone.losses)).toString() + '\n'
-									+ 'stat1: ' + (keystone.stat1/((keystone.wins+keystone.losses))).toString() + '\n'
-									+ 'stat2: ' + (keystone.stat2/((keystone.wins+keystone.losses))).toString() + '\n'
-									+ 'stat3: ' + (keystone.stat3/((keystone.wins+keystone.losses))).toString() + '\n');
-				dominationTTT.push('Win Rate: '+((perk1.wins / (perk1.wins+perk1.losses))*100).toPrecision(4).toString()+ '%\n'
+									+ '\n' + '-Average Stats-' +'\n'
+									+ keystone.stat1_name + ': ' + (keystone.stat1/((keystone.wins+keystone.losses))).toString() + '\n';
+				if(keystone.stat2_name != "none"){
+					ins = ins + keystone.stat2_name + ': ' + (keystone.stat2/((keystone.wins+keystone.losses))).toString() + '\n';
+				}
+				if(keystone.stat3_name != "none"){
+					ins = ins + keystone.stat3_name + ': ' + (keystone.stat3/((keystone.wins+keystone.losses))).toString() + '\n';
+				}
+				dominationTTT.push(ins);
+
+				/////////////////////rune 1//////////////////////
+				ins = perk1.name + '\n\n' + 'Win Rate: '+((perk1.wins / (perk1.wins+perk1.losses))*100).toPrecision(4).toString()+ '%\n'
 									+ 'Games Played: ' + ((perk1.wins+perk1.losses)).toString() + '\n'
-									+ 'stat1: ' + (perk1.stat1/((perk1.wins+perk1.losses))).toString() + '\n'
-									+ 'stat2: ' + (perk1.stat2/((perk1.wins+perk1.losses))).toString() + '\n'
-									+ 'stat3: ' + (perk1.stat3/((perk1.wins+perk1.losses))).toString() + '\n');
-				dominationTTT.push('Win Rate: '+((perk2.wins / (perk2.wins+perk2.losses))*100).toPrecision(4).toString()+ '%\n'
+									+ '\n' + '-Average Stats-'+'\n'
+									+ perk1.stat1_name + ': ' + (perk1.stat1/((perk1.wins+perk1.losses))).toString() + '\n';
+				if(perk1.stat2_name != "none"){
+					ins = ins + perk1.stat2_name + ': ' + (perk1.stat2/((perk1.wins+perk1.losses))).toString() + '\n';
+				}
+				if(perk1.stat3_name != "none"){
+					ins = ins + perk1.stat3_name + ': ' + (perk1.stat3/((perk1.wins+perk1.losses))).toString() + '\n';
+				}
+				dominationTTT.push(ins);
+				////////////////////////rune 2/////////////////////
+				ins = perk2.name + '\n\n' + 'Win Rate: '+((perk2.wins / (perk2.wins+perk2.losses))*100).toPrecision(4).toString()+ '%\n'
 									+ 'Games Played: ' + ((perk2.wins+perk2.losses)).toString() + '\n'
-									+ 'stat1: ' + (perk2.stat1/((perk2.wins+perk2.losses))).toString() + '\n'
-									+ 'stat2: ' + (perk2.stat2/((perk2.wins+perk2.losses))).toString() + '\n'
-									+ 'stat3: ' + (perk2.stat3/((perk2.wins+perk2.losses))).toString() + '\n');
-				dominationTTT.push('Win Rate: '+((perk3.wins / (perk3.wins+perk3.losses))*100).toPrecision(4).toString()+ '%\n'
+									+ '\n' + '-Average Stats-'+'\n'
+									+ perk2.stat1_name + ': ' + (perk2.stat1/((perk2.wins+perk2.losses))).toString() + '\n';
+				if(perk2.stat2_name != "none"){
+					ins = ins + perk2.stat2_name + ': ' + (perk2.stat2/((perk2.wins+perk2.losses))).toString() + '\n';
+				}
+				if(perk2.stat3_name != "none"){
+					ins = ins + perk2.stat3_name + ': ' + (perk2.stat3/((perk2.wins+perk2.losses))).toString() + '\n';
+				}
+				dominationTTT.push(ins);
+				///////////////////////rune 3///////////////////////
+				ins = perk3.name + '\n\n' + 'Win Rate: '+((perk3.wins / (perk3.wins+perk3.losses))*100).toPrecision(4).toString()+ '%\n'
 									+ 'Games Played: ' + ((perk3.wins+perk3.losses)).toString() + '\n'
-									+ 'stat1: ' + (perk3.stat1/((perk3.wins+perk3.losses))).toString() + '\n'
-									+ 'stat2: ' + (perk3.stat2/((perk3.wins+perk3.losses))).toString() + '\n'
-									+ 'stat3: ' + (perk3.stat3/((perk3.wins+perk3.losses))).toString() + '\n');
+									+ '\n' + '-Average Stats-'+'\n'
+									+ perk3.stat1_name + ': ' + (perk3.stat1/((perk3.wins+perk3.losses))).toString() + '\n';
+				if(perk3.stat2_name != "none"){
+					ins = ins + perk3.stat2_name + ': ' + (perk3.stat2/((perk3.wins+perk3.losses))).toString() + '\n';
+				}
+				if(perk3.stat3_name != "none"){
+					ins = ins + perk3.stat3_name + ': ' + (perk3.stat3/((perk3.wins+perk3.losses))).toString() + '\n';
+				}
+				dominationTTT.push(ins);
 					
 				keystone = inspirationTree.runes.keystone[i];
 				perk1 = inspirationTree.runes.perk1[i];
 				perk2 = inspirationTree.runes.perk2[i];
 				perk3 = inspirationTree.runes.perk3[i];
 
-				inspirationTTT.push('Win Rate: '+((keystone.wins / (keystone.wins+keystone.losses))*100).toPrecision(4).toString()+ '%\n'
+				/////////////////////key stone/////////////////////
+				ins = keystone.name + '\n\n' +'Win Rate: '+((keystone.wins / (keystone.wins+keystone.losses))*100).toPrecision(4).toString()+ '%\n'
 									+ 'Games Played: ' + ((keystone.wins+keystone.losses)).toString() + '\n'
-									+ 'stat1: ' + (keystone.stat1/((keystone.wins+keystone.losses))).toString() + '\n'
-									+ 'stat2: ' + (keystone.stat2/((keystone.wins+keystone.losses))).toString() + '\n'
-									+ 'stat3: ' + (keystone.stat3/((keystone.wins+keystone.losses))).toString() + '\n');
-				inspirationTTT.push('Win Rate: '+((perk1.wins / (perk1.wins+perk1.losses))*100).toPrecision(4).toString()+ '%\n'
+									+ '\n' + '-Average Stats-' +'\n'
+									+ keystone.stat1_name + ': ' + (keystone.stat1/((keystone.wins+keystone.losses))).toString() + '\n';
+				if(keystone.stat2_name != "none"){
+					ins = ins + keystone.stat2_name + ': ' + (keystone.stat2/((keystone.wins+keystone.losses))).toString() + '\n';
+				}
+				if(keystone.stat3_name != "none"){
+					ins = ins + keystone.stat3_name + ': ' + (keystone.stat3/((keystone.wins+keystone.losses))).toString() + '\n';
+				}
+				inspirationTTT.push(ins);
+
+				/////////////////////rune 1//////////////////////
+				ins = perk1.name + '\n\n' + 'Win Rate: '+((perk1.wins / (perk1.wins+perk1.losses))*100).toPrecision(4).toString()+ '%\n'
 									+ 'Games Played: ' + ((perk1.wins+perk1.losses)).toString() + '\n'
-									+ 'stat1: ' + (perk1.stat1/((perk1.wins+perk1.losses))).toString() + '\n'
-									+ 'stat2: ' + (perk1.stat2/((perk1.wins+perk1.losses))).toString() + '\n'
-									+ 'stat3: ' + (perk1.stat3/((perk1.wins+perk1.losses))).toString() + '\n');
-				inspirationTTT.push('Win Rate: '+((perk2.wins / (perk2.wins+perk2.losses))*100).toPrecision(4).toString()+ '%\n'
+									+ '\n' + '-Average Stats-'+'\n'
+									+ perk1.stat1_name + ': ' + (perk1.stat1/((perk1.wins+perk1.losses))).toString() + '\n';
+				if(perk1.stat2_name != "none"){
+					ins = ins + perk1.stat2_name + ': ' + (perk1.stat2/((perk1.wins+perk1.losses))).toString() + '\n';
+				}
+				if(perk1.stat3_name != "none"){
+					ins = ins + perk1.stat3_name + ': ' + (perk1.stat3/((perk1.wins+perk1.losses))).toString() + '\n';
+				}
+				inspirationTTT.push(ins);
+				////////////////////////rune 2/////////////////////
+				ins = perk2.name + '\n\n' + 'Win Rate: '+((perk2.wins / (perk2.wins+perk2.losses))*100).toPrecision(4).toString()+ '%\n'
 									+ 'Games Played: ' + ((perk2.wins+perk2.losses)).toString() + '\n'
-									+ 'stat1: ' + (perk2.stat1/((perk2.wins+perk2.losses))).toString() + '\n'
-									+ 'stat2: ' + (perk2.stat2/((perk2.wins+perk2.losses))).toString() + '\n'
-									+ 'stat3: ' + (perk2.stat3/((perk2.wins+perk2.losses))).toString() + '\n');
-				inspirationTTT.push('Win Rate: '+((perk3.wins / (perk3.wins+perk3.losses))*100).toPrecision(4).toString()+ '%\n'
+									+ '\n' + '-Average Stats-'+'\n'
+									+ perk2.stat1_name + ': ' + (perk2.stat1/((perk2.wins+perk2.losses))).toString() + '\n';
+				if(perk2.stat2_name != "none"){
+					ins = ins + perk2.stat2_name + ': ' + (perk2.stat2/((perk2.wins+perk2.losses))).toString() + '\n';
+				}
+				if(perk2.stat3_name != "none"){
+					ins = ins + perk2.stat3_name + ': ' + (perk2.stat3/((perk2.wins+perk2.losses))).toString() + '\n';
+				}
+				inspirationTTT.push(ins);
+				///////////////////////rune 3///////////////////////
+				ins = perk3.name + '\n\n' + 'Win Rate: '+((perk3.wins / (perk3.wins+perk3.losses))*100).toPrecision(4).toString()+ '%\n'
 									+ 'Games Played: ' + ((perk3.wins+perk3.losses)).toString() + '\n'
-									+ 'stat1: ' + (perk3.stat1/((perk3.wins+perk3.losses))).toString() + '\n'
-									+ 'stat2: ' + (perk3.stat2/((perk3.wins+perk3.losses))).toString() + '\n'
-									+ 'stat3: ' + (perk3.stat3/((perk3.wins+perk3.losses))).toString() + '\n');
+									+ '\n' + '-Average Stats-'+'\n'
+									+ perk3.stat1_name + ': ' + (perk3.stat1/((perk3.wins+perk3.losses))).toString() + '\n';
+				if(perk3.stat2_name != "none"){
+					ins = ins + perk3.stat2_name + ': ' + (perk3.stat2/((perk3.wins+perk3.losses))).toString() + '\n';
+				}
+				if(perk3.stat3_name != "none"){
+					ins = ins + perk3.stat3_name + ': ' + (perk3.stat3/((perk3.wins+perk3.losses))).toString() + '\n';
+				}
+				inspirationTTT.push(ins);
 									
 				keystone = resolveTree.runes.keystone[i];
 				perk1 = resolveTree.runes.perk1[i];
 				perk2 = resolveTree.runes.perk2[i];
 				perk3 = resolveTree.runes.perk3[i];
 
-				resolveTTT.push('Win Rate: '+((keystone.wins / (keystone.wins+keystone.losses))*100).toPrecision(4).toString()+ '%\n'
+				/////////////////////key stone/////////////////////
+				ins = keystone.name + '\n\n' +'Win Rate: '+((keystone.wins / (keystone.wins+keystone.losses))*100).toPrecision(4).toString()+ '%\n'
 									+ 'Games Played: ' + ((keystone.wins+keystone.losses)).toString() + '\n'
-									+ 'stat1: ' + (keystone.stat1/((keystone.wins+keystone.losses))).toString() + '\n'
-									+ 'stat2: ' + (keystone.stat2/((keystone.wins+keystone.losses))).toString() + '\n'
-									+ 'stat3: ' + (keystone.stat3/((keystone.wins+keystone.losses))).toString() + '\n');
-				resolveTTT.push('Win Rate: '+((perk1.wins / (perk1.wins+perk1.losses))*100).toPrecision(4).toString()+ '%\n'
+									+ '\n' + '-Average Stats-' +'\n'
+									+ keystone.stat1_name + ': ' + (keystone.stat1/((keystone.wins+keystone.losses))).toString() + '\n';
+				if(keystone.stat2_name != "none"){
+					ins = ins + keystone.stat2_name + ': ' + (keystone.stat2/((keystone.wins+keystone.losses))).toString() + '\n';
+				}
+				if(keystone.stat3_name != "none"){
+					ins = ins + keystone.stat3_name + ': ' + (keystone.stat3/((keystone.wins+keystone.losses))).toString() + '\n';
+				}
+				resolveTTT.push(ins);
+
+				/////////////////////rune 1//////////////////////
+				ins = perk1.name + '\n\n' + 'Win Rate: '+((perk1.wins / (perk1.wins+perk1.losses))*100).toPrecision(4).toString()+ '%\n'
 									+ 'Games Played: ' + ((perk1.wins+perk1.losses)).toString() + '\n'
-									+ 'stat1: ' + (perk1.stat1/((perk1.wins+perk1.losses))).toString() + '\n'
-									+ 'stat2: ' + (perk1.stat2/((perk1.wins+perk1.losses))).toString() + '\n'
-									+ 'stat3: ' + (perk1.stat3/((perk1.wins+perk1.losses))).toString() + '\n');
-				resolveTTT.push('Win Rate: '+((perk2.wins / (perk2.wins+perk2.losses))*100).toPrecision(4).toString()+ '%\n'
+									+ '\n' + '-Average Stats-'+'\n'
+									+ perk1.stat1_name + ': ' + (perk1.stat1/((perk1.wins+perk1.losses))).toString() + '\n';
+				if(perk1.stat2_name != "none"){
+					ins = ins + perk1.stat2_name + ': ' + (perk1.stat2/((perk1.wins+perk1.losses))).toString() + '\n';
+				}
+				if(perk1.stat3_name != "none"){
+					ins = ins + perk1.stat3_name + ': ' + (perk1.stat3/((perk1.wins+perk1.losses))).toString() + '\n';
+				}
+				resolveTTT.push(ins);
+				////////////////////////rune 2/////////////////////
+				ins = perk2.name + '\n\n' + 'Win Rate: '+((perk2.wins / (perk2.wins+perk2.losses))*100).toPrecision(4).toString()+ '%\n'
 									+ 'Games Played: ' + ((perk2.wins+perk2.losses)).toString() + '\n'
-									+ 'stat1: ' + (perk2.stat1/((perk2.wins+perk2.losses))).toString() + '\n'
-									+ 'stat2: ' + (perk2.stat2/((perk2.wins+perk2.losses))).toString() + '\n'
-									+ 'stat3: ' + (perk2.stat3/((perk2.wins+perk2.losses))).toString() + '\n');
-				resolveTTT.push('Win Rate: '+((perk3.wins / (perk3.wins+perk3.losses))*100).toPrecision(4).toString()+ '%\n'
+									+ '\n' + '-Average Stats-'+'\n'
+									+ perk2.stat1_name + ': ' + (perk2.stat1/((perk2.wins+perk2.losses))).toString() + '\n';
+				if(perk2.stat2_name != "none"){
+					ins = ins + perk2.stat2_name + ': ' + (perk2.stat2/((perk2.wins+perk2.losses))).toString() + '\n';
+				}
+				if(perk2.stat3_name != "none"){
+					ins = ins + perk2.stat3_name + ': ' + (perk2.stat3/((perk2.wins+perk2.losses))).toString() + '\n';
+				}
+				resolveTTT.push(ins);
+				///////////////////////rune 3///////////////////////
+				ins = perk3.name + '\n\n' + 'Win Rate: '+((perk3.wins / (perk3.wins+perk3.losses))*100).toPrecision(4).toString()+ '%\n'
 									+ 'Games Played: ' + ((perk3.wins+perk3.losses)).toString() + '\n'
-									+ 'stat1: ' + (perk3.stat1/((perk3.wins+perk3.losses))).toString() + '\n'
-									+ 'stat2: ' + (perk3.stat2/((perk3.wins+perk3.losses))).toString() + '\n'
-									+ 'stat3: ' + (perk3.stat3/((perk3.wins+perk3.losses))).toString() + '\n');
+									+ '\n' + '-Average Stats-'+'\n'
+									+ perk3.stat1_name + ': ' + (perk3.stat1/((perk3.wins+perk3.losses))).toString() + '\n';
+				if(perk3.stat2_name != "none"){
+					ins = ins + perk3.stat2_name + ': ' + (perk3.stat2/((perk3.wins+perk3.losses))).toString() + '\n';
+				}
+				if(perk3.stat3_name != "none"){
+					ins = ins + perk3.stat3_name + ': ' + (perk3.stat3/((perk3.wins+perk3.losses))).toString() + '\n';
+				}
+				resolveTTT.push(ins);
 			}
 			var pRank =[];
-			var	sRank =[];
+			var sRank =[];
 			var rRank=[];
 			var dRank=[];
 			var iRank=[];
@@ -560,136 +708,284 @@ module.exports = function (app,path, ourModel) {
 				inspirationPerk3 += (tmp.wins+tmp.loses);
 			}
 			for(i =0; i < 3; i++){
+				/////////////////////PRECISION////////////////////
 				var keystone = precisionTree.runes.keystone[i];
-			    //here you can pull keystone.wins, keystone.losses, keystone.stat1,stat2,stat3, id
+			   	//here you can pull keystone.wins, keystone.losses, keystone.stat1,stat2,stat3, id
 				var perk1 = precisionTree.runes.perk1[i];
 				var perk2 = precisionTree.runes.perk2[i];
 				var perk3 = precisionTree.runes.perk3[i];
-
-				precisionTTT.push('Win Rate: '+((keystone.wins / (keystone.wins+keystone.losses))*100).toPrecision(4).toString()+ '%\n'
-									+ 'Games Played: ' + ((keystone.wins+keystone.losses)).toString() + '\n'
-									+ 'stat1: ' + (keystone.stat1/((keystone.wins+keystone.losses))).toString() + '\n'
-									+ 'stat2: ' + (keystone.stat2/((keystone.wins+keystone.losses))).toString() + '\n'
-									+ 'stat3: ' + (keystone.stat3/((keystone.wins+keystone.losses))).toString() + '\n');
-				precisionTTT.push('Win Rate: '+((perk1.wins / (perk1.wins+perk1.losses))*100).toPrecision(4).toString()+ '%\n'
-									+ 'Games Played: ' + ((perk1.wins+perk1.losses)).toString() + '\n'
-									+ 'stat1: ' + (perk1.stat1/((perk1.wins+perk1.losses))).toString() + '\n'
-									+ 'stat2: ' + (perk1.stat2/((perk1.wins+perk1.losses))).toString() + '\n'
-									+ 'stat3: ' + (perk1.stat3/((perk1.wins+perk1.losses))).toString() + '\n');
-				precisionTTT.push('Win Rate: '+((perk2.wins / (perk2.wins+perk2.losses))*100).toPrecision(4).toString()+ '%\n'
-									+ 'Games Played: ' + ((perk2.wins+perk2.losses)).toString() + '\n'
-									+ 'stat1: ' + (perk2.stat1/((perk2.wins+perk2.losses))).toString() + '\n'
-									+ 'stat2: ' + (perk2.stat2/((perk2.wins+perk2.losses))).toString() + '\n'
-									+ 'stat3: ' + (perk2.stat3/((perk2.wins+perk2.losses))).toString() + '\n');
-				precisionTTT.push('Win Rate: '+((perk3.wins / (perk3.wins+perk3.losses))*100).toPrecision(4).toString()+ '%\n'
-									+ 'Games Played: ' + ((perk3.wins+perk3.losses)).toString() + '\n'
-									+ 'stat1: ' + (perk3.stat1/((perk3.wins+perk3.losses))).toString() + '\n'
-									+ 'stat2: ' + (perk3.stat2/((perk3.wins+perk3.losses))).toString() + '\n'
-									+ 'stat3: ' + (perk3.stat3/((perk3.wins+perk3.losses))).toString() + '\n');
 				
+				/////////////////////key stone/////////////////////
+				var ins = keystone.name + '\n\n' +'Win Rate: '+((keystone.wins / (keystone.wins+keystone.losses))*100).toPrecision(4).toString()+ '%\n'
+									+ 'Games Played: ' + ((keystone.wins+keystone.losses)).toString() + '\n'
+									+ '\n' + '-Average Stats-' +'\n'
+									+ keystone.stat1_name + ': ' + (keystone.stat1/((keystone.wins+keystone.losses))).toString() + '\n';
+				if(keystone.stat2_name != "none"){
+					ins = ins + keystone.stat2_name + ': ' + (keystone.stat2/((keystone.wins+keystone.losses))).toString() + '\n';
+				}
+				if(keystone.stat3_name != "none"){
+					ins = ins + keystone.stat3_name + ': ' + (keystone.stat3/((keystone.wins+keystone.losses))).toString() + '\n';
+				}
+				precisionTTT.push(ins);
+
+				/////////////////////rune 1//////////////////////
+				ins = perk1.name + '\n\n' + 'Win Rate: '+((perk1.wins / (perk1.wins+perk1.losses))*100).toPrecision(4).toString()+ '%\n'
+									+ 'Games Played: ' + ((perk1.wins+perk1.losses)).toString() + '\n'
+									+ '\n' + '-Average Stats-'+'\n'
+									+ perk1.stat1_name + ': ' + (perk1.stat1/((perk1.wins+perk1.losses))).toString() + '\n';
+				if(perk1.stat2_name != "none"){
+					ins = ins + perk1.stat2_name + ': ' + (perk1.stat2/((perk1.wins+perk1.losses))).toString() + '\n';
+				}
+				if(perk1.stat3_name != "none"){
+					ins = ins + perk1.stat3_name + ': ' + (perk1.stat3/((perk1.wins+perk1.losses))).toString() + '\n';
+				}
+				precisionTTT.push(ins);
+				////////////////////////rune 2/////////////////////
+				ins = perk2.name + '\n\n' + 'Win Rate: '+((perk2.wins / (perk2.wins+perk2.losses))*100).toPrecision(4).toString()+ '%\n'
+									+ 'Games Played: ' + ((perk2.wins+perk2.losses)).toString() + '\n'
+									+ '\n' + '-Average Stats-'+'\n'
+									+ perk2.stat1_name + ': ' + (perk2.stat1/((perk2.wins+perk2.losses))).toString() + '\n';
+				if(perk2.stat2_name != "none"){
+					ins = ins + perk2.stat2_name + ': ' + (perk2.stat2/((perk2.wins+perk2.losses))).toString() + '\n';
+				}
+				if(perk2.stat3_name != "none"){
+					ins = ins + perk2.stat3_name + ': ' + (perk2.stat3/((perk2.wins+perk2.losses))).toString() + '\n';
+				}
+				precisionTTT.push(ins);
+				///////////////////////rune 3///////////////////////
+				ins = perk3.name + '\n\n' + 'Win Rate: '+((perk3.wins / (perk3.wins+perk3.losses))*100).toPrecision(4).toString()+ '%\n'
+									+ 'Games Played: ' + ((perk3.wins+perk3.losses)).toString() + '\n'
+									+ '\n' + '-Average Stats-'+'\n'
+									+ perk3.stat1_name + ': ' + (perk3.stat1/((perk3.wins+perk3.losses))).toString() + '\n';
+				if(perk3.stat2_name != "none"){
+					ins = ins + perk3.stat2_name + ': ' + (perk3.stat2/((perk3.wins+perk3.losses))).toString() + '\n';
+				}
+				if(perk3.stat3_name != "none"){
+					ins = ins + perk3.stat3_name + ': ' + (perk3.stat3/((perk3.wins+perk3.losses))).toString() + '\n';
+				}
+				precisionTTT.push(ins);
+				
+
+				/////////////////////SORCERY////////////////////////
 				keystone = sorceryTree.runes.keystone[i];
 				perk1 = sorceryTree.runes.perk1[i];
 				perk2 = sorceryTree.runes.perk2[i];
 				perk3 = sorceryTree.runes.perk3[i];
 
-				sorceryTTT.push('Win Rate: '+((keystone.wins / (keystone.wins+keystone.losses))*100).toPrecision(4).toString()+ '%\n'
+				/////////////////////key stone/////////////////////
+				ins = keystone.name + '\n\n' +'Win Rate: '+((keystone.wins / (keystone.wins+keystone.losses))*100).toPrecision(4).toString()+ '%\n'
 									+ 'Games Played: ' + ((keystone.wins+keystone.losses)).toString() + '\n'
-									+ 'stat1: ' + (keystone.stat1/((keystone.wins+keystone.losses))).toString() + '\n'
-									+ 'stat2: ' + (keystone.stat2/((keystone.wins+keystone.losses))).toString() + '\n'
-									+ 'stat3: ' + (keystone.stat3/((keystone.wins+keystone.losses))).toString() + '\n');
-				sorceryTTT.push('Win Rate: '+((perk1.wins / (perk1.wins+perk1.losses))*100).toPrecision(4).toString()+ '%\n'
+									+ '\n' + '-Average Stats-' +'\n'
+									+ keystone.stat1_name + ': ' + (keystone.stat1/((keystone.wins+keystone.losses))).toString() + '\n';
+				if(keystone.stat2_name != "none"){
+					ins = ins + keystone.stat2_name + ': ' + (keystone.stat2/((keystone.wins+keystone.losses))).toString() + '\n';
+				}
+				if(keystone.stat3_name != "none"){
+					ins = ins + keystone.stat3_name + ': ' + (keystone.stat3/((keystone.wins+keystone.losses))).toString() + '\n';
+				}
+				sorceryTTT.push(ins);
+
+				/////////////////////rune 1//////////////////////
+				ins = perk1.name + '\n\n' + 'Win Rate: '+((perk1.wins / (perk1.wins+perk1.losses))*100).toPrecision(4).toString()+ '%\n'
 									+ 'Games Played: ' + ((perk1.wins+perk1.losses)).toString() + '\n'
-									+ 'stat1: ' + (perk1.stat1/((perk1.wins+perk1.losses))).toString() + '\n'
-									+ 'stat2: ' + (perk1.stat2/((perk1.wins+perk1.losses))).toString() + '\n'
-									+ 'stat3: ' + (perk1.stat3/((perk1.wins+perk1.losses))).toString() + '\n');
-				sorceryTTT.push('Win Rate: '+((perk2.wins / (perk2.wins+perk2.losses))*100).toPrecision(4).toString()+ '%\n'
+									+ '\n' + '-Average Stats-'+'\n'
+									+ perk1.stat1_name + ': ' + (perk1.stat1/((perk1.wins+perk1.losses))).toString() + '\n';
+				if(perk1.stat2_name != "none"){
+					ins = ins + perk1.stat2_name + ': ' + (perk1.stat2/((perk1.wins+perk1.losses))).toString() + '\n';
+				}
+				if(perk1.stat3_name != "none"){
+					ins = ins + perk1.stat3_name + ': ' + (perk1.stat3/((perk1.wins+perk1.losses))).toString() + '\n';
+				}
+				sorceryTTT.push(ins);
+				////////////////////////rune 2/////////////////////
+				ins = perk2.name + '\n\n' + 'Win Rate: '+((perk2.wins / (perk2.wins+perk2.losses))*100).toPrecision(4).toString()+ '%\n'
 									+ 'Games Played: ' + ((perk2.wins+perk2.losses)).toString() + '\n'
-									+ 'stat1: ' + (perk2.stat1/((perk2.wins+perk2.losses))).toString() + '\n'
-									+ 'stat2: ' + (perk2.stat2/((perk2.wins+perk2.losses))).toString() + '\n'
-									+ 'stat3: ' + (perk2.stat3/((perk2.wins+perk2.losses))).toString() + '\n');
-				sorceryTTT.push('Win Rate: '+((perk3.wins / (perk3.wins+perk3.losses))*100).toPrecision(4).toString()+ '%\n'
+									+ '\n' + '-Average Stats-'+'\n'
+									+ perk2.stat1_name + ': ' + (perk2.stat1/((perk2.wins+perk2.losses))).toString() + '\n';
+				if(perk2.stat2_name != "none"){
+					ins = ins + perk2.stat2_name + ': ' + (perk2.stat2/((perk2.wins+perk2.losses))).toString() + '\n';
+				}
+				if(perk2.stat3_name != "none"){
+					ins = ins + perk2.stat3_name + ': ' + (perk2.stat3/((perk2.wins+perk2.losses))).toString() + '\n';
+				}
+				sorceryTTT.push(ins);
+				///////////////////////rune 3///////////////////////
+				ins = perk3.name + '\n\n' + 'Win Rate: '+((perk3.wins / (perk3.wins+perk3.losses))*100).toPrecision(4).toString()+ '%\n'
 									+ 'Games Played: ' + ((perk3.wins+perk3.losses)).toString() + '\n'
-									+ 'stat1: ' + (perk3.stat1/((perk3.wins+perk3.losses))).toString() + '\n'
-									+ 'stat2: ' + (perk3.stat2/((perk3.wins+perk3.losses))).toString() + '\n'
-									+ 'stat3: ' + (perk3.stat3/((perk3.wins+perk3.losses))).toString() + '\n');
+									+ '\n' + '-Average Stats-'+'\n'
+									+ perk3.stat1_name + ': ' + (perk3.stat1/((perk3.wins+perk3.losses))).toString() + '\n';
+				if(perk3.stat2_name != "none"){
+					ins = ins + perk3.stat2_name + ': ' + (perk3.stat2/((perk3.wins+perk3.losses))).toString() + '\n';
+				}
+				if(perk3.stat3_name != "none"){
+					ins = ins + perk3.stat3_name + ': ' + (perk3.stat3/((perk3.wins+perk3.losses))).toString() + '\n';
+				}
+				sorceryTTT.push(ins);
 									
 				keystone = dominationTree.runes.keystone[i];
 				perk1 = dominationTree.runes.perk1[i];
 				perk2 = dominationTree.runes.perk2[i];
 				perk3 = dominationTree.runes.perk3[i];
 
-				dominationTTT.push('Win Rate: '+((keystone.wins / (keystone.wins+keystone.losses))*100).toPrecision(4).toString()+ '%\n'
+				/////////////////////key stone/////////////////////
+				ins = keystone.name + '\n\n' +'Win Rate: '+((keystone.wins / (keystone.wins+keystone.losses))*100).toPrecision(4).toString()+ '%\n'
 									+ 'Games Played: ' + ((keystone.wins+keystone.losses)).toString() + '\n'
-									+ 'stat1: ' + (keystone.stat1/((keystone.wins+keystone.losses))).toString() + '\n'
-									+ 'stat2: ' + (keystone.stat2/((keystone.wins+keystone.losses))).toString() + '\n'
-									+ 'stat3: ' + (keystone.stat3/((keystone.wins+keystone.losses))).toString() + '\n');
-				dominationTTT.push('Win Rate: '+((perk1.wins / (perk1.wins+perk1.losses))*100).toPrecision(4).toString()+ '%\n'
+									+ '\n' + '-Average Stats-' +'\n'
+									+ keystone.stat1_name + ': ' + (keystone.stat1/((keystone.wins+keystone.losses))).toString() + '\n';
+				if(keystone.stat2_name != "none"){
+					ins = ins + keystone.stat2_name + ': ' + (keystone.stat2/((keystone.wins+keystone.losses))).toString() + '\n';
+				}
+				if(keystone.stat3_name != "none"){
+					ins = ins + keystone.stat3_name + ': ' + (keystone.stat3/((keystone.wins+keystone.losses))).toString() + '\n';
+				}
+				dominationTTT.push(ins);
+
+				/////////////////////rune 1//////////////////////
+				ins = perk1.name + '\n\n' + 'Win Rate: '+((perk1.wins / (perk1.wins+perk1.losses))*100).toPrecision(4).toString()+ '%\n'
 									+ 'Games Played: ' + ((perk1.wins+perk1.losses)).toString() + '\n'
-									+ 'stat1: ' + (perk1.stat1/((perk1.wins+perk1.losses))).toString() + '\n'
-									+ 'stat2: ' + (perk1.stat2/((perk1.wins+perk1.losses))).toString() + '\n'
-									+ 'stat3: ' + (perk1.stat3/((perk1.wins+perk1.losses))).toString() + '\n');
-				dominationTTT.push('Win Rate: '+((perk2.wins / (perk2.wins+perk2.losses))*100).toPrecision(4).toString()+ '%\n'
+									+ '\n' + '-Average Stats-'+'\n'
+									+ perk1.stat1_name + ': ' + (perk1.stat1/((perk1.wins+perk1.losses))).toString() + '\n';
+				if(perk1.stat2_name != "none"){
+					ins = ins + perk1.stat2_name + ': ' + (perk1.stat2/((perk1.wins+perk1.losses))).toString() + '\n';
+				}
+				if(perk1.stat3_name != "none"){
+					ins = ins + perk1.stat3_name + ': ' + (perk1.stat3/((perk1.wins+perk1.losses))).toString() + '\n';
+				}
+				dominationTTT.push(ins);
+				////////////////////////rune 2/////////////////////
+				ins = perk2.name + '\n\n' + 'Win Rate: '+((perk2.wins / (perk2.wins+perk2.losses))*100).toPrecision(4).toString()+ '%\n'
 									+ 'Games Played: ' + ((perk2.wins+perk2.losses)).toString() + '\n'
-									+ 'stat1: ' + (perk2.stat1/((perk2.wins+perk2.losses))).toString() + '\n'
-									+ 'stat2: ' + (perk2.stat2/((perk2.wins+perk2.losses))).toString() + '\n'
-									+ 'stat3: ' + (perk2.stat3/((perk2.wins+perk2.losses))).toString() + '\n');
-				dominationTTT.push('Win Rate: '+((perk3.wins / (perk3.wins+perk3.losses))*100).toPrecision(4).toString()+ '%\n'
+									+ '\n' + '-Average Stats-'+'\n'
+									+ perk2.stat1_name + ': ' + (perk2.stat1/((perk2.wins+perk2.losses))).toString() + '\n';
+				if(perk2.stat2_name != "none"){
+					ins = ins + perk2.stat2_name + ': ' + (perk2.stat2/((perk2.wins+perk2.losses))).toString() + '\n';
+				}
+				if(perk2.stat3_name != "none"){
+					ins = ins + perk2.stat3_name + ': ' + (perk2.stat3/((perk2.wins+perk2.losses))).toString() + '\n';
+				}
+				dominationTTT.push(ins);
+				///////////////////////rune 3///////////////////////
+				ins = perk3.name + '\n\n' + 'Win Rate: '+((perk3.wins / (perk3.wins+perk3.losses))*100).toPrecision(4).toString()+ '%\n'
 									+ 'Games Played: ' + ((perk3.wins+perk3.losses)).toString() + '\n'
-									+ 'stat1: ' + (perk3.stat1/((perk3.wins+perk3.losses))).toString() + '\n'
-									+ 'stat2: ' + (perk3.stat2/((perk3.wins+perk3.losses))).toString() + '\n'
-									+ 'stat3: ' + (perk3.stat3/((perk3.wins+perk3.losses))).toString() + '\n');
+									+ '\n' + '-Average Stats-'+'\n'
+									+ perk3.stat1_name + ': ' + (perk3.stat1/((perk3.wins+perk3.losses))).toString() + '\n';
+				if(perk3.stat2_name != "none"){
+					ins = ins + perk3.stat2_name + ': ' + (perk3.stat2/((perk3.wins+perk3.losses))).toString() + '\n';
+				}
+				if(perk3.stat3_name != "none"){
+					ins = ins + perk3.stat3_name + ': ' + (perk3.stat3/((perk3.wins+perk3.losses))).toString() + '\n';
+				}
+				dominationTTT.push(ins);
 					
 				keystone = inspirationTree.runes.keystone[i];
 				perk1 = inspirationTree.runes.perk1[i];
 				perk2 = inspirationTree.runes.perk2[i];
 				perk3 = inspirationTree.runes.perk3[i];
 
-				inspirationTTT.push('Win Rate: '+((keystone.wins / (keystone.wins+keystone.losses))*100).toPrecision(4).toString()+ '%\n'
+				/////////////////////key stone/////////////////////
+				ins = keystone.name + '\n\n' +'Win Rate: '+((keystone.wins / (keystone.wins+keystone.losses))*100).toPrecision(4).toString()+ '%\n'
 									+ 'Games Played: ' + ((keystone.wins+keystone.losses)).toString() + '\n'
-									+ 'stat1: ' + (keystone.stat1/((keystone.wins+keystone.losses))).toString() + '\n'
-									+ 'stat2: ' + (keystone.stat2/((keystone.wins+keystone.losses))).toString() + '\n'
-									+ 'stat3: ' + (keystone.stat3/((keystone.wins+keystone.losses))).toString() + '\n');
-				inspirationTTT.push('Win Rate: '+((perk1.wins / (perk1.wins+perk1.losses))*100).toPrecision(4).toString()+ '%\n'
+									+ '\n' + '-Average Stats-' +'\n'
+									+ keystone.stat1_name + ': ' + (keystone.stat1/((keystone.wins+keystone.losses))).toString() + '\n';
+				if(keystone.stat2_name != "none"){
+					ins = ins + keystone.stat2_name + ': ' + (keystone.stat2/((keystone.wins+keystone.losses))).toString() + '\n';
+				}
+				if(keystone.stat3_name != "none"){
+					ins = ins + keystone.stat3_name + ': ' + (keystone.stat3/((keystone.wins+keystone.losses))).toString() + '\n';
+				}
+				inspirationTTT.push(ins);
+
+				/////////////////////rune 1//////////////////////
+				ins = perk1.name + '\n\n' + 'Win Rate: '+((perk1.wins / (perk1.wins+perk1.losses))*100).toPrecision(4).toString()+ '%\n'
 									+ 'Games Played: ' + ((perk1.wins+perk1.losses)).toString() + '\n'
-									+ 'stat1: ' + (perk1.stat1/((perk1.wins+perk1.losses))).toString() + '\n'
-									+ 'stat2: ' + (perk1.stat2/((perk1.wins+perk1.losses))).toString() + '\n'
-									+ 'stat3: ' + (perk1.stat3/((perk1.wins+perk1.losses))).toString() + '\n');
-				inspirationTTT.push('Win Rate: '+((perk2.wins / (perk2.wins+perk2.losses))*100).toPrecision(4).toString()+ '%\n'
+									+ '\n' + '-Average Stats-'+'\n'
+									+ perk1.stat1_name + ': ' + (perk1.stat1/((perk1.wins+perk1.losses))).toString() + '\n';
+				if(perk1.stat2_name != "none"){
+					ins = ins + perk1.stat2_name + ': ' + (perk1.stat2/((perk1.wins+perk1.losses))).toString() + '\n';
+				}
+				if(perk1.stat3_name != "none"){
+					ins = ins + perk1.stat3_name + ': ' + (perk1.stat3/((perk1.wins+perk1.losses))).toString() + '\n';
+				}
+				inspirationTTT.push(ins);
+				////////////////////////rune 2/////////////////////
+				ins = perk2.name + '\n\n' + 'Win Rate: '+((perk2.wins / (perk2.wins+perk2.losses))*100).toPrecision(4).toString()+ '%\n'
 									+ 'Games Played: ' + ((perk2.wins+perk2.losses)).toString() + '\n'
-									+ 'stat1: ' + (perk2.stat1/((perk2.wins+perk2.losses))).toString() + '\n'
-									+ 'stat2: ' + (perk2.stat2/((perk2.wins+perk2.losses))).toString() + '\n'
-									+ 'stat3: ' + (perk2.stat3/((perk2.wins+perk2.losses))).toString() + '\n');
-				inspirationTTT.push('Win Rate: '+((perk3.wins / (perk3.wins+perk3.losses))*100).toPrecision(4).toString()+ '%\n'
+									+ '\n' + '-Average Stats-'+'\n'
+									+ perk2.stat1_name + ': ' + (perk2.stat1/((perk2.wins+perk2.losses))).toString() + '\n';
+				if(perk2.stat2_name != "none"){
+					ins = ins + perk2.stat2_name + ': ' + (perk2.stat2/((perk2.wins+perk2.losses))).toString() + '\n';
+				}
+				if(perk2.stat3_name != "none"){
+					ins = ins + perk2.stat3_name + ': ' + (perk2.stat3/((perk2.wins+perk2.losses))).toString() + '\n';
+				}
+				inspirationTTT.push(ins);
+				///////////////////////rune 3///////////////////////
+				ins = perk3.name + '\n\n' + 'Win Rate: '+((perk3.wins / (perk3.wins+perk3.losses))*100).toPrecision(4).toString()+ '%\n'
 									+ 'Games Played: ' + ((perk3.wins+perk3.losses)).toString() + '\n'
-									+ 'stat1: ' + (perk3.stat1/((perk3.wins+perk3.losses))).toString() + '\n'
-									+ 'stat2: ' + (perk3.stat2/((perk3.wins+perk3.losses))).toString() + '\n'
-									+ 'stat3: ' + (perk3.stat3/((perk3.wins+perk3.losses))).toString() + '\n');
+									+ '\n' + '-Average Stats-'+'\n'
+									+ perk3.stat1_name + ': ' + (perk3.stat1/((perk3.wins+perk3.losses))).toString() + '\n';
+				if(perk3.stat2_name != "none"){
+					ins = ins + perk3.stat2_name + ': ' + (perk3.stat2/((perk3.wins+perk3.losses))).toString() + '\n';
+				}
+				if(perk3.stat3_name != "none"){
+					ins = ins + perk3.stat3_name + ': ' + (perk3.stat3/((perk3.wins+perk3.losses))).toString() + '\n';
+				}
+				inspirationTTT.push(ins);
 									
 				keystone = resolveTree.runes.keystone[i];
 				perk1 = resolveTree.runes.perk1[i];
 				perk2 = resolveTree.runes.perk2[i];
 				perk3 = resolveTree.runes.perk3[i];
 
-				resolveTTT.push('Win Rate: '+((keystone.wins / (keystone.wins+keystone.losses))*100).toPrecision(4).toString()+ '%\n'
+				/////////////////////key stone/////////////////////
+				ins = keystone.name + '\n\n' +'Win Rate: '+((keystone.wins / (keystone.wins+keystone.losses))*100).toPrecision(4).toString()+ '%\n'
 									+ 'Games Played: ' + ((keystone.wins+keystone.losses)).toString() + '\n'
-									+ 'stat1: ' + (keystone.stat1/((keystone.wins+keystone.losses))).toString() + '\n'
-									+ 'stat2: ' + (keystone.stat2/((keystone.wins+keystone.losses))).toString() + '\n'
-									+ 'stat3: ' + (keystone.stat3/((keystone.wins+keystone.losses))).toString() + '\n');
-				resolveTTT.push('Win Rate: '+((perk1.wins / (perk1.wins+perk1.losses))*100).toPrecision(4).toString()+ '%\n'
+									+ '\n' + '-Average Stats-' +'\n'
+									+ keystone.stat1_name + ': ' + (keystone.stat1/((keystone.wins+keystone.losses))).toString() + '\n';
+				if(keystone.stat2_name != "none"){
+					ins = ins + keystone.stat2_name + ': ' + (keystone.stat2/((keystone.wins+keystone.losses))).toString() + '\n';
+				}
+				if(keystone.stat3_name != "none"){
+					ins = ins + keystone.stat3_name + ': ' + (keystone.stat3/((keystone.wins+keystone.losses))).toString() + '\n';
+				}
+				resolveTTT.push(ins);
+
+				/////////////////////rune 1//////////////////////
+				ins = perk1.name + '\n\n' + 'Win Rate: '+((perk1.wins / (perk1.wins+perk1.losses))*100).toPrecision(4).toString()+ '%\n'
 									+ 'Games Played: ' + ((perk1.wins+perk1.losses)).toString() + '\n'
-									+ 'stat1: ' + (perk1.stat1/((perk1.wins+perk1.losses))).toString() + '\n'
-									+ 'stat2: ' + (perk1.stat2/((perk1.wins+perk1.losses))).toString() + '\n'
-									+ 'stat3: ' + (perk1.stat3/((perk1.wins+perk1.losses))).toString() + '\n');
-				resolveTTT.push('Win Rate: '+((perk2.wins / (perk2.wins+perk2.losses))*100).toPrecision(4).toString()+ '%\n'
+									+ '\n' + '-Average Stats-'+'\n'
+									+ perk1.stat1_name + ': ' + (perk1.stat1/((perk1.wins+perk1.losses))).toString() + '\n';
+				if(perk1.stat2_name != "none"){
+					ins = ins + perk1.stat2_name + ': ' + (perk1.stat2/((perk1.wins+perk1.losses))).toString() + '\n';
+				}
+				if(perk1.stat3_name != "none"){
+					ins = ins + perk1.stat3_name + ': ' + (perk1.stat3/((perk1.wins+perk1.losses))).toString() + '\n';
+				}
+				resolveTTT.push(ins);
+				////////////////////////rune 2/////////////////////
+				ins = perk2.name + '\n\n' + 'Win Rate: '+((perk2.wins / (perk2.wins+perk2.losses))*100).toPrecision(4).toString()+ '%\n'
 									+ 'Games Played: ' + ((perk2.wins+perk2.losses)).toString() + '\n'
-									+ 'stat1: ' + (perk2.stat1/((perk2.wins+perk2.losses))).toString() + '\n'
-									+ 'stat2: ' + (perk2.stat2/((perk2.wins+perk2.losses))).toString() + '\n'
-									+ 'stat3: ' + (perk2.stat3/((perk2.wins+perk2.losses))).toString() + '\n');
-				resolveTTT.push('Win Rate: '+((perk3.wins / (perk3.wins+perk3.losses))*100).toPrecision(4).toString()+ '%\n'
+									+ '\n' + '-Average Stats-'+'\n'
+									+ perk2.stat1_name + ': ' + (perk2.stat1/((perk2.wins+perk2.losses))).toString() + '\n';
+				if(perk2.stat2_name != "none"){
+					ins = ins + perk2.stat2_name + ': ' + (perk2.stat2/((perk2.wins+perk2.losses))).toString() + '\n';
+				}
+				if(perk2.stat3_name != "none"){
+					ins = ins + perk2.stat3_name + ': ' + (perk2.stat3/((perk2.wins+perk2.losses))).toString() + '\n';
+				}
+				resolveTTT.push(ins);
+				///////////////////////rune 3///////////////////////
+				ins = perk3.name + '\n\n' + 'Win Rate: '+((perk3.wins / (perk3.wins+perk3.losses))*100).toPrecision(4).toString()+ '%\n'
 									+ 'Games Played: ' + ((perk3.wins+perk3.losses)).toString() + '\n'
-									+ 'stat1: ' + (perk3.stat1/((perk3.wins+perk3.losses))).toString() + '\n'
-									+ 'stat2: ' + (perk3.stat2/((perk3.wins+perk3.losses))).toString() + '\n'
-									+ 'stat3: ' + (perk3.stat3/((perk3.wins+perk3.losses))).toString() + '\n');
+									+ '\n' + '-Average Stats-'+'\n'
+									+ perk3.stat1_name + ': ' + (perk3.stat1/((perk3.wins+perk3.losses))).toString() + '\n';
+				if(perk3.stat2_name != "none"){
+					ins = ins + perk3.stat2_name + ': ' + (perk3.stat2/((perk3.wins+perk3.losses))).toString() + '\n';
+				}
+				if(perk3.stat3_name != "none"){
+					ins = ins + perk3.stat3_name + ': ' + (perk3.stat3/((perk3.wins+perk3.losses))).toString() + '\n';
+				}
+				resolveTTT.push(ins)
 			}
 			var pRank =[];
 			var	sRank =[];
@@ -1035,136 +1331,284 @@ module.exports = function (app,path, ourModel) {
 				inspirationPerk3 += (tmp.wins+tmp.loses);
 			}
 			for(i =0; i < 3; i++){
+				/////////////////////PRECISION////////////////////
 				var keystone = precisionTree.runes.keystone[i];
-			    //here you can pull keystone.wins, keystone.losses, keystone.stat1,stat2,stat3, id
+			   	//here you can pull keystone.wins, keystone.losses, keystone.stat1,stat2,stat3, id
 				var perk1 = precisionTree.runes.perk1[i];
 				var perk2 = precisionTree.runes.perk2[i];
 				var perk3 = precisionTree.runes.perk3[i];
-
-				precisionTTT.push('Win Rate: '+((keystone.wins / (keystone.wins+keystone.losses))*100).toPrecision(4).toString()+ '%\n'
-									+ 'Games Played: ' + ((keystone.wins+keystone.losses)).toString() + '\n'
-									+ 'stat1: ' + (keystone.stat1/((keystone.wins+keystone.losses))).toString() + '\n'
-									+ 'stat2: ' + (keystone.stat2/((keystone.wins+keystone.losses))).toString() + '\n'
-									+ 'stat3: ' + (keystone.stat3/((keystone.wins+keystone.losses))).toString() + '\n');
-				precisionTTT.push('Win Rate: '+((perk1.wins / (perk1.wins+perk1.losses))*100).toPrecision(4).toString()+ '%\n'
-									+ 'Games Played: ' + ((perk1.wins+perk1.losses)).toString() + '\n'
-									+ 'stat1: ' + (perk1.stat1/((perk1.wins+perk1.losses))).toString() + '\n'
-									+ 'stat2: ' + (perk1.stat2/((perk1.wins+perk1.losses))).toString() + '\n'
-									+ 'stat3: ' + (perk1.stat3/((perk1.wins+perk1.losses))).toString() + '\n');
-				precisionTTT.push('Win Rate: '+((perk2.wins / (perk2.wins+perk2.losses))*100).toPrecision(4).toString()+ '%\n'
-									+ 'Games Played: ' + ((perk2.wins+perk2.losses)).toString() + '\n'
-									+ 'stat1: ' + (perk2.stat1/((perk2.wins+perk2.losses))).toString() + '\n'
-									+ 'stat2: ' + (perk2.stat2/((perk2.wins+perk2.losses))).toString() + '\n'
-									+ 'stat3: ' + (perk2.stat3/((perk2.wins+perk2.losses))).toString() + '\n');
-				precisionTTT.push('Win Rate: '+((perk3.wins / (perk3.wins+perk3.losses))*100).toPrecision(4).toString()+ '%\n'
-									+ 'Games Played: ' + ((perk3.wins+perk3.losses)).toString() + '\n'
-									+ 'stat1: ' + (perk3.stat1/((perk3.wins+perk3.losses))).toString() + '\n'
-									+ 'stat2: ' + (perk3.stat2/((perk3.wins+perk3.losses))).toString() + '\n'
-									+ 'stat3: ' + (perk3.stat3/((perk3.wins+perk3.losses))).toString() + '\n');
 				
+				/////////////////////key stone/////////////////////
+				var ins = keystone.name + '\n\n' +'Win Rate: '+((keystone.wins / (keystone.wins+keystone.losses))*100).toPrecision(4).toString()+ '%\n'
+									+ 'Games Played: ' + ((keystone.wins+keystone.losses)).toString() + '\n'
+									+ '\n' + '-Average Stats-' +'\n'
+									+ keystone.stat1_name + ': ' + (keystone.stat1/((keystone.wins+keystone.losses))).toString() + '\n';
+				if(keystone.stat2_name != "none"){
+					ins = ins + keystone.stat2_name + ': ' + (keystone.stat2/((keystone.wins+keystone.losses))).toString() + '\n';
+				}
+				if(keystone.stat3_name != "none"){
+					ins = ins + keystone.stat3_name + ': ' + (keystone.stat3/((keystone.wins+keystone.losses))).toString() + '\n';
+				}
+				precisionTTT.push(ins);
+
+				/////////////////////rune 1//////////////////////
+				ins = perk1.name + '\n\n' + 'Win Rate: '+((perk1.wins / (perk1.wins+perk1.losses))*100).toPrecision(4).toString()+ '%\n'
+									+ 'Games Played: ' + ((perk1.wins+perk1.losses)).toString() + '\n'
+									+ '\n' + '-Average Stats-'+'\n'
+									+ perk1.stat1_name + ': ' + (perk1.stat1/((perk1.wins+perk1.losses))).toString() + '\n';
+				if(perk1.stat2_name != "none"){
+					ins = ins + perk1.stat2_name + ': ' + (perk1.stat2/((perk1.wins+perk1.losses))).toString() + '\n';
+				}
+				if(perk1.stat3_name != "none"){
+					ins = ins + perk1.stat3_name + ': ' + (perk1.stat3/((perk1.wins+perk1.losses))).toString() + '\n';
+				}
+				precisionTTT.push(ins);
+				////////////////////////rune 2/////////////////////
+				ins = perk2.name + '\n\n' + 'Win Rate: '+((perk2.wins / (perk2.wins+perk2.losses))*100).toPrecision(4).toString()+ '%\n'
+									+ 'Games Played: ' + ((perk2.wins+perk2.losses)).toString() + '\n'
+									+ '\n' + '-Average Stats-'+'\n'
+									+ perk2.stat1_name + ': ' + (perk2.stat1/((perk2.wins+perk2.losses))).toString() + '\n';
+				if(perk2.stat2_name != "none"){
+					ins = ins + perk2.stat2_name + ': ' + (perk2.stat2/((perk2.wins+perk2.losses))).toString() + '\n';
+				}
+				if(perk2.stat3_name != "none"){
+					ins = ins + perk2.stat3_name + ': ' + (perk2.stat3/((perk2.wins+perk2.losses))).toString() + '\n';
+				}
+				precisionTTT.push(ins);
+				///////////////////////rune 3///////////////////////
+				ins = perk3.name + '\n\n' + 'Win Rate: '+((perk3.wins / (perk3.wins+perk3.losses))*100).toPrecision(4).toString()+ '%\n'
+									+ 'Games Played: ' + ((perk3.wins+perk3.losses)).toString() + '\n'
+									+ '\n' + '-Average Stats-'+'\n'
+									+ perk3.stat1_name + ': ' + (perk3.stat1/((perk3.wins+perk3.losses))).toString() + '\n';
+				if(perk3.stat2_name != "none"){
+					ins = ins + perk3.stat2_name + ': ' + (perk3.stat2/((perk3.wins+perk3.losses))).toString() + '\n';
+				}
+				if(perk3.stat3_name != "none"){
+					ins = ins + perk3.stat3_name + ': ' + (perk3.stat3/((perk3.wins+perk3.losses))).toString() + '\n';
+				}
+				precisionTTT.push(ins);
+				
+
+				/////////////////////SORCERY////////////////////////
 				keystone = sorceryTree.runes.keystone[i];
 				perk1 = sorceryTree.runes.perk1[i];
 				perk2 = sorceryTree.runes.perk2[i];
 				perk3 = sorceryTree.runes.perk3[i];
 
-				sorceryTTT.push('Win Rate: '+((keystone.wins / (keystone.wins+keystone.losses))*100).toPrecision(4).toString()+ '%\n'
+				/////////////////////key stone/////////////////////
+				ins = keystone.name + '\n\n' +'Win Rate: '+((keystone.wins / (keystone.wins+keystone.losses))*100).toPrecision(4).toString()+ '%\n'
 									+ 'Games Played: ' + ((keystone.wins+keystone.losses)).toString() + '\n'
-									+ 'stat1: ' + (keystone.stat1/((keystone.wins+keystone.losses))).toString() + '\n'
-									+ 'stat2: ' + (keystone.stat2/((keystone.wins+keystone.losses))).toString() + '\n'
-									+ 'stat3: ' + (keystone.stat3/((keystone.wins+keystone.losses))).toString() + '\n');
-				sorceryTTT.push('Win Rate: '+((perk1.wins / (perk1.wins+perk1.losses))*100).toPrecision(4).toString()+ '%\n'
+									+ '\n' + '-Average Stats-' +'\n'
+									+ keystone.stat1_name + ': ' + (keystone.stat1/((keystone.wins+keystone.losses))).toString() + '\n';
+				if(keystone.stat2_name != "none"){
+					ins = ins + keystone.stat2_name + ': ' + (keystone.stat2/((keystone.wins+keystone.losses))).toString() + '\n';
+				}
+				if(keystone.stat3_name != "none"){
+					ins = ins + keystone.stat3_name + ': ' + (keystone.stat3/((keystone.wins+keystone.losses))).toString() + '\n';
+				}
+				sorceryTTT.push(ins);
+
+				/////////////////////rune 1//////////////////////
+				ins = perk1.name + '\n\n' + 'Win Rate: '+((perk1.wins / (perk1.wins+perk1.losses))*100).toPrecision(4).toString()+ '%\n'
 									+ 'Games Played: ' + ((perk1.wins+perk1.losses)).toString() + '\n'
-									+ 'stat1: ' + (perk1.stat1/((perk1.wins+perk1.losses))).toString() + '\n'
-									+ 'stat2: ' + (perk1.stat2/((perk1.wins+perk1.losses))).toString() + '\n'
-									+ 'stat3: ' + (perk1.stat3/((perk1.wins+perk1.losses))).toString() + '\n');
-				sorceryTTT.push('Win Rate: '+((perk2.wins / (perk2.wins+perk2.losses))*100).toPrecision(4).toString()+ '%\n'
+									+ '\n' + '-Average Stats-'+'\n'
+									+ perk1.stat1_name + ': ' + (perk1.stat1/((perk1.wins+perk1.losses))).toString() + '\n';
+				if(perk1.stat2_name != "none"){
+					ins = ins + perk1.stat2_name + ': ' + (perk1.stat2/((perk1.wins+perk1.losses))).toString() + '\n';
+				}
+				if(perk1.stat3_name != "none"){
+					ins = ins + perk1.stat3_name + ': ' + (perk1.stat3/((perk1.wins+perk1.losses))).toString() + '\n';
+				}
+				sorceryTTT.push(ins);
+				////////////////////////rune 2/////////////////////
+				ins = perk2.name + '\n\n' + 'Win Rate: '+((perk2.wins / (perk2.wins+perk2.losses))*100).toPrecision(4).toString()+ '%\n'
 									+ 'Games Played: ' + ((perk2.wins+perk2.losses)).toString() + '\n'
-									+ 'stat1: ' + (perk2.stat1/((perk2.wins+perk2.losses))).toString() + '\n'
-									+ 'stat2: ' + (perk2.stat2/((perk2.wins+perk2.losses))).toString() + '\n'
-									+ 'stat3: ' + (perk2.stat3/((perk2.wins+perk2.losses))).toString() + '\n');
-				sorceryTTT.push('Win Rate: '+((perk3.wins / (perk3.wins+perk3.losses))*100).toPrecision(4).toString()+ '%\n'
+									+ '\n' + '-Average Stats-'+'\n'
+									+ perk2.stat1_name + ': ' + (perk2.stat1/((perk2.wins+perk2.losses))).toString() + '\n';
+				if(perk2.stat2_name != "none"){
+					ins = ins + perk2.stat2_name + ': ' + (perk2.stat2/((perk2.wins+perk2.losses))).toString() + '\n';
+				}
+				if(perk2.stat3_name != "none"){
+					ins = ins + perk2.stat3_name + ': ' + (perk2.stat3/((perk2.wins+perk2.losses))).toString() + '\n';
+				}
+				sorceryTTT.push(ins);
+				///////////////////////rune 3///////////////////////
+				ins = perk3.name + '\n\n' + 'Win Rate: '+((perk3.wins / (perk3.wins+perk3.losses))*100).toPrecision(4).toString()+ '%\n'
 									+ 'Games Played: ' + ((perk3.wins+perk3.losses)).toString() + '\n'
-									+ 'stat1: ' + (perk3.stat1/((perk3.wins+perk3.losses))).toString() + '\n'
-									+ 'stat2: ' + (perk3.stat2/((perk3.wins+perk3.losses))).toString() + '\n'
-									+ 'stat3: ' + (perk3.stat3/((perk3.wins+perk3.losses))).toString() + '\n');
+									+ '\n' + '-Average Stats-'+'\n'
+									+ perk3.stat1_name + ': ' + (perk3.stat1/((perk3.wins+perk3.losses))).toString() + '\n';
+				if(perk3.stat2_name != "none"){
+					ins = ins + perk3.stat2_name + ': ' + (perk3.stat2/((perk3.wins+perk3.losses))).toString() + '\n';
+				}
+				if(perk3.stat3_name != "none"){
+					ins = ins + perk3.stat3_name + ': ' + (perk3.stat3/((perk3.wins+perk3.losses))).toString() + '\n';
+				}
+				sorceryTTT.push(ins);
 									
 				keystone = dominationTree.runes.keystone[i];
 				perk1 = dominationTree.runes.perk1[i];
 				perk2 = dominationTree.runes.perk2[i];
 				perk3 = dominationTree.runes.perk3[i];
 
-				dominationTTT.push('Win Rate: '+((keystone.wins / (keystone.wins+keystone.losses))*100).toPrecision(4).toString()+ '%\n'
+				/////////////////////key stone/////////////////////
+				ins = keystone.name + '\n\n' +'Win Rate: '+((keystone.wins / (keystone.wins+keystone.losses))*100).toPrecision(4).toString()+ '%\n'
 									+ 'Games Played: ' + ((keystone.wins+keystone.losses)).toString() + '\n'
-									+ 'stat1: ' + (keystone.stat1/((keystone.wins+keystone.losses))).toString() + '\n'
-									+ 'stat2: ' + (keystone.stat2/((keystone.wins+keystone.losses))).toString() + '\n'
-									+ 'stat3: ' + (keystone.stat3/((keystone.wins+keystone.losses))).toString() + '\n');
-				dominationTTT.push('Win Rate: '+((perk1.wins / (perk1.wins+perk1.losses))*100).toPrecision(4).toString()+ '%\n'
+									+ '\n' + '-Average Stats-' +'\n'
+									+ keystone.stat1_name + ': ' + (keystone.stat1/((keystone.wins+keystone.losses))).toString() + '\n';
+				if(keystone.stat2_name != "none"){
+					ins = ins + keystone.stat2_name + ': ' + (keystone.stat2/((keystone.wins+keystone.losses))).toString() + '\n';
+				}
+				if(keystone.stat3_name != "none"){
+					ins = ins + keystone.stat3_name + ': ' + (keystone.stat3/((keystone.wins+keystone.losses))).toString() + '\n';
+				}
+				dominationTTT.push(ins);
+
+				/////////////////////rune 1//////////////////////
+				ins = perk1.name + '\n\n' + 'Win Rate: '+((perk1.wins / (perk1.wins+perk1.losses))*100).toPrecision(4).toString()+ '%\n'
 									+ 'Games Played: ' + ((perk1.wins+perk1.losses)).toString() + '\n'
-									+ 'stat1: ' + (perk1.stat1/((perk1.wins+perk1.losses))).toString() + '\n'
-									+ 'stat2: ' + (perk1.stat2/((perk1.wins+perk1.losses))).toString() + '\n'
-									+ 'stat3: ' + (perk1.stat3/((perk1.wins+perk1.losses))).toString() + '\n');
-				dominationTTT.push('Win Rate: '+((perk2.wins / (perk2.wins+perk2.losses))*100).toPrecision(4).toString()+ '%\n'
+									+ '\n' + '-Average Stats-'+'\n'
+									+ perk1.stat1_name + ': ' + (perk1.stat1/((perk1.wins+perk1.losses))).toString() + '\n';
+				if(perk1.stat2_name != "none"){
+					ins = ins + perk1.stat2_name + ': ' + (perk1.stat2/((perk1.wins+perk1.losses))).toString() + '\n';
+				}
+				if(perk1.stat3_name != "none"){
+					ins = ins + perk1.stat3_name + ': ' + (perk1.stat3/((perk1.wins+perk1.losses))).toString() + '\n';
+				}
+				dominationTTT.push(ins);
+				////////////////////////rune 2/////////////////////
+				ins = perk2.name + '\n\n' + 'Win Rate: '+((perk2.wins / (perk2.wins+perk2.losses))*100).toPrecision(4).toString()+ '%\n'
 									+ 'Games Played: ' + ((perk2.wins+perk2.losses)).toString() + '\n'
-									+ 'stat1: ' + (perk2.stat1/((perk2.wins+perk2.losses))).toString() + '\n'
-									+ 'stat2: ' + (perk2.stat2/((perk2.wins+perk2.losses))).toString() + '\n'
-									+ 'stat3: ' + (perk2.stat3/((perk2.wins+perk2.losses))).toString() + '\n');
-				dominationTTT.push('Win Rate: '+((perk3.wins / (perk3.wins+perk3.losses))*100).toPrecision(4).toString()+ '%\n'
+									+ '\n' + '-Average Stats-'+'\n'
+									+ perk2.stat1_name + ': ' + (perk2.stat1/((perk2.wins+perk2.losses))).toString() + '\n';
+				if(perk2.stat2_name != "none"){
+					ins = ins + perk2.stat2_name + ': ' + (perk2.stat2/((perk2.wins+perk2.losses))).toString() + '\n';
+				}
+				if(perk2.stat3_name != "none"){
+					ins = ins + perk2.stat3_name + ': ' + (perk2.stat3/((perk2.wins+perk2.losses))).toString() + '\n';
+				}
+				dominationTTT.push(ins);
+				///////////////////////rune 3///////////////////////
+				ins = perk3.name + '\n\n' + 'Win Rate: '+((perk3.wins / (perk3.wins+perk3.losses))*100).toPrecision(4).toString()+ '%\n'
 									+ 'Games Played: ' + ((perk3.wins+perk3.losses)).toString() + '\n'
-									+ 'stat1: ' + (perk3.stat1/((perk3.wins+perk3.losses))).toString() + '\n'
-									+ 'stat2: ' + (perk3.stat2/((perk3.wins+perk3.losses))).toString() + '\n'
-									+ 'stat3: ' + (perk3.stat3/((perk3.wins+perk3.losses))).toString() + '\n');
+									+ '\n' + '-Average Stats-'+'\n'
+									+ perk3.stat1_name + ': ' + (perk3.stat1/((perk3.wins+perk3.losses))).toString() + '\n';
+				if(perk3.stat2_name != "none"){
+					ins = ins + perk3.stat2_name + ': ' + (perk3.stat2/((perk3.wins+perk3.losses))).toString() + '\n';
+				}
+				if(perk3.stat3_name != "none"){
+					ins = ins + perk3.stat3_name + ': ' + (perk3.stat3/((perk3.wins+perk3.losses))).toString() + '\n';
+				}
+				dominationTTT.push(ins);
 					
 				keystone = inspirationTree.runes.keystone[i];
 				perk1 = inspirationTree.runes.perk1[i];
 				perk2 = inspirationTree.runes.perk2[i];
 				perk3 = inspirationTree.runes.perk3[i];
 
-				inspirationTTT.push('Win Rate: '+((keystone.wins / (keystone.wins+keystone.losses))*100).toPrecision(4).toString()+ '%\n'
+				/////////////////////key stone/////////////////////
+				ins = keystone.name + '\n\n' +'Win Rate: '+((keystone.wins / (keystone.wins+keystone.losses))*100).toPrecision(4).toString()+ '%\n'
 									+ 'Games Played: ' + ((keystone.wins+keystone.losses)).toString() + '\n'
-									+ 'stat1: ' + (keystone.stat1/((keystone.wins+keystone.losses))).toString() + '\n'
-									+ 'stat2: ' + (keystone.stat2/((keystone.wins+keystone.losses))).toString() + '\n'
-									+ 'stat3: ' + (keystone.stat3/((keystone.wins+keystone.losses))).toString() + '\n');
-				inspirationTTT.push('Win Rate: '+((perk1.wins / (perk1.wins+perk1.losses))*100).toPrecision(4).toString()+ '%\n'
+									+ '\n' + '-Average Stats-' +'\n'
+									+ keystone.stat1_name + ': ' + (keystone.stat1/((keystone.wins+keystone.losses))).toString() + '\n';
+				if(keystone.stat2_name != "none"){
+					ins = ins + keystone.stat2_name + ': ' + (keystone.stat2/((keystone.wins+keystone.losses))).toString() + '\n';
+				}
+				if(keystone.stat3_name != "none"){
+					ins = ins + keystone.stat3_name + ': ' + (keystone.stat3/((keystone.wins+keystone.losses))).toString() + '\n';
+				}
+				inspirationTTT.push(ins);
+
+				/////////////////////rune 1//////////////////////
+				ins = perk1.name + '\n\n' + 'Win Rate: '+((perk1.wins / (perk1.wins+perk1.losses))*100).toPrecision(4).toString()+ '%\n'
 									+ 'Games Played: ' + ((perk1.wins+perk1.losses)).toString() + '\n'
-									+ 'stat1: ' + (perk1.stat1/((perk1.wins+perk1.losses))).toString() + '\n'
-									+ 'stat2: ' + (perk1.stat2/((perk1.wins+perk1.losses))).toString() + '\n'
-									+ 'stat3: ' + (perk1.stat3/((perk1.wins+perk1.losses))).toString() + '\n');
-				inspirationTTT.push('Win Rate: '+((perk2.wins / (perk2.wins+perk2.losses))*100).toPrecision(4).toString()+ '%\n'
+									+ '\n' + '-Average Stats-'+'\n'
+									+ perk1.stat1_name + ': ' + (perk1.stat1/((perk1.wins+perk1.losses))).toString() + '\n';
+				if(perk1.stat2_name != "none"){
+					ins = ins + perk1.stat2_name + ': ' + (perk1.stat2/((perk1.wins+perk1.losses))).toString() + '\n';
+				}
+				if(perk1.stat3_name != "none"){
+					ins = ins + perk1.stat3_name + ': ' + (perk1.stat3/((perk1.wins+perk1.losses))).toString() + '\n';
+				}
+				inspirationTTT.push(ins);
+				////////////////////////rune 2/////////////////////
+				ins = perk2.name + '\n\n' + 'Win Rate: '+((perk2.wins / (perk2.wins+perk2.losses))*100).toPrecision(4).toString()+ '%\n'
 									+ 'Games Played: ' + ((perk2.wins+perk2.losses)).toString() + '\n'
-									+ 'stat1: ' + (perk2.stat1/((perk2.wins+perk2.losses))).toString() + '\n'
-									+ 'stat2: ' + (perk2.stat2/((perk2.wins+perk2.losses))).toString() + '\n'
-									+ 'stat3: ' + (perk2.stat3/((perk2.wins+perk2.losses))).toString() + '\n');
-				inspirationTTT.push('Win Rate: '+((perk3.wins / (perk3.wins+perk3.losses))*100).toPrecision(4).toString()+ '%\n'
+									+ '\n' + '-Average Stats-'+'\n'
+									+ perk2.stat1_name + ': ' + (perk2.stat1/((perk2.wins+perk2.losses))).toString() + '\n';
+				if(perk2.stat2_name != "none"){
+					ins = ins + perk2.stat2_name + ': ' + (perk2.stat2/((perk2.wins+perk2.losses))).toString() + '\n';
+				}
+				if(perk2.stat3_name != "none"){
+					ins = ins + perk2.stat3_name + ': ' + (perk2.stat3/((perk2.wins+perk2.losses))).toString() + '\n';
+				}
+				inspirationTTT.push(ins);
+				///////////////////////rune 3///////////////////////
+				ins = perk3.name + '\n\n' + 'Win Rate: '+((perk3.wins / (perk3.wins+perk3.losses))*100).toPrecision(4).toString()+ '%\n'
 									+ 'Games Played: ' + ((perk3.wins+perk3.losses)).toString() + '\n'
-									+ 'stat1: ' + (perk3.stat1/((perk3.wins+perk3.losses))).toString() + '\n'
-									+ 'stat2: ' + (perk3.stat2/((perk3.wins+perk3.losses))).toString() + '\n'
-									+ 'stat3: ' + (perk3.stat3/((perk3.wins+perk3.losses))).toString() + '\n');
+									+ '\n' + '-Average Stats-'+'\n'
+									+ perk3.stat1_name + ': ' + (perk3.stat1/((perk3.wins+perk3.losses))).toString() + '\n';
+				if(perk3.stat2_name != "none"){
+					ins = ins + perk3.stat2_name + ': ' + (perk3.stat2/((perk3.wins+perk3.losses))).toString() + '\n';
+				}
+				if(perk3.stat3_name != "none"){
+					ins = ins + perk3.stat3_name + ': ' + (perk3.stat3/((perk3.wins+perk3.losses))).toString() + '\n';
+				}
+				inspirationTTT.push(ins);
 									
 				keystone = resolveTree.runes.keystone[i];
 				perk1 = resolveTree.runes.perk1[i];
 				perk2 = resolveTree.runes.perk2[i];
 				perk3 = resolveTree.runes.perk3[i];
 
-				resolveTTT.push('Win Rate: '+((keystone.wins / (keystone.wins+keystone.losses))*100).toPrecision(4).toString()+ '%\n'
+				/////////////////////key stone/////////////////////
+				ins = keystone.name + '\n\n' +'Win Rate: '+((keystone.wins / (keystone.wins+keystone.losses))*100).toPrecision(4).toString()+ '%\n'
 									+ 'Games Played: ' + ((keystone.wins+keystone.losses)).toString() + '\n'
-									+ 'stat1: ' + (keystone.stat1/((keystone.wins+keystone.losses))).toString() + '\n'
-									+ 'stat2: ' + (keystone.stat2/((keystone.wins+keystone.losses))).toString() + '\n'
-									+ 'stat3: ' + (keystone.stat3/((keystone.wins+keystone.losses))).toString() + '\n');
-				resolveTTT.push('Win Rate: '+((perk1.wins / (perk1.wins+perk1.losses))*100).toPrecision(4).toString()+ '%\n'
+									+ '\n' + '-Average Stats-' +'\n'
+									+ keystone.stat1_name + ': ' + (keystone.stat1/((keystone.wins+keystone.losses))).toString() + '\n';
+				if(keystone.stat2_name != "none"){
+					ins = ins + keystone.stat2_name + ': ' + (keystone.stat2/((keystone.wins+keystone.losses))).toString() + '\n';
+				}
+				if(keystone.stat3_name != "none"){
+					ins = ins + keystone.stat3_name + ': ' + (keystone.stat3/((keystone.wins+keystone.losses))).toString() + '\n';
+				}
+				resolveTTT.push(ins);
+
+				/////////////////////rune 1//////////////////////
+				ins = perk1.name + '\n\n' + 'Win Rate: '+((perk1.wins / (perk1.wins+perk1.losses))*100).toPrecision(4).toString()+ '%\n'
 									+ 'Games Played: ' + ((perk1.wins+perk1.losses)).toString() + '\n'
-									+ 'stat1: ' + (perk1.stat1/((perk1.wins+perk1.losses))).toString() + '\n'
-									+ 'stat2: ' + (perk1.stat2/((perk1.wins+perk1.losses))).toString() + '\n'
-									+ 'stat3: ' + (perk1.stat3/((perk1.wins+perk1.losses))).toString() + '\n');
-				resolveTTT.push('Win Rate: '+((perk2.wins / (perk2.wins+perk2.losses))*100).toPrecision(4).toString()+ '%\n'
+									+ '\n' + '-Average Stats-'+'\n'
+									+ perk1.stat1_name + ': ' + (perk1.stat1/((perk1.wins+perk1.losses))).toString() + '\n';
+				if(perk1.stat2_name != "none"){
+					ins = ins + perk1.stat2_name + ': ' + (perk1.stat2/((perk1.wins+perk1.losses))).toString() + '\n';
+				}
+				if(perk1.stat3_name != "none"){
+					ins = ins + perk1.stat3_name + ': ' + (perk1.stat3/((perk1.wins+perk1.losses))).toString() + '\n';
+				}
+				resolveTTT.push(ins);
+				////////////////////////rune 2/////////////////////
+				ins = perk2.name + '\n\n' + 'Win Rate: '+((perk2.wins / (perk2.wins+perk2.losses))*100).toPrecision(4).toString()+ '%\n'
 									+ 'Games Played: ' + ((perk2.wins+perk2.losses)).toString() + '\n'
-									+ 'stat1: ' + (perk2.stat1/((perk2.wins+perk2.losses))).toString() + '\n'
-									+ 'stat2: ' + (perk2.stat2/((perk2.wins+perk2.losses))).toString() + '\n'
-									+ 'stat3: ' + (perk2.stat3/((perk2.wins+perk2.losses))).toString() + '\n');
-				resolveTTT.push('Win Rate: '+((perk3.wins / (perk3.wins+perk3.losses))*100).toPrecision(4).toString()+ '%\n'
+									+ '\n' + '-Average Stats-'+'\n'
+									+ perk2.stat1_name + ': ' + (perk2.stat1/((perk2.wins+perk2.losses))).toString() + '\n';
+				if(perk2.stat2_name != "none"){
+					ins = ins + perk2.stat2_name + ': ' + (perk2.stat2/((perk2.wins+perk2.losses))).toString() + '\n';
+				}
+				if(perk2.stat3_name != "none"){
+					ins = ins + perk2.stat3_name + ': ' + (perk2.stat3/((perk2.wins+perk2.losses))).toString() + '\n';
+				}
+				resolveTTT.push(ins);
+				///////////////////////rune 3///////////////////////
+				ins = perk3.name + '\n\n' + 'Win Rate: '+((perk3.wins / (perk3.wins+perk3.losses))*100).toPrecision(4).toString()+ '%\n'
 									+ 'Games Played: ' + ((perk3.wins+perk3.losses)).toString() + '\n'
-									+ 'stat1: ' + (perk3.stat1/((perk3.wins+perk3.losses))).toString() + '\n'
-									+ 'stat2: ' + (perk3.stat2/((perk3.wins+perk3.losses))).toString() + '\n'
-									+ 'stat3: ' + (perk3.stat3/((perk3.wins+perk3.losses))).toString() + '\n');
+									+ '\n' + '-Average Stats-'+'\n'
+									+ perk3.stat1_name + ': ' + (perk3.stat1/((perk3.wins+perk3.losses))).toString() + '\n';
+				if(perk3.stat2_name != "none"){
+					ins = ins + perk3.stat2_name + ': ' + (perk3.stat2/((perk3.wins+perk3.losses))).toString() + '\n';
+				}
+				if(perk3.stat3_name != "none"){
+					ins = ins + perk3.stat3_name + ': ' + (perk3.stat3/((perk3.wins+perk3.losses))).toString() + '\n';
+				}
+				resolveTTT.push(ins)
 			}
 			var pRank =[];
 			var	sRank =[];

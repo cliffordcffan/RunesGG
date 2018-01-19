@@ -39,11 +39,16 @@ var runeModel = mongoose.model('RunesReforged',runeSchema);
 var perkSchema = new Schema(
   {
     id:{type:String},
+    name:{type:String},
+    desc:{type:String},
     wins:{type:Number, default:0},
     losses:{type:Number, default:0},
     stat1:{type:Number, default:0},
     stat2:{type:Number, default:0},
-    stat3:{type:Number, default:0}
+    stat3:{type:Number, default:0},
+    stat1_name:{type:String},
+    stat2_name:{type:String},
+    stat3_name:{type:String}
   }
 );
 var treeSchema = new Schema(
@@ -80,6 +85,8 @@ var tempModel = mongoose.model('FoundPlayers', new Schema({accountid:{type:Numbe
 //////////////Commented out after seeding into db///////////
 //clean database for testing purposes
 //ourModel.remove({},function(err){});
+//matchModel.remove({},function(err){});
+//tempModel.remove({},function(err){});
 
 //parse riot api champion list and send to new champ list
 //require('./app/parseChampions.js')(champModel,ourModel);
@@ -89,15 +96,18 @@ var tempModel = mongoose.model('FoundPlayers', new Schema({accountid:{type:Numbe
 
 //parse set of matches
 //tempModel.remove({},function(err){});
-var apiKey = 'RGAPI-5c5768f1-1789-4c65-9cb7-17b689fef1e7';
+var apiKey = 'RGAPI-f5f939db-3934-4d05-8a7f-edc5a23343e8';
 var matchLink = 'https://na1.api.riotgames.com/lol/league/v3/challengerleagues/by-queue/RANKED_SOLO_5x5?api_key='+apiKey;
 var request = require('request');
 /*
 var data;
 request(matchLink,function(err,res,body){
 	if(!err && res.statusCode ==200){
+		console.log("Parsing league...");
 		data = JSON.parse(body).entries;
 		require('./app/parseLeague.js')(data,tempModel);
+	}else{
+		console.log(res);
 	}
 });*/
 //require('./app/matchID.js')(tempModel,request,apiKey);
