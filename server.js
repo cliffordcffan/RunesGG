@@ -60,6 +60,15 @@ var treeSchema = new Schema(
   }
 );
 
+var treeCombinSchema = new Schema(
+  {
+    primary_id: {type:String},
+    secondary_id: {type:String},
+    wins: {type:Number,default:0},
+    losses: {type:Number,default:0}
+  }
+);
+
 var ourChampSchema = new Schema(
   {
     name: {type:String, required:true},
@@ -68,7 +77,8 @@ var ourChampSchema = new Schema(
     wins: {type:Number},
     losses: {type:Number},
     primaryTrees: [treeSchema],
-    secondaryTrees: [treeSchema]
+    secondaryTrees: [treeSchema],
+    combinations: [treeCombinSchema]
   },
   {collection:'ourChampions'}
 );
@@ -76,6 +86,7 @@ var ourChampSchema = new Schema(
 var ourModel = mongoose.model('OurChampions',ourChampSchema);
 var treeModel = mongoose.model('Tree',treeSchema);
 var perkModel = mongoose.model('Perk',perkSchema);
+var combModel = mongoose.model('Combinations',treeCombinSchema);
 var matchModel = mongoose.model('FoundMatches', new Schema({id:{type:Number,required:true},
 	parsed:{type:Boolean}}));
 var tempModel = mongoose.model('FoundPlayers', new Schema({accountid:{type:Number,default:0},
@@ -91,8 +102,9 @@ var tempModel = mongoose.model('FoundPlayers', new Schema({accountid:{type:Numbe
 //parse riot api champion list and send to new champ list
 //require('./app/parseChampions.js')(champModel,ourModel);
 
-//add runes
+//add runes and rune-tree combinations
 //require('./app/parseRunes.js')(ourModel,runeModel,treeModel,perkModel);
+//require('./app/addTreeCombinationsToDB.js')(ourModel,combModel);
 
 //parse set of matches
 //tempModel.remove({},function(err){});
