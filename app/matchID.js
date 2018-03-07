@@ -17,7 +17,7 @@ module.exports = function match(tempModel, request, apiKey){
 				}
 			});
 			console.log("Waiting...");
-			setTimeout(match,2500,tempModel,request,apiKey);
+			setTimeout(match,1500,tempModel,request,apiKey);
 		}else{
 			
 		}

@@ -19,7 +19,7 @@ module.exports = function matchHist(tempModel, matchModel, request, apiKey){
 						//ranked solo games only
 						if(match.queue==420){
 							matchModel.update({id:match.gameId},
-								{id:match.gameId},
+								{id:match.gameId,parsed:false},
 								{upsert:true},
 								function(err,numUpdated){
 									if(err) return handleError(err);
@@ -32,7 +32,7 @@ module.exports = function matchHist(tempModel, matchModel, request, apiKey){
 				}
 			});
 			console.log("Waiting...");
-			setTimeout(matchHist,2500,tempModel,matchModel,request,apiKey);
+			setTimeout(matchHist,1500,tempModel,matchModel,request,apiKey);
 
 		}
 	});

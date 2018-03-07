@@ -98,7 +98,7 @@ module.exports = function(ourModel, runeModel, treeModel, perkModel){
 				///////////////////RUNE 1///////////////////////
 				var rune1 = new perkModel({
 					name:rune.slots[1].runes[i].name,
-					id:rune.slots[1].runes[i].name
+					id:rune.slots[1].runes[i].id
 				});
 				//PRECISION
 				if(rune1.name == "Overheal"){
@@ -179,7 +179,7 @@ module.exports = function(ourModel, runeModel, treeModel, perkModel){
 				//////////////////////////RUNE 2/////////////////////
 				var rune2 = new perkModel({
 					name:rune.slots[2].runes[i].name,
-					id:rune.slots[2].runes[i].name
+					id:rune.slots[2].runes[i].id
 				});
 				//PRECISION
 				if(rune2.name == "Legend: Alacrity"){
@@ -258,7 +258,7 @@ module.exports = function(ourModel, runeModel, treeModel, perkModel){
 				/////////////////////////RUNE 3////////////////////
 				var rune3 = new perkModel({
 					name:rune.slots[3].runes[i].name,
-					id:rune.slots[3].runes[i].name
+					id:rune.slots[3].runes[i].id
 				});
 				//PRECISION
 				if(rune3.name == "Coup de Grace"){

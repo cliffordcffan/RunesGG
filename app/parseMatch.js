@@ -15,7 +15,7 @@ module.exports  = function parser(matchModel, ourModel, request, apiKey){
 					var patch = match.gameVersion;
 					console.log("Game patch is on: "+patch);
 					var patchSplit = patch.split(".");
-					if(patchSplit[0]=='7' && Number(patchSplit[1]) >= 22){
+					if(patchSplit[0]=='8' && Number(patchSplit[1]) >= 0){
 						var teamOneWin;
 						if(match.teams[0].win==='Win'){
 							teamOneWin=true;
