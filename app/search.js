@@ -128,6 +128,9 @@ module.exports = {
 			case "jarvan":
 				dbName = "Jarvan IV";
 				break;
+			case "j4":
+				dbName = "Jarvan IV";
+				break;
 			case "kayn":
 				dbName = "Kayn";
 				break;
