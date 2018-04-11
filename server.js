@@ -124,7 +124,7 @@ request(matchLink,function(err,res,body){
 });*/
 //require('./app/matchID.js')(tempModel,request,apiKey);
 //require('./app/parseMatchHistory.js')(tempModel,matchModel,request,apiKey);
-require('./app/parseMatch.js')(matchModel,ourModel,request,apiKey);
+//require('./app/parseMatch.js')(matchModel,ourModel,request,apiKey);
 
 //using ejs
 app.set('view engine', 'ejs');
