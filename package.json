@@ -3,6 +3,7 @@
   "version": "0.0.0",
   "description": "App for Riot API challenge. ",
   "main": "js/server.js",
+  "something_else": "idkidc",
   "author": "BobfromSweden, Zoe ZoeStar",
   "dependencies": {
     "body-parser": "^1.18.2",
